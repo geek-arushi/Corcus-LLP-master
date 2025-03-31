@@ -9899,3 +9899,40 @@ body {
   color: #fff;
   /* Text color to contrast with yellow */
 }
+
+.card {
+  border: 1px solid #ccc;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+.btn-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.btn-link i {
+  margin-right: 0.5rem;
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  /* Adds spacing between cards */
+  border: 2px solid #ccc;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  /* Popup effect */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
