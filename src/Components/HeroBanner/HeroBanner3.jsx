@@ -44,7 +44,7 @@ const HeroBanner3 = () => {
       <div className="container-fluid">
         <div className="row g-2 justify-content-between align-items-center">
           <div className="col-lg-6">
-            <div className="hero-content" style={{ marginRight: "-15px" }}>
+            <div className="hero-content" style={{ marginRight: "-60px" }}>
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
               <h1 className="wow fadeInUp" data-wow-delay=".3s">
                 {parse(heroContent.title)}
