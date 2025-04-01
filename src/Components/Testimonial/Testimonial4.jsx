@@ -7,40 +7,34 @@ import "swiper/css";
 const ClientFeedback = () => {
   const feedbacks = [
     {
-      name: "Dan Gabreil",
-      title: "Marketing Head | Coinsafe VPN",
+      name: "Anamika Anand",
+      title: "Paidavaar (CEO & Founder)",
       review:
-        "Working with Doodlo was a Game changer for us. They revamped our brand and website with unmatched creativity & precision. Their team's dedication and attention to detail is truly impressive. Highly recommended for design.",
+        "Corcus completely reimagined our brand with a fresh and strong identity that truly connects with our audience. The creative touch they brought, especially with the 'Gayani Thai' character, helped us build a deeper bond with the farming community. The results speak for themselves - we've seen a huge boost in engagement, reach, and trust. It's been a transformative experience!",
     },
     {
-      name: "Charu Jain",
-      title: "Marketing Head | Rishabh Industries Pvt Ltd",
+      name: "Nand Kumar Patil",
+      title: "Fresh O Need (CEO)",
       review:
-        "Doodlo Guys hyped our packaging design! Their creativity and attention to detail brought our product to life in ways we never imagined. Couldn't be more pleased with the outcome!",
+        "Corcus took our digital presence to new heights with their seamless marketing strategies. They optimized our website, created amazing content, and ran ads that really resonated with our audience. Sales and engagement skyrocketed, and thanks to their expertise, we've been able to expand globally. They've truly been an essential part of our journey.",
     },
     {
-      name: "Norman Dental",
-      title: "CEO | Wurth Industries",
+      name: "Abinash",
+      title: "Fresh Super Mall",
       review:
-        "Doodlo is definitely the right choice for our coffee table project. The team came up with a unique set of ideas that clearly sets us apart. Very constructive and flexible collaboration. Good work!",
+        "Working with Corcus was a game changer for our franchise lead generation. Their targeted ads, SEO, and automation strategies took things to the next level. We saw a 300% increase in leads, and our brand visibility grew massively. Their creative content and smart approach really made a difference. Couldn't recommend them more!",
     },
     {
-      name: "Monika K",
-      title: "Founder | K99 Solutions",
+      name: "Abinash",
+      title: "Fresh Super Mall",
       review:
-        "You guys nailed it! Their work on our brand and website was absolutely top-notch. Everything exceeded our expectations.",
+        "Working with Corcus was a game changer for our franchise lead generation. Their targeted ads, SEO, and automation strategies took things to the next level. We saw a 300% increase in leads, and our brand visibility grew massively. Their creative content and smart approach really made a difference. Couldn't recommend them more!",
     },
     {
-      name: "Monika K",
-      title: "Founder | K99 Solutions",
+      name: "Abinash",
+      title: "Fresh Super Mall",
       review:
-        "You guys nailed it! Their work on our brand and website was absolutely top-notch. Everything exceeded our expectations.",
-    },
-    {
-      name: "Monika K",
-      title: "Founder | K99 Solutions",
-      review:
-        "You guys nailed it! Their work on our brand and website was absolutely top-notch. Everything exceeded our expectations.",
+        "Working with Corcus was a game changer for our franchise lead generation. Their targeted ads, SEO, and automation strategies took things to the next level. We saw a 300% increase in leads, and our brand visibility grew massively. Their creative content and smart approach really made a difference. Couldn't recommend them more!",
     },
   ];
 
@@ -52,7 +46,7 @@ const ClientFeedback = () => {
           style={{
             WebkitTextStroke: "2px black",
             color: "transparent",
-            fontWeight: 900, // Extra bold
+            fontWeight: 900,
           }}
         >
           CLIENT
@@ -61,6 +55,7 @@ const ClientFeedback = () => {
           FEEDBACK
         </h2>
       </div>
+
       <div className="container">
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -69,27 +64,29 @@ const ClientFeedback = () => {
           navigation
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1200: { slidesPerView: 4 },
+            768: { slidesPerView: 1 },
+            1024: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 },
           }}
         >
           {feedbacks.map((feedback, index) => (
-            <SwiperSlide key={index}>
-              <div className="card h-100 shadow-sm p-3">
-                <div className="card-body">
-                  <h5 className="card-title font-weight-bold">
-                    {feedback.name}
-                  </h5>
-                  <h6 className="card-subtitle mb-2 text-muted">
-                    {feedback.title}
-                  </h6>
-                  <div className="text-warning mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <FontAwesomeIcon key={i} icon={faStar} />
-                    ))}
+            <SwiperSlide key={index} className="h-100">
+              <div className="card h-100 shadow-sm p-3 d-flex flex-column">
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h5 className="card-title font-weight-bold">
+                      {feedback.name}
+                    </h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      {feedback.title}
+                    </h6>
+                    <div className="text-warning mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <FontAwesomeIcon key={i} icon={faStar} />
+                      ))}
+                    </div>
                   </div>
-                  <p className="card-text">{feedback.review}</p>
+                  <p className="card-text mt-auto">{feedback.review}</p>
                 </div>
               </div>
             </SwiperSlide>
