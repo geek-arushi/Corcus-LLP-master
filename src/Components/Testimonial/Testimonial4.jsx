@@ -39,7 +39,7 @@ const ClientFeedback = () => {
   ];
 
   return (
-    <div className="bg-white py-5">
+    <div className="bg-white py-2">
       <div className="container text-left mb-5">
         <h1
           className="display-4 font-weight-bold"

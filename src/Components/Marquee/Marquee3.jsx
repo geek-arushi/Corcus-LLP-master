@@ -1,6 +1,6 @@
 const Marquee3 = () => {
   return (
-    <div className="marquee-section section-padding pt-0">
+    <div className="marquee-section section-padding pt-10">
       <div className="mycustom-marque theme-blue-bg">
         <div className="scrolling-wrap">
           <div className="comm">

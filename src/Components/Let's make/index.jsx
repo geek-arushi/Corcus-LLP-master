@@ -28,7 +28,7 @@ const Letmake = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
+    <div className="container d-flex justify-content-center align-items-center min-vh-50">
       <div style={styles.container}>
         <div>
           <h4 className="font-weight-bold mb-4">Let's Make Things Happen</h4>

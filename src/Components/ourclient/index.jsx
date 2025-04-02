@@ -30,7 +30,7 @@ const Client = () => {
 
   return (
     <div
-      className="container py-5 bg-gradient"
+      className="container  bg-gradient"
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
       <div className="text-left mb-4">
@@ -77,7 +77,7 @@ const Client = () => {
         </div>
       </div>
 
-      <div className="row mt-5 text-center">
+      {/* <div className="row mt-5 text-center">
         {[
           { target: 387, text: "Project Delivered & Counting" },
           { target: 7, text: "Years of Combined Experience" },
@@ -93,7 +93,7 @@ const Client = () => {
             <p className="h6 text-black fw-bold">{item.text}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

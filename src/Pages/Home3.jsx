@@ -16,12 +16,13 @@ import ContactForm from "../Components/contactForm";
 import Why from "../Components/Why/why";
 import Testimonial4 from "../Components/Testimonial/Testimonial4";
 import Letmake from "../Components/Let's make";
+import Servicesnew from "../Components/servicenew/Services";
 const Home3 = () => {
   return (
     <div>
       <HeroBanner3></HeroBanner3>
       <Marquee2></Marquee2>
-      <Services2></Services2>
+      <Servicesnew></Servicesnew>
       <Letmake></Letmake>
       <OurJourney></OurJourney>
       <Why></Why>
