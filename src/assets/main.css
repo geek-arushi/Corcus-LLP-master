@@ -18,11 +18,12 @@
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 999;
 }
 
 .main-button .theme-btn {
   position: relative;
-  z-index: 2;
+  z-index: 999;
   display: inline-block;
   border: none;
   text-transform: uppercase;
@@ -4558,7 +4559,7 @@ span {
 }
 
 .mean-container .mean-nav {
-  background: none;
+  background: var(--theme);
   margin-top: 0;
 }
 
@@ -4690,12 +4691,12 @@ span {
 .mean-container .mean-nav ul li a {
   width: 100%;
   padding: 10px 0;
-  color: var(--header);
+  color: var(--white);
   font-size: 16px;
   line-height: 1.5;
   font-weight: 600;
   text-transform: capitalize;
-  border-bottom: 1px solid var(--border) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   border: none;
 }
 
@@ -8654,7 +8655,7 @@ input.main-search-input::placeholder {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
-  background-color: #fff;
+  background-color: #000;
   box-shadow: var(--box-shadow);
 }
 
@@ -8995,12 +8996,12 @@ input.main-search-input::placeholder {
     position: absolute;
     width: 100vw;
     left: -15px;
-    background-color: #181818;
+    background-color: #000000;
     padding: 10px 0;
     display: none;
     top: 100%;
-    border-top: 1px solid #4d4d4d 52;
-    border-bottom: 1px solid #4d4d4d 52;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: auto;
     max-height: calc(100vh - 80px);
     line-height: 1.6em;
@@ -9518,8 +9519,14 @@ input.main-search-input::placeholder {
 
 .cs_main_header_right .main-button.main-btn-area2 .theme-btn,
 .cs_main_header_right .main-button.main-btn-area2 .arrow-btn {
-  background-color: var(--theme);
+  background-color: #000000;
   color: var(--white);
+  transition: all 0.4s ease-in-out;
+}
+
+.cs_main_header_right .main-button.main-btn-area2:hover .theme-btn,
+.cs_main_header_right .main-button.main-btn-area2:hover .arrow-btn {
+  background-color: #e9a132;
 }
 
 .testimonial-slider-2 .slick-slide img {

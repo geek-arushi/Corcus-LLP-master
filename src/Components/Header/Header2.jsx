@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import PopupForm from "../popup";
 export default function Header2({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [searchToggle, setSearchToggle] = useState(false);
+  const [showContactPopup, setShowContactPopup] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,9 +64,12 @@ export default function Header2({ variant }) {
               <div className="cs_main_header_right">
                 <div className="header-btn d-flex align-items-center">
                   <div className="main-button main-btn-area2">
-                    <Link to="/contact">
-                      <span className="theme-btn"> Contact Us </span>
-                    </Link>
+                    <button
+                      onClick={() => setShowContactPopup(true)}
+                      className="theme-btn"
+                    >
+                      Contact Us
+                    </button>
                   </div>
                 </div>
               </div>
@@ -95,6 +100,9 @@ export default function Header2({ variant }) {
       </div>
 
       <div className="cs_site_header_spacing_40"></div>
+      {showContactPopup && (
+        <PopupForm isOpen={showContactPopup} setIsOpen={setShowContactPopup} />
+      )}
     </div>
   );
 }
