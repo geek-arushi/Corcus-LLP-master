@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import './Popup.scss';
+import "./popup.scss";
 
 const PopupForm = ({ isOpen, setIsOpen }) => {
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
     email: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -25,7 +25,12 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
     setSubmitStatus(null);
 
     // Basic validation
-    if (!formData.name.trim() || !formData.mobile.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.mobile.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
       setSubmitStatus("error");
       setIsSubmitting(false);
       return;
@@ -33,7 +38,7 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
 
     try {
       // Simulate API call - replace with actual API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log("Form submitted:", formData);
       setSubmitStatus("success");
 
@@ -101,13 +106,21 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
           />
           <button
             type="submit"
-            className={`submit-button ${isSubmitting ? 'submitting' : ''} ${submitStatus ? submitStatus : ''}`}
+            className={`submit-button ${isSubmitting ? "submitting" : ""} ${
+              submitStatus ? submitStatus : ""
+            }`}
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Sending...' : submitStatus === 'success' ? 'Sent!' : 'Send'}
+            {isSubmitting
+              ? "Sending..."
+              : submitStatus === "success"
+              ? "Sent!"
+              : "Send"}
           </button>
-          {submitStatus === 'error' && (
-            <p className="error-message">Failed to send message. Please try again.</p>
+          {submitStatus === "error" && (
+            <p className="error-message">
+              Failed to send message. Please try again.
+            </p>
           )}
         </form>
       </div>
