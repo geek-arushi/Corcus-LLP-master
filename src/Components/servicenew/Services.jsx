@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Servicesnew = () => {
   return (
-    <div className="container my-5">
+    <div className="container my-5 ">
       {/* Custom CSS for shadow, border, and hover popup */}
       <style>
         {`
