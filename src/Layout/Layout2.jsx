@@ -9,8 +9,8 @@ const Layout2 = () => {
       <Header2></Header2>
       <Outlet></Outlet>
       <Footer2></Footer2>
-      <WhatsAppButton />
-      <CustomCursor />
+      <WhatsAppButton></WhatsAppButton>
+      <CustomCursor></CustomCursor>
     </div>
   );
 };
