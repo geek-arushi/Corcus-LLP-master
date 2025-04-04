@@ -21,8 +21,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center p-3 min-vh-100 contact-container">
-      <div className="shadow-lg p-5 rounded contact-card">
+    <div className="container-fluid p-0 d-flex justify-content-center align-items-center min-vh-100 contact-container">
+      <div className="shadow-lg p-5 rounded contact-card w-100">
         {/* Social Icons (Right Side) */}
         <div className="social-icons">
           <a href="#" className="text-dark">
@@ -101,13 +101,19 @@ const ContactForm = () => {
               </button>
             </form>
             {/* Marquee Section Inside White Section */}
-            <div className="mt-4">
-              <div className="marquee-container">
+            <div className="mt-4" style={{ overflow: "hidden", width: "100%" }}>
+              <div
+                className="marquee-container"
+                style={{ width: "100%", overflow: "hidden" }}
+              >
                 <Marquee gradient={false} speed={60} className="marquee-text">
                   BOOK NOW &nbsp; BOOK NOW &nbsp; BOOK NOW &nbsp; BOOK NOW
                 </Marquee>
               </div>
-              <div className="marquee-container2">
+              <div
+                className="marquee-container2"
+                style={{ width: "100%", overflow: "hidden" }}
+              >
                 <Marquee
                   gradient={false}
                   speed={60}

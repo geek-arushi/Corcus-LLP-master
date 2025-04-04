@@ -9756,22 +9756,19 @@ body {
 
 /* Marquee Container */
 .marquee-container {
-  width: 110%;
+  width: 100%;
   background-color: black;
-  padding: 5px 0;
-  margin-top: 120px;
-  transform: rotate(-18deg);
-
+  transform: rotate(-10deg);
+  margin: 0;
+  overflow: hidden;
 }
 
 .marquee-container2 {
   width: 100%;
   background-color: rgb(104, 103, 103);
-  padding: 5px 0;
-  margin-top: 20px;
-  margin-left: 50px;
-  transform: rotate(-16deg);
-
+  margin: 0;
+  transform: rotate(-8deg);
+  overflow: hidden;
 }
 
 /* Marquee Text */
@@ -9949,4 +9946,3 @@ body {
     flex-direction: row;
   }
 }
-
