@@ -10,26 +10,22 @@ const Contacthero = () => {
     loadBackgroudImages();
   }, []);
 
-  // State to manage the image index for the hero images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of images to be auto-scrolled in the content section
   const heroImages = [
-    "public/assets/img/Contactus/01.png",
-    "public/assets/img/Contactus/02.png",
-    "public/assets/img/Contactus/03.png",
-    "public/assets/img/Contactus/04.png", // Add more images as needed
+    "/assets/img/Contactus/01.png",
+    "/assets/img/Contactus/02.png",
+    "/assets/img/Contactus/03.png",
+    "/assets/img/Contactus/04.png",
   ];
 
-  // Set the interval to change the image every 3 seconds (3000ms)
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    }, 3000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const heroContent = {
@@ -40,12 +36,9 @@ const Contacthero = () => {
   };
 
   return (
-    <section
-      className="hero-section hero-3"
-      style={{ padding: "120px 0 10px 0" }}
-    >
+    <section className="hero-section hero-3 contact-hero">
       <div className="container-fluid">
-        <div className="row g-4 justify-content-between align-items-center">
+        <div className="row g-0 align-items-center no-gap-row">
           <div className="col-lg-6">
             <div className="hero-content">
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
@@ -55,51 +48,91 @@ const Contacthero = () => {
               <p className="wow fadeInUp" data-wow-delay=".5s">
                 {heroContent.content}
               </p>
-              <div className="hero-button d-flex gap-3">
-                <div
-                  className="main-button wow fadeInUp"
-                  data-wow-delay=".3s"
-                ></div>
-                <div
-                  className="main-button wow fadeInUp"
-                  data-wow-delay=".5s"
-                ></div>
-              </div>
             </div>
           </div>
-          <div className="col-lg-5">
+          <div className="col-lg-6">
             <div
               className="hero-image wow img-custom-anim-left"
               data-wow-duration="1.5s"
               data-wow-delay="0.3s"
             >
-              <img src={heroImages[currentImageIndex]} alt="Hero" />
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="Hero"
+                className="img-fluid w-100 h-auto"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Custom CSS for Contact Us Button */}
-      <style>
-        {`
-          .contact-btn {
-            background: transparent;
-            border: 2px solid black;
-            color: black;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            border-radius: 25px;
-            gap: 8px;
-            transition: all 0.3s ease-in-out;
+      <style jsx="true">{`
+        .contact-hero {
+          padding: 60px 0 10px 0;
+        }
+
+        .no-gap-row > [class*="col-"] {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .hero-content {
+          margin-bottom: 0 !important;
+          padding: 40px 40px 0 40px;
+        }
+
+        .hero-image {
+          margin-bottom: 0 !important;
+        }
+
+        .contact-btn {
+          background: transparent;
+          border: 2px solid #000;
+          color: #000;
+          padding: 10px 22px;
+          display: flex;
+          align-items: center;
+          border-radius: 30px;
+          gap: 8px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .contact-btn:hover {
+          background: #000;
+          color: #fff;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+          color: #444;
+        }
+
+        @media (max-width: 768px) {
+          .hero-content h1 {
+            font-size: 2rem;
           }
 
-          .contact-btn:hover {
-            background: black;
-            color: white;
+          .contact-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
           }
-        `}
-      </style>
+
+          .hero-button {
+            flex-direction: column;
+          }
+
+          .hero-content {
+            padding: 30px 15px 0 15px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

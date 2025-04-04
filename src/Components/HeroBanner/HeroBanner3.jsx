@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import PopupForm from "../popup"; // Make sure this path is correct
 
 const HeroBanner3 = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const HeroBanner3 = () => {
   }, []);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
   const heroImages = [
     "/assets/img/hero/hero-image-1.png",
@@ -59,10 +61,14 @@ const HeroBanner3 = () => {
                   </Link>
                 </div>
                 <div className="main-button wow fadeInUp" data-wow-delay=".5s">
-                  <Link to={heroContent.btnurl} className="contact-btn">
+                  <span
+                    className="contact-btn"
+                    onClick={() => setShowPopup(true)}
+                    role="button"
+                  >
                     <FontAwesomeIcon icon={faPhone} className="me-2" />
                     {heroContent.btnname2}
-                  </Link>
+                  </span>
                 </div>
               </div>
             </div>
@@ -80,6 +86,9 @@ const HeroBanner3 = () => {
         </div>
       </div>
 
+      {/* Popup Form */}
+      {showPopup && <PopupForm onClose={() => setShowPopup(false)} />}
+
       {/* Custom CSS for Contact Us Button */}
       <style>
         {`
@@ -93,6 +102,7 @@ const HeroBanner3 = () => {
             border-radius: 25px;
             gap: 8px;
             transition: all 0.3s ease-in-out;
+            cursor: pointer;
           }
 
           .contact-btn:hover {
