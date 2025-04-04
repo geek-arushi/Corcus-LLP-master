@@ -4,6 +4,7 @@ import './Popup.scss';
 const PopupForm = ({ isOpen, setIsOpen }) => {
   const [formData, setFormData] = useState({
     name: "",
+    mobile: "",
     email: "",
     message: ""
   });
@@ -24,7 +25,7 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
     setSubmitStatus(null);
 
     // Basic validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (!formData.name.trim() || !formData.mobile.trim() || !formData.email.trim() || !formData.message.trim()) {
       setSubmitStatus("error");
       setIsSubmitting(false);
       return;
@@ -35,13 +36,13 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       console.log("Form submitted:", formData);
       setSubmitStatus("success");
-      
+
       // Reset form after successful submission
       setTimeout(() => {
         setIsOpen(false);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", mobile: "", email: "", message: "" });
         setSubmitStatus(null);
-      }, 2000); // Increased timeout for better UX
+      }, 2000);
     } catch (error) {
       console.error("Submission error:", error);
       setSubmitStatus("error");
@@ -68,6 +69,17 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
             placeholder="Your Name"
             required
             disabled={isSubmitting}
+          />
+          <input
+            type="tel"
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleChange}
+            placeholder="Your Mobile Number"
+            required
+            disabled={isSubmitting}
+            pattern="[0-9]{10}"
+            title="Enter a 10-digit mobile number"
           />
           <input
             type="email"

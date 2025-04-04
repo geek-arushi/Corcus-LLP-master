@@ -100,7 +100,8 @@
         overflow: hidden;
 
         &:hover:not(:disabled) {
-          background-color: #0056b3;
+          background-color: #fbd735;
+          color: black;
           transform: translateY(-1px);
         }
 
