@@ -87,7 +87,7 @@ const HeroBanner3 = () => {
       </div>
 
       {/* Popup Form */}
-      {showPopup && <PopupForm onClose={() => setShowPopup(false)} />}
+      {showPopup && <PopupForm isOpen={showPopup} setIsOpen={setShowPopup} />}
 
       {/* Custom CSS for Contact Us Button */}
       <style>

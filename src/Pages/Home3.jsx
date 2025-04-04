@@ -32,6 +32,7 @@ const Home3 = () => {
       {/* <Team1></Team1> */}
       {/* <Marquee3></Marquee3> */}
       <Client></Client>
+      <Letmake></Letmake>
       {/* <WhyChoose3></WhyChoose3> */}
       {/* <Testimonial3></Testimonial3> */}
       <Testimonial4></Testimonial4>
