@@ -12,7 +12,7 @@ const Counter3 = () => {
           const [toggle, setToggle] = useState(false);
         
           const handelClick = () => {
-            setIframeSrc("https://www.youtube.com/embed/rRid6GCJtgc");
+            setIframeSrc("https://youtu.be/NSKCh9yhZxk?si=xta174qNbcoCBTAe");
             setToggle(!toggle);
           };
           const handelClose = () => {
