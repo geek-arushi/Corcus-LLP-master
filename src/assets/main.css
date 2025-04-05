@@ -7,9 +7,9 @@
   --white: #fff;
   --theme: #000000;
   --theme2: #000000;
-  --header: #000000;
+  --header: #1a1a1a;
   --text: #504E4E;
-  --border: #E5E5E5;
+  --border: #000000;
   --bg: #ffffff;
   --box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
 }
@@ -2516,11 +2516,11 @@ span {
 }
 
 .footer-widgets-wrapper {
-  padding: 60px 0;
+  padding: 80px 0 60px;
 }
 
 .footer-widgets-wrapper .single-footer-widget {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
@@ -2581,15 +2581,18 @@ span {
 }
 
 .footer-widgets-wrapper .single-footer-widget .footer-content .social-icon {
-  margin-top: 40px;
-  gap: 10px;
+  margin-top: 25px;
+  gap: 15px;
   position: relative;
   z-index: 9;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 575px) {
   .footer-widgets-wrapper .single-footer-widget .footer-content .social-icon {
     margin-top: 20px;
+    justify-content: center;
   }
 }
 
@@ -2763,10 +2766,11 @@ span {
 }
 
 .footer-bottom {
-  padding: 20px 0;
-  background-color: #050a1e;
+  padding: 25px 0;
+  background-color: #000000;
   position: relative;
   margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 767px) {
@@ -2783,17 +2787,22 @@ span {
 }
 
 .footer-bottom .footer-wrapper .footer-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 767px) {
+  .footer-bottom .footer-wrapper .footer-menu {
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
 .footer-bottom .footer-wrapper .footer-menu li a {
@@ -8655,7 +8664,7 @@ input.main-search-input::placeholder {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
-  background-color: #000;
+  background-color: #fffafa;
   box-shadow: var(--box-shadow);
 }
 
@@ -8829,7 +8838,7 @@ input.main-search-input::placeholder {
 
   .cs_nav .cs_nav_list ul {
     width: 230px;
-    background-color: #fff;
+    background-color: #000000;
     position: absolute;
     border-top: 2px solid #000000;
     -webkit-box-shadow: 0px 1px 2px 0px rgba(2, 0, 181, 0.1);
@@ -9037,7 +9046,7 @@ input.main-search-input::placeholder {
   .cs-munu_toggle span:after {
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: #000000 !important;
     display: block;
   }
 
@@ -9114,7 +9123,7 @@ input.main-search-input::placeholder {
   }
 
   .cs_site_header.cs_style_1.cs_color_1 .cs_nav .cs_nav_list {
-    background-color: #fff;
+    background-color: #000000;
   }
 
   .cs_main_header_right .header-btn {
@@ -9122,13 +9131,13 @@ input.main-search-input::placeholder {
   }
 
   .cs-gescout_sticky {
-    background-color: #000;
+    background-color: #ffffff;
   }
 
   .header_sticky_style2 .cs-munu_toggle span,
   .header_sticky_style2 .cs-munu_toggle span:before,
   .header_sticky_style2 .cs-munu_toggle span:after {
-    background-color: #000;
+    background-color: #ffffff;
   }
 
 }
@@ -9375,7 +9384,7 @@ input.main-search-input::placeholder {
 
   .cs_site_header.cs_style_1 .cs_nav_list {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -9386,13 +9395,14 @@ input.main-search-input::placeholder {
 
   .cs_site_header.cs_style_1 .cs_nav_list a {
     font-size: 16px;
+    color: #ffffff;
     padding: 8px 15px;
     display: block;
     transition: all 0.3s ease;
   }
 
   .cs_site_header.cs_style_1 .cs_nav_list a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
     border-radius: 5px;
   }
 
@@ -9420,7 +9430,7 @@ input.main-search-input::placeholder {
   }
 
   .cs_nav .cs_nav_list li a {
-    color: #fff;
+    color: #ffffff;
   }
 
   .cs_main_header_right .header-btn {
@@ -9457,7 +9467,7 @@ input.main-search-input::placeholder {
 }
 
 .header_style_3.cs-gescout_show .container::before {
-  background-color: #000000 !important;
+  background-color: #ffffff !important;
 }
 
 .accordion-area2 .accordion-button {

@@ -1,7 +1,10 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Popup from "../popup/Popup";
+import ContactForm from "../contactForm/ContactForm";
 
 const Servicesnew = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <div className="container my-5">
       {/* Custom CSS for shadow, border, hover popup, stroke text, and button hover */}
@@ -35,15 +38,16 @@ const Servicesnew = () => {
         <h1
           className="display-4 mb-2 mb-md-0 me-md-4 stroke-text"
           style={{
-            backgroundColor: '#fbd735',
-            padding: '10px 30px',
-            borderRadius: '8px',
+            backgroundColor: "#fbd735",
+            padding: "10px 30px",
+            borderRadius: "8px",
           }}
         >
           Service
         </h1>
         <p className="lead fw-bold">
-          At our digital marketing agency, we offer a wide range of services to help businesses grow and achieve their goals. These services include:
+          At our digital marketing agency, we offer a wide range of services to
+          help businesses grow and achieve their goals. These services include:
         </p>
       </div>
 
@@ -54,61 +58,63 @@ const Servicesnew = () => {
             desc: "Contact us today to learn how our digital marketing services can help your business grow. Let's make things happen!",
             img: "https://storage.googleapis.com/a1aa/image/5uc2fv4cxC3oMRHykdI7VJJacv3S8YMeW2wC8ijyjM8.jpg",
             btnStyle: "dark",
-            darkStyle: false
+            darkStyle: false,
           },
           {
             title: "Social Media Marketing",
             desc: "Strategic content creation and management across platforms to engage your audience.",
             img: "https://storage.googleapis.com/a1aa/image/wefXIsLvtycT9Shfxg11D22Abs3j0nT-IocQgusqGdc.jpg",
             btnStyle: "light",
-            darkStyle: true
+            darkStyle: true,
           },
           {
             title: "Search Engine Optimization",
             desc: "Improve your website's visibility and ranking on search engines.",
             img: "https://storage.googleapis.com/a1aa/image/FneCYJh2bfHp7NKk3XJ_68N5cX1tLoBynLFHRUSLCU4.jpg",
             btnStyle: "light",
-            darkStyle: true
+            darkStyle: true,
           },
           {
             title: "Content Marketing",
             desc: "Engaging and informative content that builds brand authority and attracts customers.",
             img: "https://storage.googleapis.com/a1aa/image/A7hl5keKixBkU8r1e9QbV1m8EPXUgwvb9WDPFSMjF_Y.jpg",
             btnStyle: "dark",
-            darkStyle: false
+            darkStyle: false,
           },
           {
             title: "Performance Marketing",
             desc: "Contact us today to learn how our digital marketing services can help your business grow. Let's make things happen!",
             img: "https://storage.googleapis.com/a1aa/image/5uc2fv4cxC3oMRHykdI7VJJacv3S8YMeW2wC8ijyjM8.jpg",
             btnStyle: "dark",
-            darkStyle: false
+            darkStyle: false,
           },
           {
             title: "Social Media Marketing",
             desc: "Strategic content creation and management across platforms to engage your audience.",
             img: "https://storage.googleapis.com/a1aa/image/wefXIsLvtycT9Shfxg11D22Abs3j0nT-IocQgusqGdc.jpg",
             btnStyle: "light",
-            darkStyle: true
+            darkStyle: true,
           },
           {
             title: "Search Engine Optimization",
             desc: "Improve your website's visibility and ranking on search engines.",
             img: "https://storage.googleapis.com/a1aa/image/FneCYJh2bfHp7NKk3XJ_68N5cX1tLoBynLFHRUSLCU4.jpg",
             btnStyle: "light",
-            darkStyle: true
+            darkStyle: true,
           },
           {
             title: "Content Marketing",
             desc: "Engaging and informative content that builds brand authority and attracts customers.",
             img: "https://storage.googleapis.com/a1aa/image/A7hl5keKixBkU8r1e9QbV1m8EPXUgwvb9WDPFSMjF_Y.jpg",
             btnStyle: "dark",
-            darkStyle: false
+            darkStyle: false,
           },
         ].map((service, index) => (
           <div className="col-md-6 mb-4" key={index}>
             <div
-              className={`card service-card h-100 p-4 rounded d-flex flex-column flex-md-row align-items-center ${service.darkStyle ? 'bg-black text-white' : ''}`}
+              className={`card service-card h-100 p-4 rounded d-flex flex-column flex-md-row align-items-center ${
+                service.darkStyle ? "bg-black text-white" : ""
+              }`}
             >
               <div className="order-md-2 ms-md-4">
                 <img
@@ -122,14 +128,20 @@ const Servicesnew = () => {
               <div>
                 <h2 className="h4 fw-bold mb-2">{service.title}</h2>
                 <p className="mb-4">{service.desc}</p>
-                <a href="/contact" target="_blank" rel="noopener noreferrer">
-                  <button className={`btn btn-${service.btnStyle}`}>Get your free proposal</button>
-                </a>
+                <button
+                  className={`btn btn-${service.btnStyle}`}
+                  onClick={() => setIsPopupOpen(true)}
+                >
+                  Get your free proposal
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
+      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
+        <ContactForm />
+      </Popup>
     </div>
   );
 };

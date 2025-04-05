@@ -42,7 +42,10 @@ const HeroBanner3 = () => {
   };
 
   return (
-    <section className="hero-section hero-3" style={{ padding: "120px 0 10px 0" }}>
+    <section
+      className="hero-section hero-3"
+      style={{ padding: "120px 0 10px 0" }}
+    >
       <div className="container-fluid">
         <div className="row g-2 justify-content-between align-items-center">
           <div className="col-lg-6">
@@ -56,9 +59,13 @@ const HeroBanner3 = () => {
               </p>
               <div className="hero-button d-flex gap-3">
                 <div className="main-button wow fadeInUp" data-wow-delay=".3s">
-                  <Link to={heroContent.btnurl}>
-                    <span className="theme-btn">{heroContent.btnname}</span>
-                  </Link>
+                  <span
+                    className="theme-btn"
+                    onClick={() => setShowPopup(true)}
+                    role="button"
+                  >
+                    {heroContent.btnname}
+                  </span>
                 </div>
                 <div className="main-button wow fadeInUp" data-wow-delay=".5s">
                   <span
