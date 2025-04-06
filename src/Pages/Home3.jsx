@@ -23,7 +23,6 @@ const Home3 = () => {
       <HeroBanner3></HeroBanner3>
       <Marquee2></Marquee2>
       <Servicesnew></Servicesnew>
-      <Letmake></Letmake>
       <OurJourney></OurJourney>
       <Why></Why>
       <Poweredby></Poweredby>

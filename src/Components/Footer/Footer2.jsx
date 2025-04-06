@@ -35,10 +35,10 @@ const Footer2 = () => {
                       <a href="https://www.instagram.com/corcus_studio?igsh=dTRlc3dobXZuY2E1">
                         <i className="bi bi-instagram"></i>
                       </a>
-                      <a href="#">
+                      <a href="https://www.youtube.com/@corcusstudiollp7004">
                         <i className="bi bi-youtube"></i>
                       </a>
-                      <a href="#">
+                      <a href="https://www.linkedin.com/company/corcus-studio-llp/">
                         <i className="bi bi-linkedin"></i>
                       </a>
                     </div>

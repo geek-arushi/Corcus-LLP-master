@@ -10,27 +10,24 @@ const Serviceshero = () => {
     loadBackgroudImages();
   }, []);
 
-  // State to manage the image index for the hero images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of images to be auto-scrolled in the content section
   const heroImages = [
     "public/assets/img/Servicedetail/1.png",
     "public/assets/img/Servicedetail/2.png",
     "public/assets/img/Servicedetail/3.png",
     "public/assets/img/Servicedetail/4.png",
-    "public/assets/img/Servicedetail/5.png", // Add more images as needed
+    "public/assets/img/Servicedetail/5.png",
   ];
 
-  // Set the interval to change the image every 3 seconds (3000ms)
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   const heroContent = {
@@ -45,8 +42,8 @@ const Serviceshero = () => {
       className="hero-section hero-3"
       style={{ padding: "120px 0 10px 0" }}
     >
-      <div className="container-fluid">
-        <div className="row g-4 justify-content-between align-items-center">
+      <div className="container">
+        <div className="row g-0 justify-content-between align-items-center">
           <div className="col-lg-6">
             <div className="hero-content">
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
@@ -68,21 +65,30 @@ const Serviceshero = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-5">
+          <div className="col-lg-6">
             <div
               className="hero-image wow img-custom-anim-left"
               data-wow-duration="1.5s"
               data-wow-delay="0.3s"
             >
-              <img src={heroImages[currentImageIndex]} alt="Hero" />
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="Hero"
+                style={{ width: "100%", height: "auto" }}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Custom CSS for Contact Us Button */}
+      {/* Custom CSS for Consistent Padding */}
       <style>
         {`
+          .hero-section .container {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+
           .contact-btn {
             background: transparent;
             border: 2px solid black;
