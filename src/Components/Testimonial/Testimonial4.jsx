@@ -41,52 +41,173 @@ const ClientFeedback = () => {
   return (
     <div className="bg-white py-2">
       <div className="container text-left mb-5">
-        <h1
-          className="display-4 font-weight-bold"
-          style={{
-            WebkitTextStroke: "2px black",
-            color: "transparent",
-            fontWeight: 900,
-          }}
-        >
-          CLIENT
-        </h1>
-        <h2 className="display-3 font-weight-bold" style={{ fontWeight: 900 }}>
-          FEEDBACK
-        </h2>
+        <style jsx="true">{`
+          .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealText 0.8s ease-out forwards;
+          }
+
+          @keyframes revealText {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease,
+              background-color 0.3s ease, color 0.3s ease;
+            aspect-ratio: 1/1.4;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+              rgba(17, 17, 26, 0.05) 0px 8px 32px;
+          }
+
+          .card-body {
+            padding: 1rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+
+          .testimonial-card:hover {
+            transform: translateY(-5px);
+            background-color: black;
+            color: white;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px,
+              rgba(0, 0, 0, 0.3) 0px 16px 56px, rgba(0, 0, 0, 0.3) 0px 24px 80px;
+          }
+
+          .testimonial-card:hover .card-subtitle {
+            color: #cccccc !important;
+          }
+
+          .testimonial-card:hover .star {
+            color: #ffd700;
+          }
+
+          .card-body {
+            padding: 2rem;
+            height: 100%;
+          }
+
+          .card-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+          }
+
+          .card-subtitle {
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+          }
+
+          .card-text {
+            font-size: 0.6rem;
+            line-height: 1.6;
+            flex-grow: 1;
+          }
+          .animate-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease-out forwards;
+          }
+
+          @keyframes slideUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .star {
+            animation: twinkle 1.5s infinite;
+          }
+
+          .star:nth-child(2) {
+            animation-delay: 0.3s;
+          }
+          .star:nth-child(3) {
+            animation-delay: 0.6s;
+          }
+          .star:nth-child(4) {
+            animation-delay: 0.9s;
+          }
+          .star:nth-child(5) {
+            animation-delay: 1.2s;
+          }
+
+          @keyframes twinkle {
+            0%,
+            100% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0.5;
+            }
+          }
+        `}</style>
+        <div className="reveal-text">
+          <h1
+            className="display-4 font-weight-bold"
+            style={{
+              WebkitTextStroke: "2px black",
+              color: "transparent",
+              fontWeight: 900,
+            }}
+          >
+            CLIENT
+          </h1>
+          <h2
+            className="display-3 font-weight-bold"
+            style={{ fontWeight: 900 }}
+          >
+            FEEDBACK
+          </h2>
+        </div>
       </div>
 
       <div className="container">
         <Swiper
           modules={[Navigation, Autoplay]}
-          spaceBetween={20}
+          spaceBetween={50}
           slidesPerView={1}
           navigation
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
-            768: { slidesPerView: 1 },
-            1024: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
+            640: { slidesPerView: 1, spaceBetween: 30 },
+            768: { slidesPerView: 2, spaceBetween: 40 },
+            1024: { slidesPerView: 3, spaceBetween: 60 },
+            1200: { slidesPerView: 4, spaceBetween: 30 },
           }}
         >
           {feedbacks.map((feedback, index) => (
             <SwiperSlide key={index} className="h-100">
-              <div className="card h-100 shadow-sm p-3 d-flex flex-column">
+              <div className="testimonial-card card h-100 shadow-sm p-3 d-flex flex-column">
                 <div className="card-body d-flex flex-column justify-content-between">
                   <div>
-                    <h5 className="card-title font-weight-bold">
+                    <h5 className="card-title font-weight-bold animate-up">
                       {feedback.name}
                     </h5>
-                    <h6 className="card-subtitle mb-2 text-muted">
+                    <h6 className="card-subtitle mb-2 text-muted animate-up">
                       {feedback.title}
                     </h6>
-                    <div className="text-warning mb-3">
+                    <div className="star-rating text-warning mb-3">
                       {[...Array(5)].map((_, i) => (
-                        <FontAwesomeIcon key={i} icon={faStar} />
+                        <FontAwesomeIcon
+                          key={i}
+                          icon={faStar}
+                          className="star"
+                        />
                       ))}
                     </div>
                   </div>
-                  <p className="card-text mt-auto">{feedback.review}</p>
+                  <p className="card-text mt-auto animate-up">
+                    {feedback.review}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
