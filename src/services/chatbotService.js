@@ -58,7 +58,7 @@ export const processMessage = (message) => {
     return chatbotResponses.services.content;
   }
 
-  // Check for pricing inquiries
+  // Check for pricing inquirie
   if (
     lowerMessage.includes("price") ||
     lowerMessage.includes("cost") ||

@@ -26,32 +26,22 @@ const Counter3 = () => {
             <div className="cta-counter-wrapper-2">
                 <div className="section-title-area">
                     <div className="section-title">
-                        <div className="sub-title bg-color-3 wow fadeInUp">
-                            <span>Counter</span>
-                        </div>
                         <h2 className="text-white wow fadeInUp" data-wow-delay=".3s">
-                            Make your marketing <br/> more effective
+                        About Us
                         </h2>
-                    </div>
-                    <div className="counter-box-area">
-                        <div className="counter-text wow fadeInUp" data-wow-delay=".3s">
-                            <h2>
-                                <span className="count">19.4</span>K
-                            </h2>
-                            <p>Projects Done</p>
-                        </div>
-                        <div className="counter-text wow fadeInUp" data-wow-delay=".5s">
-                            <h2>
-                                <span className="count">95.2</span>K
-                            </h2>
-                            <p>Happy Clients</p>
-                        </div>
-                        <div className="counter-text wow fadeInUp" data-wow-delay=".7s">
-                            <h2>
-                                <span className="count">142.6</span>K
-                            </h2>
-                            <p>Team Members</p>
-                        </div>
+                        <p className="text-white wow fadeInUp" data-wow-delay=".3s">
+                        At Corcus, we are a performance-driven digital marketing company dedicated to delivering measurable results and real business growth. Established in 2020, Corcus was built on a foundation of over 10 years of collective industry experience brought in by our expert team.
+                        </p>
+                        <p className="text-white wow fadeInUp" data-wow-delay=".3s">
+                        From startups to well-established brands, we partner with businesses to craft data-backed strategies that drive traffic, generate leads, and boost ROI. We don’t just run ads—we create performance engines tailored to your unique goals.
+                        </p>
+                        <p className="text-white wow fadeInUp" data-wow-delay=".3s">
+                        Our team of seasoned marketers, creatives, and strategists are passionate about staying ahead of trends, understanding audiences, and executing campaigns that convert. Whether it’s social media marketing, paid ads, SEO, content creation, or full-funnel growth strategies—we focus on what matters: your results.
+                        </p>
+                        <p className="text-white wow fadeInUp" data-wow-delay=".3s">
+                        Join us on the journey to transform clicks into customers and ideas into impact.
+                        Corcus — Where Strategy Meets Performance.
+                        </p>
                     </div>
                 </div>
                 <div className="cta-video-image wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.3s">
