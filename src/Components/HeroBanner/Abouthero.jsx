@@ -13,9 +13,9 @@ const Abouthero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
-    "/public/assets/img/about/06.png",
-    "/public/assets/img/about/07.png",
-    "/public/assets/img/about/08.png",
+    "/assets/img/about/06.png",
+    "/assets/img/about/07.png",
+    "/assets/img/about/08.png",
   ];
 
   useEffect(() => {

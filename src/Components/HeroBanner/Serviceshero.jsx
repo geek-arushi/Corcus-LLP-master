@@ -13,11 +13,11 @@ const Serviceshero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
-    "public/assets/img/Servicedetail/1.png",
-    "public/assets/img/Servicedetail/2.png",
-    "public/assets/img/Servicedetail/3.png",
-    "public/assets/img/Servicedetail/4.png",
-    "public/assets/img/Servicedetail/5.png",
+    "assets/img/Servicedetail/1.png",
+    "assets/img/Servicedetail/2.png",
+    "assets/img/Servicedetail/3.png",
+    "assets/img/Servicedetail/4.png",
+    "assets/img/Servicedetail/5.png",
   ];
 
   useEffect(() => {
