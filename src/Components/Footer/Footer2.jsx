@@ -54,6 +54,12 @@ const Footer2 = () => {
                     <h3>Quick Links</h3>
                   </div>
                   <ul className="list-area">
+                  <li>
+                      <Link to="/home3">
+                        <i className="bi bi-arrow-right"></i>
+                        Home
+                      </Link>
+                    </li>
                     <li>
                       <Link to="/about">
                         <i className="bi bi-arrow-right"></i>
@@ -93,37 +99,19 @@ const Footer2 = () => {
               >
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <h3>upcoming things</h3>
+                    <h3>Important Links</h3>
                   </div>
                   <ul className="list-area">
-                    <li>
-                      <Link to="/about">
-                        <i className="bi bi-arrow-right"></i>
-                        About Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/service">
-                        <i className="bi bi-arrow-right"></i>
-                        Our Services
-                      </Link>
-                    </li>
-                    {/* <li>
+                     <li>
                       <Link to="/blog">
                         <i className="bi bi-arrow-right"></i>
                         Our Blogs
                       </Link>
-                    </li> */}
-                    <li>
-                      <Link to="/Team">
-                        <i className="bi bi-arrow-right"></i>
-                        Teams
-                      </Link>
                     </li>
                     <li>
-                      <Link to="/contact">
+                      <Link to="/">
                         <i className="bi bi-arrow-right"></i>
-                        Connect Us
+                        Join Us
                       </Link>
                     </li>
                   </ul>
