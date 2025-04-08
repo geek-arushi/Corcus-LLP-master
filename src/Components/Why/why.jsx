@@ -7,8 +7,8 @@ const Why = () => {
 
   // Array of images for the auto-scrolling section
   const images = [
-    "public/assets/img/why.png",
-    "public/assets/img/why2.png",
+    "assets/img/why/why.png",
+    "assets/img/why/why2.png",
     // Add more images as needed
   ];
 
