@@ -24,10 +24,10 @@ const Value1 = () => {
             {chooseContent.map((item, i) => (
                 <div key={i} className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div className="value-box-items">
-                        <div className="icon">
+                        <div className="icon icon-center">
                            <i className={item.iconclass}></i>
                         </div>
-                        <div className="content">
+                        <div className="content text-center ">
                             <h3>{item.title}</h3>
                             <p>
                             {item.content}
