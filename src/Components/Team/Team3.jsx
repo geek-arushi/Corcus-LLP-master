@@ -3,14 +3,20 @@ import { Link } from "react-router-dom";
 const Team3 = () => {
 
     const teamContent = [
-        {img:'/assets/img/team/01.jpg', name:'Reful Miya', content:'CO-Leader',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/02.jpg', name:'Shikhon Islam', content:'Web Developer',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/03.jpg', name:'Abdullah Islam', content:'Web Development',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/04.jpg', name:'Leslie Alexander', content:'Nursing Assistant',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/05.jpg', name:'Reful Miya', content:'CO-Leader',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/06.jpg', name:'Shikhon Islam', content:'Web Developer',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/07.jpg', name:'Abdullah Islam', content:'Web Development',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
-        {img:'/assets/img/team/08.jpg', name:'Leslie Alexander', content:'Nursing Assistant',instagram:'#',facebook:'#',twitter:'#',linkedin:'#'},
+        {img:'/assets/img/team/01.jpg', name:'Ayush Anand', content:'CEO FOUNDER '},
+        {img:'/assets/img/team/02.jpg', name:'Vidya Gupta', content:'Co-Founder'},
+        {img:'/assets/img/team/03.jpg', name:'Animesh Anand', content:'Co-Founder'},
+        {img:'/assets/img/team/04.jpg', name:'Tanisha', content:'CFO'},
+        {img:'/assets/img/team/05.jpg', name:'Durganshi', content:'Social Media Manager'},
+        {img:'/assets/img/team/06.jpg', name:'Abhishek Raj', content:'Sr. Software Developer / Video Editor'},
+        {img:'/assets/img/team/07.jpg', name:'Arushi Singh', content:'Software Developer'},
+        {img:'/assets/img/team/08.jpg', name:'Ujwal', content:'Web Developer'},
+        {img:'/assets/img/team/07.jpg', name:'Mayank', content:'Team Leader / Content Writer'},
+        {img:'/assets/img/team/08.jpg', name:'Deepak', content:'Graphic Designer'},
+        {img:'/assets/img/team/07.jpg', name:'Sujit', content:'Graphic Designer'},
+        {img:'/assets/img/team/08.jpg', name:'Alka', content:'Graphic Designer'},
+        {img:'/assets/img/team/07.jpg', name:'Mohit', content:'Social Media Manager'},
+        
       ];
 
     return (
