@@ -159,7 +159,7 @@ const ClientFeedback = () => {
               fontWeight: 900,
             }}
           >
-            CLIENT
+            CLIENT 
           </h1>
           <h2
             className="display-3 font-weight-bold"

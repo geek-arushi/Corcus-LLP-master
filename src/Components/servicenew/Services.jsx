@@ -5,9 +5,10 @@ import ContactForm from "../contactForm/ContactForm";
 
 const Servicesnew = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
     <div className="container my-5">
-      {/* Custom CSS for shadow, border, hover popup, stroke text, and button hover */}
+      {/* Custom CSS for styling */}
       <style>
         {`
           .service-card {
@@ -31,26 +32,40 @@ const Servicesnew = () => {
             color: black !important;
             border-color: yellow !important;
           }
+
+          .custom-btn:hover {
+            background-color: #eeb200 !important;
+            color: black !important;
+            border-color: #eeb200 !important;
+          }
         `}
       </style>
 
-      <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4">
+      {/* Title Section */}
+      <div className="d-flex flex-column flex-md-row align-items-start mb-4">
         <h1
-          className="display-4 mb-2 mb-md-0 me-md-4 stroke-text"
+          className="display-4 stroke-text me-md-4 mb-3 mb-md-0"
           style={{
             backgroundColor: "#fbd735",
             padding: "10px 30px",
             borderRadius: "8px",
+            minWidth: "200px",
+            textAlign: "center",
           }}
         >
-          Service
+          Services
         </h1>
-        <p className="lead fw-bold">
-          At our digital marketing agency, we offer a wide range of services to
-          help businesses grow and achieve their goals. These services include:
-        </p>
+        <div>
+          <p className="lead fw-semibold color-black mb-0">
+            At our digital marketing agency, we offer a wide range of services to help
+            businesses grow and achieve their goals. These services include performance
+            marketing, social media management, SEO, content creation, and more — all
+            tailored to boost your brand’s online presence and drive real results.
+          </p>
+        </div>
       </div>
 
+      {/* Service Cards */}
       <div className="row">
         {[
           {
@@ -82,29 +97,29 @@ const Servicesnew = () => {
             darkStyle: false,
           },
           {
-            title: "Performance Marketing",
-            desc: "Contact us today to learn how our digital marketing services can help your business grow. Let's make things happen!",
+            title: "Brand Strategy & Consulting",
+            desc: "Customized marketing strategies that align with your business goals.",
             img: "https://storage.googleapis.com/a1aa/image/5uc2fv4cxC3oMRHykdI7VJJacv3S8YMeW2wC8ijyjM8.jpg",
             btnStyle: "dark",
             darkStyle: false,
           },
           {
-            title: "Social Media Marketing",
-            desc: "Strategic content creation and management across platforms to engage your audience.",
+            title: "Creative Design",
+            desc: "Visually appealing creatives that resonate with your target audience.",
             img: "https://storage.googleapis.com/a1aa/image/wefXIsLvtycT9Shfxg11D22Abs3j0nT-IocQgusqGdc.jpg",
             btnStyle: "light",
             darkStyle: true,
           },
           {
-            title: "Search Engine Optimization",
-            desc: "Improve your website's visibility and ranking on search engines.",
+            title: "E-commerce Marketing",
+            desc: "Comprehensive solutions to boost your online store's sales and visibility.",
             img: "https://storage.googleapis.com/a1aa/image/FneCYJh2bfHp7NKk3XJ_68N5cX1tLoBynLFHRUSLCU4.jpg",
             btnStyle: "light",
             darkStyle: true,
           },
           {
-            title: "Content Marketing",
-            desc: "Engaging and informative content that builds brand authority and attracts customers.",
+            title: "Analytics & Reporting",
+            desc: "In-depth performance analysis to refine and optimize your campaigns.",
             img: "https://storage.googleapis.com/a1aa/image/A7hl5keKixBkU8r1e9QbV1m8EPXUgwvb9WDPFSMjF_Y.jpg",
             btnStyle: "dark",
             darkStyle: false,
@@ -126,19 +141,24 @@ const Servicesnew = () => {
                 />
               </div>
               <div>
-                <h2 className="h4 fw-bold mb-2">{service.title}</h2>
-                <p className="mb-4">{service.desc}</p>
-                <button
-                  className={`btn btn-${service.btnStyle}`}
-                  onClick={() => setIsPopupOpen(true)}
-                >
-                  Get your free proposal
-                </button>
+                <h2 className="h4 fw-bold mb-3">{service.title}</h2>
+                <p className="mb-3">
+                  {service.desc}
+                  <br />
+                  <button
+                    className={`btn btn-${service.btnStyle} custom-btn mt-3`}
+                    onClick={() => setIsPopupOpen(true)}
+                  >
+                    Get your free proposal
+                  </button>
+                </p>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Popup Form */}
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
         <ContactForm />
       </Popup>

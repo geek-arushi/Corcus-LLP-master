@@ -34,7 +34,7 @@ const Client = () => {
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
       <div className="text-left mb-4">
-        <h1 className="display-4 fw-bold text-black">OUR</h1>
+        <h1 className="display-4 fw-bold text-black"></h1>
         <h2
           className="display-3 fw-bold"
           style={{
@@ -42,11 +42,11 @@ const Client = () => {
             color: "transparent",
           }}
         >
-          CLIENTS
+         Our CLIENTS
         </h2>
-        <p className="h5 text-primary text-start text-black">
-          Trusted by 1000K+ customers
-        </p>
+             <p className="h5 text-primary text-start text-black">
+               Trusted by 1000K+ customers
+              </p>
       </div>
 
       {/* First Scrolling Line */}

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
-import { Link } from "react-router-dom";
 import parse from "html-react-parser";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Serviceshero = () => {
   useEffect(() => {
@@ -31,45 +28,41 @@ const Serviceshero = () => {
   }, []);
 
   const heroContent = {
-    subtitle: "go for advertising",
-    title: " Scale Your Brand with Performance Driven Marketing",
+    subtitle: "What We Offer",
+    title: "Strategic Digital Marketing Services That Deliver Results",
     content:
-      " We help businesses maximize their ROI with data-driven strategies, high-converting ads, and powerful digital campaigns.",
+      " We offer a full suite of performance-driven digital marketing services designed to elevate your brand and drive real business growth. Whether you're looking to build brand awareness, generate quality leads, or boost your online sales — we've got you covered.",
   };
 
   return (
-    <section
-      className="hero-section hero-3"
-      style={{ padding: "120px 0 10px 0" }}
-    >
+    <section className="hero-section hero-3 services-hero">
       <div className="container">
-        <div className="row g-0 justify-content-between align-items-center">
-          <div className="col-lg-6">
+        <div className="row align-items-center">
+          <div className="col-lg-6 px-4">
             <div className="hero-content">
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
+              <h1
+                className="wow fadeInUp"
+                data-wow-delay=".3s"
+                style={{ marginBottom: "15px" }}
+              >
                 {parse(heroContent.title)}
               </h1>
-              <p className="wow fadeInUp" data-wow-delay=".5s">
+              <p
+                className="wow fadeInUp"
+                data-wow-delay=".5s"
+                style={{ marginTop: "0" }}
+              >
                 {heroContent.content}
               </p>
-              <div className="hero-button d-flex gap-3">
-                <div
-                  className="main-button wow fadeInUp"
-                  data-wow-delay=".3s"
-                ></div>
-                <div
-                  className="main-button wow fadeInUp"
-                  data-wow-delay=".5s"
-                ></div>
-              </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 px-4">
             <div
               className="hero-image wow img-custom-anim-left"
               data-wow-duration="1.5s"
               data-wow-delay="0.3s"
+              style={{ textAlign: "center" }}
             >
               <img
                 src={heroImages[currentImageIndex]}
@@ -81,32 +74,54 @@ const Serviceshero = () => {
         </div>
       </div>
 
-      {/* Custom CSS for Consistent Padding */}
-      <style>
-        {`
-          .hero-section .container {
-            padding-left: 15px;
-            padding-right: 15px;
+      <style jsx="true">{`
+        .services-hero {
+          padding: 100px 0 20px 0;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+          color: #444;
+        }
+
+        .contact-btn {
+          background: transparent;
+          border: 2px solid black;
+          color: black;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          border-radius: 25px;
+          gap: 8px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .contact-btn:hover {
+          background: black;
+          color: white;
+        }
+
+        @media (max-width: 768px) {
+          .hero-content {
+            padding: 30px 15px 0 15px;
+            text-align: center;
+          }
+
+          .hero-content h1 {
+            font-size: 2rem;
           }
 
           .contact-btn {
-            background: transparent;
-            border: 2px solid black;
-            color: black;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            border-radius: 25px;
-            gap: 8px;
-            transition: all 0.3s ease-in-out;
+            padding: 8px 16px;
+            font-size: 0.9rem;
           }
-
-          .contact-btn:hover {
-            background: black;
-            color: white;
-          }
-        `}
-      </style>
+        }
+      `}</style>
     </section>
   );
 };

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
-import { Link } from "react-router-dom";
-import parse from "html-react-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import PopupForm from "../popup"; // Make sure this path is correct
+import PopupForm from "../popup";
+import parse from "html-react-parser";
 
 const HeroBanner3 = () => {
   useEffect(() => {
@@ -35,26 +34,31 @@ const HeroBanner3 = () => {
     subtitle: "go for advertising",
     title: " Scale Your Brand with Performance Driven Marketing",
     content:
-      " We help businesses maximize their ROI with data-driven strategies, high-converting ads, and powerful digital campaigns.",
+      "We help businesses maximize their ROI with data-backed strategies, high-converting ad creatives, and impactful digital campaigns. Whether you're just starting out or ready to level up, we craft marketing solutions that are tailored to your audience, your goals, and your brand voice.",
     btnname: "Get Started",
     btnname2: "Contact Us",
     btnurl: "/contact",
   };
 
   return (
-    <section
-      className="hero-section hero-3"
-      style={{ padding: "120px 0 10px 0" }}
-    >
-      <div className="container-fluid">
-        <div className="row g-2 justify-content-between align-items-center">
-          <div className="col-lg-6">
-            <div className="hero-content" style={{ marginRight: "-60px" }}>
+    <section className="hero-section hero-3" style={{ padding: "100px 0 40px 0" }}>
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-6" style={{ paddingRight: "20px" }}>
+            <div className="hero-content">
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
+              <h1
+                className="wow fadeInUp"
+                data-wow-delay=".3s"
+                style={{ marginBottom: "15px" }}
+              >
                 {parse(heroContent.title)}
               </h1>
-              <p className="wow fadeInUp" data-wow-delay=".5s">
+              <p
+                className="wow fadeInUp"
+                data-wow-delay=".5s"
+                style={{ marginTop: "0" }}
+              >
                 {heroContent.content}
               </p>
               <div className="hero-button d-flex gap-3">
@@ -80,23 +84,26 @@ const HeroBanner3 = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-5">
+
+          <div className="col-lg-6" style={{ paddingLeft: "20px" }}>
             <div
               className="hero-image wow img-custom-anim-left"
               data-wow-duration="1.5s"
               data-wow-delay="0.3s"
-              style={{ marginLeft: "-15px" }}
+              style={{ textAlign: "center" }}
             >
-              <img src={heroImages[currentImageIndex]} alt="Hero" />
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="Hero"
+                style={{ maxWidth: "100%", height: "auto" }}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Popup Form */}
       {showPopup && <PopupForm isOpen={showPopup} setIsOpen={setShowPopup} />}
 
-      {/* Custom CSS for Contact Us Button */}
       <style>
         {`
           .contact-btn {
@@ -115,6 +122,13 @@ const HeroBanner3 = () => {
           .contact-btn:hover {
             background: black;
             color: white;
+          }
+
+          @media (max-width: 768px) {
+            .hero-content {
+              text-align: center;
+              padding-bottom: 30px;
+            }
           }
         `}
       </style>

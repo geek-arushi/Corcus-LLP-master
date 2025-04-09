@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
-import { Link } from "react-router-dom";
 import parse from "html-react-parser";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Contacthero = () => {
   useEffect(() => {
@@ -29,32 +26,41 @@ const Contacthero = () => {
   }, []);
 
   const heroContent = {
-    subtitle: "go for advertising",
-    title: " Scale Your Brand with Performance Driven Marketing",
+    subtitle: "Let’s Connect",
+    title: " We’re Here to Help You Grow",
     content:
-      " We help businesses maximize their ROI with data-driven strategies, high-converting ads, and powerful digital campaigns.",
+      "Have a project in mind? Need a marketing partner who understands your goals? We’re just a message away! Whether you have a question, need a custom quote, or want to explore how we can take your brand to the next level — we’d love to hear from you.",
   };
 
   return (
     <section className="hero-section hero-3 contact-hero">
-      <div className="container-fluid">
-        <div className="row g-0 align-items-center no-gap-row">
-          <div className="col-lg-6">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-6 px-4">
             <div className="hero-content">
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
+              <h1
+                className="wow fadeInUp"
+                data-wow-delay=".3s"
+                style={{ marginBottom: "15px" }}
+              >
                 {parse(heroContent.title)}
               </h1>
-              <p className="wow fadeInUp" data-wow-delay=".5s">
+              <p
+                className="wow fadeInUp"
+                data-wow-delay=".5s"
+                style={{ marginTop: "0" }}
+              >
                 {heroContent.content}
               </p>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 px-4">
             <div
               className="hero-image wow img-custom-anim-left"
               data-wow-duration="1.5s"
               data-wow-delay="0.3s"
+              style={{ textAlign: "center" }}
             >
               <img
                 src={heroImages[currentImageIndex]}
@@ -68,21 +74,21 @@ const Contacthero = () => {
 
       <style jsx="true">{`
         .contact-hero {
-          padding: 60px 0 10px 0;
-        }
-
-        .no-gap-row > [class*="col-"] {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
+          padding: 80px 0 20px 0;
         }
 
         .hero-content {
-          margin-bottom: 0 !important;
-          padding: 40px 40px 0 40px;
+          margin-bottom: 0;
         }
 
-        .hero-image {
-          margin-bottom: 0 !important;
+        .hero-content h1 {
+          font-size: 2.5rem;
+          font-weight: 700;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+          color: #444;
         }
 
         .contact-btn {
@@ -104,17 +110,12 @@ const Contacthero = () => {
           color: #fff;
         }
 
-        .hero-content h1 {
-          font-size: 2.5rem;
-          font-weight: 700;
-        }
-
-        .hero-content p {
-          font-size: 1.1rem;
-          color: #444;
-        }
-
         @media (max-width: 768px) {
+          .hero-content {
+            padding: 30px 15px 0 15px;
+            text-align: center;
+          }
+
           .hero-content h1 {
             font-size: 2rem;
           }
@@ -122,14 +123,6 @@ const Contacthero = () => {
           .contact-btn {
             padding: 8px 16px;
             font-size: 0.9rem;
-          }
-
-          .hero-button {
-            flex-direction: column;
-          }
-
-          .hero-content {
-            padding: 30px 15px 0 15px;
           }
         }
       `}</style>

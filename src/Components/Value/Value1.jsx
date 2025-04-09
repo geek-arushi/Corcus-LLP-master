@@ -10,12 +10,7 @@ const Value1 = () => {
 
     return (
         <section className="value-section fix section-padding  pt-0">
-        <div className="value-shape">
-            <img src="/assets/img/value-shape.png" alt="img" />
-        </div>
-        <div className="value-shape-2">
-            <img src="/assets/img/value-shape-2.png" alt="img" />
-        </div>
+        
         <div className="container">
             <div className="section-title text-center wow fadeInUp" data-wow-delay=".3s">
                 <h2>Our values</h2>

@@ -2,186 +2,131 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Why = () => {
-  // State to manage the current image index
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of images for the auto-scrolling section
   const images = [
     "assets/img/why/why.png",
     "assets/img/why/why2.png",
     // Add more images as needed
   ];
 
-  // Set the interval to change the image every 3 seconds (3000ms)
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
-
-    // Cleanup the interval on component unmount
+    }, 3000);
     return () => clearInterval(intervalId);
   }, [images.length]);
 
   return (
     <div className="container py-5">
-      <div className="text-left">
+      {/* Title Section */}
+      <div className="text-left mb-5">
         <h1
-          className="display-3 fw-bold"
+          className="display-3 fw-bold stroke-text"
           style={{
-            WebkitTextStroke: "2px black", // Stroke effect
-            color: "transparent", // Removes fill color
+            WebkitTextStroke: "2px black",
+            color: "transparent",
           }}
         >
-          WHAT
+          WHAT SETS US APART
         </h1>
-
-        <h2
-          className="display-2 font-weight-bolder text-dark"
-          style={{
-            WebkitTextStroke: "3px black", // Stroke effect
-          }}
-        >
-          SETS US APART
-        </h2>
-        <div className="mt-4">
-          <i className="fas fa-chevron-down text-muted"></i>
-          <i className="fas fa-chevron-down text-muted ml-2"></i>
-          <i className="fas fa-chevron-down text-warning ml-2"></i>
-        </div>
       </div>
 
       <div className="row mt-5">
-        {/* Image Section with Auto-Scrolling */}
+        {/* Left - Auto Image Scroll */}
         <div className="col-lg-6 mb-4 mb-lg-0">
           <img
-            src={images[currentImageIndex]} // Dynamically set the image based on the index
-            alt="Placeholder image for the section"
+            src={images[currentImageIndex]}
+            alt="Why Choose Us"
             className="img-fluid"
           />
         </div>
 
-        {/* Content Section */}
+        {/* Right - Content Section */}
         <div className="col-lg-6">
-          <div className="d-flex align-items-center mb-4 gap-4">
-            <div
-              className="display-3 fw-bold"
-              style={{
-                WebkitTextStroke: "3px black", // Stroke effect
-                color: "transparent", // Removes fill color
-              }}
-            >
-              1
-            </div>
-            <img
-              src="./assets/img/pimg1.png"
-              alt="Icon representing innovation-driven strategies"
-              width="30"
-              height="30"
-            />
-            <div>
-              <h3 className="h5 fw-bold mb-2">Innovation-Driven Strategies</h3>
-              <p className="mb-0">We believe in staying ahead of the curve.</p>
-            </div>
-          </div>
-          <div className="d-flex align-items-center mb-4 gap-4">
-            <div
-              className="display-3 fw-bold"
-              style={{
-                WebkitTextStroke: "3px black", // Stroke effect
-                color: "transparent", // Removes fill color
-              }}
-            >
-              2
-            </div>
+          {[
+            {
+              number: "1",
+              icon: "./assets/img/pimg1.png",
+              title: "Innovation-Driven Strategies",
+              text: "We believe in staying ahead of the curve.",
+            },
+            {
+              number: "2",
+              icon: "./assets/img/pimg2.png",
+              title: "Client-Centric Approach",
+              text: "Our clients are at the heart of everything we do.",
+            },
+            {
+              number: "3",
+              icon: "./assets/img/pimg3.png",
+              title: "Industry Expertise",
+              text: "Trust is the foundation of all successful partnerships.",
+            },
+            {
+              number: "4",
+              icon: "./assets/img/pimg4.png",
+              title: "Client-Centric Focus",
+              text: "Our mission is to generate measurable outcomes.",
+            },
+            {
+              number: "5",
+              icon: "./assets/img/pimg5.png",
+              title: "Collaboration and Teamwork",
+              text: "Trust is the foundation of all successful partnerships.",
+            },
+          ].map((item, index) => (
+            <div className="d-flex align-items-start mb-4" key={index}>
+              {/* Number */}
+              <div
+                className="display-5 fw-bold me-3"
+                style={{
+                  WebkitTextStroke: "2px black",
+                  color: "transparent",
+                  minWidth: "30px",
+                  lineHeight: "1",
+                }}
+              >
+                {item.number}
+              </div>
 
-            <img
-              src="./assets/img/pimg2.png"
-              alt="Icon representing client-centric approach"
-              width="40"
-              height="40"
-            />
-            <div>
-              <h3 className="h5 fw-bold mb-2">Client-Centric Approach</h3>
-              <p className="mb-0">
-                Our clients are at the heart of everything we do.
-              </p>
-            </div>
-          </div>
-          <div className="d-flex align-items-center mb-4 gap-4">
-            <div
-              className="display-3 fw-bold"
-              style={{
-                WebkitTextStroke: "3px black", // Stroke effect
-                color: "transparent", // Removes fill color
-              }}
-            >
-              3
-            </div>
+              {/* Icon */}
+              <div className="me-3 d-flex align-items-center" style={{ minWidth: "40px", height: "40px" }}>
+                <img
+                  src={item.icon}
+                  alt={`Icon for ${item.title}`}
+                  width="40"
+                  height="40"
+                  className="img-fluid"
+                />
+              </div>
 
-            <img
-              src="./assets/img/pimg3.png"
-              alt="Icon representing industry expertise"
-              width="40"
-              height="40"
-            />
-            <div>
-              <h3 className="h5 fw-bold mb-2">Industry Expertise</h3>
-              <p className="mb-0">
-                Trust is the foundation of all successful partnerships.
-              </p>
+              {/* Text */}
+              <div>
+                <h5 className="fw-bold mb-1">{item.title}</h5>
+                <p className="mb-0">{item.text}</p>
+              </div>
             </div>
-          </div>
-          <div className="d-flex align-items-center mb-4 gap-4">
-            <div
-              className="display-3 fw-bold"
-              style={{
-                WebkitTextStroke: "3px black", // Stroke effect
-                color: "transparent", // Removes fill color
-              }}
-            >
-              4
-            </div>
-            <img
-              src="./assets/img/pimg4.png"
-              alt="Icon representing client-centric focus"
-              width="40"
-              height="40"
-            />
-            <div>
-              <h3 className="h5 fw-bold mb-2">Client-Centric Focus</h3>
-              <p className="mb-0">
-                Our mission is to generate measurable outcomes.
-              </p>
-            </div>
-          </div>
-          <div className="d-flex align-items-center mb-4 gap-4">
-            <div
-              className="display-3 fw-bold"
-              style={{
-                WebkitTextStroke: "3px black", // Stroke effect
-                color: "transparent", // Removes fill color
-              }}
-            >
-              5
-            </div>
-
-            <img
-              src="./assets/img/pimg5.png"
-              alt="Icon representing collaboration and teamwork"
-              width="40"
-              height="40"
-            />
-            <div>
-              <h3 className="h5 fw-bold mb-2">Collaboration and Teamwork</h3>
-              <p className="mb-0">
-                Trust is the foundation of all successful partnerships.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      {/* Custom CSS */}
+      <style jsx="true">{`
+        .stroke-text {
+          -webkit-text-stroke: 2px black;
+          color: transparent;
+          font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+          .stroke-text {
+            font-size: 2rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };
