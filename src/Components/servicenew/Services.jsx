@@ -38,25 +38,33 @@ const Servicesnew = () => {
             color: black !important;
             border-color: #eeb200 !important;
           }
+
+          @media (max-width: 768px) {
+            .stroke-text {
+              font-size: 2.5rem !important;
+            }
+          }
         `}
       </style>
 
       {/* Title Section */}
-      <div className="d-flex flex-column flex-md-row align-items-start mb-4">
-        <h1
-          className="display-4 stroke-text me-md-4 mb-3 mb-md-0"
-          style={{
-            backgroundColor: "#fbd735",
-            padding: "10px 30px",
-            borderRadius: "8px",
-            minWidth: "200px",
-            textAlign: "center",
-          }}
-        >
-          Services
-        </h1>
-        <div>
-          <p className="lead fw-semibold color-black mb-0">
+      <div className="row align-items-start mb-5">
+        <div className="col-md-4 mb-4 mb-md-0">
+          <h1
+            className="display-4 stroke-text text-center text-md-start"
+            style={{
+              backgroundColor: "#ffffff",
+              padding: "40px 20px",
+              borderRadius: "8px",
+              fontSize: "60px",
+              minWidth: "200px",
+            }}
+          >
+            Services
+          </h1>
+        </div>
+        <div className="col-md-8">
+          <p className="lead text-black ps-md-3">
             At our digital marketing agency, we offer a wide range of services to help
             businesses grow and achieve their goals. These services include performance
             marketing, social media management, SEO, content creation, and more — all
