@@ -3,16 +3,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const OurJourney = () => {
   return (
     <div className="container py-5">
-      {/* Title Section - shifted to left and above the black box */}
-      <h1
-        className="display-3 fw-bold stroke-text mb-4"
-        style={{
-          WebkitTextStroke: "2px black",
-          color: "transparent",
-        }}
-      >
-        Case Study
-      </h1>
+      {/* Title Section */}
+      <div className="text-left mb-5">
+        <h1
+          className="display-3 fw-bold stroke-text"
+          style={{
+            WebkitTextStroke: "2px black",
+            color: "transparent",
+          }}
+        >
+          Case Study
+        </h1>
+      </div>
 
       {/* Content Section with Black Background */}
       <div className="p-4 rounded" style={{ backgroundColor: "black" }}>
@@ -81,6 +83,16 @@ const OurJourney = () => {
           font-weight: bold;
         }
 
+        .card-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        .card-text {
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+
         .learn-more-link {
           color: #eeb200;
           text-decoration: underline;
@@ -94,6 +106,14 @@ const OurJourney = () => {
         @media (max-width: 768px) {
           .stroke-text {
             font-size: 2rem;
+          }
+
+          .card-title {
+            font-size: 1.25rem;
+          }
+
+          .card-text {
+            font-size: 0.95rem;
           }
         }
       `}</style>
