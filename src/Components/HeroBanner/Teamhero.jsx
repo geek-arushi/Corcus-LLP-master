@@ -1,106 +1,100 @@
 import { useEffect, useState } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
-import { Link } from "react-router-dom";
 import parse from "html-react-parser";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Teamhero = () => {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
 
-  // State to manage the image index for the hero images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of images to be auto-scrolled in the content section
   const heroImages = [
-    "public/assets/img/Servicedetail/1.png",
-    "public/assets/img/Servicedetail/2.png",
-    "public/assets/img/Servicedetail/3.png",
-    "public/assets/img/Servicedetail/4.png",
-    "public/assets/img/Servicedetail/5.png", // Add more images as needed
+    "assets/img/Servicedetail/1.png",
+    "assets/img/Servicedetail/2.png",
+    "assets/img/Servicedetail/3.png",
+    "assets/img/Servicedetail/4.png",
+    "assets/img/Servicedetail/5.png",
   ];
 
-  // Set the interval to change the image every 3 seconds (3000ms)
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    }, 3000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const heroContent = {
-    subtitle: "go for advertising",
-    title: " Scale Your Brand with Performance Driven Marketing",
+    subtitle: "Meet Our Experts",
+    title: "The Passionate Minds Behind Your Brand's Growth",
     content:
-      " We help businesses maximize their ROI with data-driven strategies, high-converting ads, and powerful digital campaigns.",
+      "Our team is a dynamic blend of strategists, designers, marketers, and developers who are united by a single mission — to help your brand thrive. With diverse backgrounds and a shared passion for innovation, we bring fresh ideas, collaborative energy, and data-driven execution to every project. We don’t just work for you — we work with you, as an extension of your vision.",
   };
 
   return (
-    <section
-      className="hero-section hero-3"
-      style={{ padding: "120px 0 10px 0" }}
-    >
-      <div className="container-fluid">
-        <div className="row g-4 justify-content-between align-items-center">
+    <section className="hero-section hero-3 py-5">
+      <div className="container">
+        <div className="row align-items-center g-3">
+          {/* Content Left */}
           <div className="col-lg-6">
-            <div className="hero-content">
-              <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
+            <div className="hero-content pe-lg-4">
+              <h6 className="text-uppercase mb-3">{heroContent.subtitle}</h6>
+              <h1 className="display-5 fw-bold mb-2">
                 {parse(heroContent.title)}
               </h1>
-              <p className="wow fadeInUp" data-wow-delay=".5s">
-                {heroContent.content}
-              </p>
-              <div className="hero-button d-flex gap-3">
-                <div
-                  className="main-button wow fadeInUp"
-                  data-wow-delay=".3s"
-                ></div>
-                <div
-                  className="main-button wow fadeInUp"
-                  data-wow-delay=".5s"
-                ></div>
-              </div>
+              <p className="lead mb-0">{heroContent.content}</p>
             </div>
           </div>
-          <div className="col-lg-5">
-            <div
-              className="hero-image wow img-custom-anim-left"
-              data-wow-duration="1.5s"
-              data-wow-delay="0.3s"
-            >
-              <img src={heroImages[currentImageIndex]} alt="Hero" />
+
+          {/* Image Right */}
+          <div className="col-lg-6">
+            <div className="hero-image ms-lg-3">
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="Team Hero"
+                className="img-fluid rounded"
+                style={{ maxHeight: "420px", objectFit: "cover", width: "100%" }}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Custom CSS for Contact Us Button */}
-      <style>
-        {`
-          .contact-btn {
-            background: transparent;
-            border: 2px solid black;
-            color: black;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            border-radius: 25px;
-            gap: 8px;
-            transition: all 0.3s ease-in-out;
+      {/* Style Section */}
+      <style jsx="true">{`
+        .hero-content h1 {
+          font-size: 2.6rem;
+          line-height: 1.3;
+          margin-bottom: 10px !important; /* Reduced spacing */
+        }
+
+        .hero-content p {
+          font-size: 1.05rem;
+          color: #444;
+          margin-top: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+          .hero-content {
+            text-align: center;
+            padding: 0 15px;
           }
 
-          .contact-btn:hover {
-            background: black;
-            color: white;
+          .hero-image {
+            margin-top: 30px;
           }
-        `}
-      </style>
+
+          .hero-content h1 {
+            font-size: 2rem;
+          }
+
+          .hero-content p {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
     </section>
   );
 };
