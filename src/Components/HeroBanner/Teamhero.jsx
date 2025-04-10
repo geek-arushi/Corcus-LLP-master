@@ -34,7 +34,7 @@ const Teamhero = () => {
   };
 
   return (
-    <section className="hero-section hero-3 py-5">
+    <section className="hero-section hero-3 py-60">
       <div className="container">
         <div className="row align-items-center g-3">
           {/* Content Left */}
@@ -55,7 +55,11 @@ const Teamhero = () => {
                 src={heroImages[currentImageIndex]}
                 alt="Team Hero"
                 className="img-fluid rounded"
-                style={{ maxHeight: "420px", objectFit: "cover", width: "100%" }}
+                style={{
+                  maxHeight: "420px",
+                  objectFit: "cover",
+                  width: "100%",
+                }}
               />
             </div>
           </div>
@@ -64,6 +68,10 @@ const Teamhero = () => {
 
       {/* Style Section */}
       <style jsx="true">{`
+        .hero-section.hero-3 {
+          padding: 100px 0 20px 0;
+        }
+
         .hero-content h1 {
           font-size: 2.6rem;
           line-height: 1.3;
@@ -73,7 +81,7 @@ const Teamhero = () => {
         .hero-content p {
           font-size: 1.05rem;
           color: #444;
-          margin-top: 0 !important;
+          margin-top: !important;
         }
 
         @media (max-width: 768px) {
