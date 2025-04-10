@@ -78,7 +78,7 @@ const Servicesnew = () => {
         {[
           {
             title: "Performance Marketing",
-            desc: "Contact us today to learn how our digital marketing services can help your business grow. Let's make things happen!",
+            desc: "Contact us today to learn how our digital marketing services can help your business grow.",
             img: "assets/img/service/01.gif",
             btnStyle: "dark",
             darkStyle: false,
@@ -99,7 +99,7 @@ const Servicesnew = () => {
           },
           {
             title: "Content Marketing",
-            desc: "Engaging and informative content that builds brand authority and attracts customers.",
+            desc: "Engaging, informative content that builds brand authority and draws in customers.",
             img: "assets/img/service/04.gif",
             btnStyle: "dark",
             darkStyle: false,
