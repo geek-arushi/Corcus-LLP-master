@@ -27,7 +27,7 @@ const Marquee2 = () => {
           {[...Array(20)].map((_, index) => (
             <div
               key={index}
-              style={{ display: "flex", gap: "40px", marginRight: "40px" }}
+              style={{ display: "flex", gap: "40px", marginRight: "0px" }}
             >
               {[...Array(20)].map((_, i) => (
                 <span
@@ -72,7 +72,7 @@ const Marquee2 = () => {
           {[...Array(20)].map((_, index) => (
             <div
               key={index}
-              style={{ display: "flex", gap: "40px", marginRight: "40px" }}
+              style={{ display: "flex", gap: "40px", marginRight: "0px" }}
             >
               {[...Array(5)].map((_, i) => (
                 <span
