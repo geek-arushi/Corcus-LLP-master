@@ -116,6 +116,69 @@ const HeroBanner3 = () => {
             background: black;
             color: white;
           }
+
+          @media (max-width: 768px) {
+            .hero-section.hero-3 {
+              padding: 40px 0 20px 0;
+            }
+
+            .hero-content {
+              margin-right: 0 !important;
+              text-align: center;
+              padding: 0 20px;
+              margin-bottom: 30px;
+            }
+
+            .hero-content h6 {
+              font-size: 0.9rem;
+              margin-bottom: 10px;
+            }
+
+            .hero-content h1 {
+              font-size: 1.8rem;
+              line-height: 1.3;
+              margin-bottom: 15px;
+            }
+
+            .hero-content p {
+              font-size: 1rem;
+              margin-bottom: 25px;
+              line-height: 1.6;
+            }
+
+            .hero-button {
+              justify-content: center;
+              flex-wrap: wrap;
+              gap: 15px !important;
+            }
+
+            .hero-button .main-button {
+              margin-bottom: 0;
+              width: 100%;
+              max-width: 200px;
+            }
+
+            .hero-button .theme-btn,
+            .hero-button .contact-btn {
+              width: 100%;
+              justify-content: center;
+              padding: 12px 20px;
+              font-size: 0.95rem;
+            }
+
+            .hero-image {
+              margin-left: 0 !important;
+              margin-top: 20px;
+              text-align: center;
+              padding: 0 20px;
+            }
+
+            .hero-image img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 10px;
+            }
+          }
         `}
       </style>
     </section>
