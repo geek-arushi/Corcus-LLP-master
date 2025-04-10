@@ -6,25 +6,25 @@ const Value1 = () => {
       iconclass: "bi bi-people",
       title: "Integrity",
       content:
-        "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services.",
+        "We believe in doing what's right — always. Integrity is the foundation of our company culture, guiding every decision and building long-term trust with our clients and partners.",
     },
     {
       iconclass: "bi bi-pie-chart",
       title: "Simplicity",
       content:
-        "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services.",
+        "In a world full of complexity, we bring clarity. Whether it’s communication, design, or execution — we keep things simple, effective, and impactful.",
     },
     {
       iconclass: "bi bi-cloudy",
       title: "Performance",
       content:
-        "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services.",
+        "We don’t just aim for results — we deliver them. Every campaign, strategy, and solution we build is focused on measurable growth and maximum return on investment.",
     },
     {
       iconclass: "bi bi-check-circle",
       title: "Innovation",
       content:
-        "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services.",
+        "We don’t follow trends — we create them. Innovation is at the heart of what we do, helping our clients stay ahead with creative thinking, advanced tech, and bold ideas.",
     },
   ];
 

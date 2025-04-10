@@ -29,20 +29,18 @@ const WhyChoose4 = () => {
                         <div className="col-xl-6">
                             <div className="team-content">
                                 <div className="section-title">
-                                    <div className="sub-title bg-color-2 wow fadeInUp">
-                                        <span>Best SEO results</span>
-                                    </div>
+
                                     <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                                        Let’s make something awesome together
+                                    We’re not just a marketing agency
                                     </h2>
                                 </div>
                                 <p className="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                    Every pleasure is to be welcomed and every pain avoided. certain circumstances and owing to the claims welcomed and every pain avoided certain circumstances
+                                we’re your growth partner. From strategy to execution, everything we do is built around your success. Our focus on integrity, simplicity, performance, and innovation ensures your brand not only stands out but scales with impact. With data-driven insights, creative thinking, and a dedicated team, we deliver solutions that work — and results that matter.
                                 </p>
                                 <div className="list-items wow fadeInUp" data-wow-delay=".3s">
                                 </div>
                                 <div className="main-button wow fadeInUp" data-wow-delay=".5s">
-                                    <Link to="/team"> <span className="theme-btn"> EXPLORE MORE </span><span className="arrow-btn"><i className="bi bi-arrow-up-right"></i></span></Link>
+                                    <Link to="/Contact"> <span className="theme-btn"> EXPLORE MORE </span><span className="arrow-btn"><i className="bi bi-arrow-up-right"></i></span></Link>
                                 </div>
                             </div>
                         </div>

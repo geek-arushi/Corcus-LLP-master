@@ -25,8 +25,7 @@ const Footer2 = () => {
                   </div>
                   <div className="footer-content">
                     <p>
-                      Phasellus ultricies aliquam volutpat ullamcorper laoreet
-                      neque, a lacinia curabitur lacinia mollis
+                    Empowering brands with integrity, simplicity, performance, and innovation.
                     </p>
                     <div className="social-icon d-flex align-items-center">
                       <a href="https://www.facebook.com/share/18tSev5WW6/">

@@ -10,12 +10,12 @@ const Team3 = () => {
         {img:'/assets/img/team/05.jpg', name:'Durganshi', content:'Social Media Manager'},
         {img:'/assets/img/team/06.jpg', name:'Abhishek Raj', content:'Sr. Software Developer / Video Editor'},
         {img:'/assets/img/team/07.jpg', name:'Arushi Singh', content:'Software Developer'},
-        {img:'/assets/img/team/08.jpg', name:'Ujwal', content:'Web Developer'},
-        {img:'/assets/img/team/07.jpg', name:'Mayank', content:'Team Leader / Content Writer'},
-        {img:'/assets/img/team/08.jpg', name:'Deepak', content:'Graphic Designer'},
-        {img:'/assets/img/team/07.jpg', name:'Sujit', content:'Graphic Designer'},
-        {img:'/assets/img/team/08.jpg', name:'Alka', content:'Graphic Designer'},
-        {img:'/assets/img/team/07.jpg', name:'Mohit', content:'Social Media Manager'},
+        {img:'/assets/img/team/08.jpg', name:'Ujjwal', content:'Web Developer'},
+        {img:'/assets/img/team/09.jpg', name:'Mayank', content:'Team Leader / Content Writer'},
+        {img:'/assets/img/team/10.jpg', name:'Deepak', content:'Graphic Designer'},
+        {img:'/assets/img/team/11.jpg', name:'Sujit', content:'Graphic Designer'},
+        {img:'/assets/img/team/12.jpg', name:'Alka', content:'Graphic Designer'},
+        {img:'/assets/img/team/13.jpg', name:'Mohit', content:'Social Media Manager'},
         
       ];
 
