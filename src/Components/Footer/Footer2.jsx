@@ -25,7 +25,8 @@ const Footer2 = () => {
                   </div>
                   <div className="footer-content">
                     <p>
-                    Empowering brands with integrity, simplicity, performance, and innovation.
+                      Empowering brands with integrity, simplicity, performance,
+                      and innovation.
                     </p>
                     <div className="social-icon d-flex align-items-center">
                       <a href="https://www.facebook.com/share/18tSev5WW6/">
@@ -53,8 +54,8 @@ const Footer2 = () => {
                     <h3>Quick Links</h3>
                   </div>
                   <ul className="list-area">
-                  <li>
-                      <Link to="/home3">
+                    <li>
+                      <Link to="/">
                         <i className="bi bi-arrow-right"></i>
                         Home
                       </Link>
@@ -101,7 +102,7 @@ const Footer2 = () => {
                     <h3>Important Links</h3>
                   </div>
                   <ul className="list-area">
-                     <li>
+                    <li>
                       <Link to="/blog">
                         <i className="bi bi-arrow-right"></i>
                         Our Blogs
