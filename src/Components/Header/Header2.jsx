@@ -42,7 +42,13 @@ export default function Header2({ variant }) {
           <div className="container">
             <div className="cs_main_header_in">
               <div className="cs_main_header_left">
-                <Link className="cs_site_branding" to="/">
+                <Link
+                  className="cs_site_branding"
+                  to="/"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
                   <img src="/assets/img/logo/logo.png" alt="Logo" />
                 </Link>
               </div>

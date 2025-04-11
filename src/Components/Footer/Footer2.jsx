@@ -19,9 +19,14 @@ const Footer2 = () => {
               >
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <a href="index.html">
+                    <Link 
+                      to="/"
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                    >
                       <img src="/assets/img/logo/black-logo.png" alt="img" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="footer-content">
                     <p>
