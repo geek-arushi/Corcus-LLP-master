@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./popup.scss";
+import "./popup.scss"; // keep your styles
 
 const PopupForm = ({ isOpen, setIsOpen }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-    message: "",
+    Name: "",
+    Phone: "",
+    Email: "",
+    Message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -24,28 +24,38 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Basic validation
     if (
-      !formData.name.trim() ||
-      !formData.mobile.trim() ||
-      !formData.email.trim() ||
-      !formData.message.trim()
+      !formData.Name.trim() ||
+      !formData.Phone.trim() ||
+      !formData.Email.trim() ||
+      !formData.Message.trim()
     ) {
       setSubmitStatus("error");
       setIsSubmitting(false);
       return;
     }
 
+    const formBody = new URLSearchParams();
+    Object.entries(formData).forEach(([key, value]) =>
+      formBody.append(key, value)
+    );
+
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form submitted:", formData);
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzeazp1goY7kBwdg06keJkhaRnBTn19V0rW8unprFBTzqXxRR7LQuI4u82WKFKQJLVtQA/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody.toString(),
+      });
+
+      const resultText = await response.text();
+      console.log("Response from script:", resultText);
       setSubmitStatus("success");
 
-      // Reset form after successful submission
       setTimeout(() => {
         setIsOpen(false);
-        setFormData({ name: "", mobile: "", email: "", message: "" });
+        setFormData({ Name: "", Phone: "", Email: "", Message: "" });
         setSubmitStatus(null);
       }, 2000);
     } catch (error) {
@@ -68,8 +78,8 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            name="Name"
+            value={formData.Name}
             onChange={handleChange}
             placeholder="Your Name"
             required
@@ -77,28 +87,27 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
           />
           <input
             type="tel"
-            name="mobile"
-            value={formData.mobile}
+            name="Phone"
+            value={formData.Phone}
             onChange={handleChange}
-            placeholder="Your Mobile Number"
+            placeholder="Your Phone Number"
             required
             disabled={isSubmitting}
             pattern="[0-9]{10}"
-            title="Enter a 10-digit mobile number"
+            title="Enter a 10-digit phone number"
           />
           <input
             type="email"
-            name="email"
-            value={formData.email}
+            name="Email"
+            value={formData.Email}
             onChange={handleChange}
             placeholder="Your Email"
             required
             disabled={isSubmitting}
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
           <textarea
-            name="message"
-            value={formData.message}
+            name="Message"
+            value={formData.Message}
             onChange={handleChange}
             placeholder="Your Message"
             required
