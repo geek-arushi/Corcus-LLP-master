@@ -3,10 +3,10 @@ import "./ContactForm.css";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
+    Name: "",
+    Phone: "",
+    Email: "",
+    Message: "",
   });
 
   const handleChange = (e) => {
@@ -17,12 +17,32 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", phone: "", email: "", message: "" });
+
+    const formBody = new URLSearchParams();
+    for (let key in formData) {
+      formBody.append(key, formData[key]);
+    }
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwe4RjJp4iIKdG92bm-R7QZ-clddBU1X6Z8fWVvRtwTmeUl10N8nYisNuJw8_LUhaWI/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody.toString(),
+      });
+
+      const resultText = await response.text();
+      console.log(resultText);
+
+      setFormData({ Name: "", Phone: "", Email: "", Message: "" });
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit form.");
+    }
   };
 
   return (
@@ -31,8 +51,8 @@ const ContactForm = () => {
       <div className="form-group">
         <input
           type="text"
-          name="name"
-          value={formData.name}
+          name="Name"
+          value={formData.Name}
           onChange={handleChange}
           placeholder="Your Name"
           required
@@ -41,8 +61,8 @@ const ContactForm = () => {
       <div className="form-group">
         <input
           type="tel"
-          name="phone"
-          value={formData.phone}
+          name="Phone"
+          value={formData.Phone}
           onChange={handleChange}
           placeholder="Your Phone Number"
           pattern="[0-9]{10}"
@@ -53,8 +73,8 @@ const ContactForm = () => {
       <div className="form-group">
         <input
           type="email"
-          name="email"
-          value={formData.email}
+          name="Email"
+          value={formData.Email}
           onChange={handleChange}
           placeholder="Your Email"
           required
@@ -62,8 +82,8 @@ const ContactForm = () => {
       </div>
       <div className="form-group">
         <textarea
-          name="message"
-          value={formData.message}
+          name="Message"
+          value={formData.Message}
           onChange={handleChange}
           placeholder="Your Message"
           required
