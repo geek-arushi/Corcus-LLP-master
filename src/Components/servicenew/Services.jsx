@@ -99,7 +99,7 @@ const Servicesnew = () => {
           },
           {
             title: "Content Marketing",
-            desc: "Engaging, informative content builds authority and attracts loyal brand customers.",
+            desc: "Engaging content builds brand authority and attracts customers.",
             img: "assets/img/service/04.gif",
             btnStyle: "dark",
             darkStyle: false,
