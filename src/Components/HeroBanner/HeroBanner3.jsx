@@ -32,7 +32,7 @@ const HeroBanner3 = () => {
 
   const heroContent = {
     subtitle: "go for advertising",
-    title: " Scale Your Brand with Performance Driven Marketing",
+    title: "Scale Your Brand with Performance Driven Marketing",
     content:
       "We help businesses maximize their ROI with data-backed strategies, high-converting ad creatives, and impactful digital campaigns. Whether you're just starting out or ready to level up, we craft marketing solutions that are tailored to your audience, your goals, and your brand voice.",
     btnname: "Get Started",
@@ -42,7 +42,8 @@ const HeroBanner3 = () => {
   return (
     <section className="hero-section hero-3 services-hero">
       <div className="container">
-        <div className="row align-items-center">
+        <div className="row align-items-center flex-column-reverse flex-lg-row">
+          {/* Content Section */}
           <div className="col-lg-6 px-4">
             <div className="hero-content">
               <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
@@ -83,7 +84,9 @@ const HeroBanner3 = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 px-4">
+
+          {/* Image Section */}
+          <div className="col-lg-6 px-4 mb-4 mb-lg-0">
             <div
               className="hero-image wow img-custom-anim-left"
               data-wow-duration="1.5s"
@@ -100,8 +103,10 @@ const HeroBanner3 = () => {
         </div>
       </div>
 
+      {/* Popup Form */}
       {showPopup && <PopupForm isOpen={showPopup} setIsOpen={setShowPopup} />}
 
+      {/* Inline Styles */}
       <style jsx="true">{`
         .services-hero {
           padding: 100px 0 20px 0;
@@ -115,6 +120,21 @@ const HeroBanner3 = () => {
         .hero-content p {
           font-size: 1.1rem;
           color: #444;
+        }
+
+        .theme-btn {
+          background: #eeb200;
+          padding: 10px 20px;
+          border-radius: 25px;
+          color: #000;
+          font-weight: 500;
+          transition: background 0.3s;
+          cursor: pointer;
+        }
+
+        .theme-btn:hover {
+          background: #000;
+          color: #fff;
         }
 
         .contact-btn {
@@ -145,9 +165,16 @@ const HeroBanner3 = () => {
             font-size: 2rem;
           }
 
-          .contact-btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
+          .hero-content p {
+            font-size: 1rem;
+          }
+
+          .contact-btn,
+          .theme-btn {
+            padding: 10px 16px;
+            font-size: 0.95rem;
+            width: 100%;
+            justify-content: center;
           }
 
           .hero-button {
@@ -155,14 +182,8 @@ const HeroBanner3 = () => {
             flex-wrap: wrap;
           }
 
-          .theme-btn,
-          .contact-btn {
-            width: 100%;
-            justify-content: center;
-          }
-
           .hero-image {
-            margin-top: 30px;
+            margin-bottom: 30px;
           }
         }
       `}</style>

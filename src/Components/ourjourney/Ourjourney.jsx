@@ -16,15 +16,15 @@ const OurJourney = () => {
         </h1>
       </div>
 
-      {/* Content Section with Black Background */}
+      {/* Content Section */}
       <div className="p-4 rounded" style={{ backgroundColor: "black" }}>
         <div className="row align-items-stretch">
           {/* Card 1 */}
           <div className="col-md-4 mb-4">
             <div className="card bg-black text-white h-100 border-0">
-              <div className="card-body p-3">
-                <h4 className="card-title mb-3">Fresh O Need</h4>
-                <p className="card-text mb-2">
+              <div className="card-body p-4">
+                <h4 className="card-title mb-4">Fresh O Need</h4>
+                <p className="card-text mb-4">
                   Fresh O Need struggled with ineffective marketing, unoptimized website, and marketplace issues. We resolved all challenges, improved engagement, optimized ads, and expanded their presence to global markets in just six months.
                 </p>
                 <a
@@ -40,9 +40,9 @@ const OurJourney = () => {
           {/* Card 2 */}
           <div className="col-md-4 mb-4">
             <div className="card bg-black text-white h-100 border-0">
-              <div className="card-body p-3">
-                <h4 className="card-title mb-3">Fresh Super Mall</h4>
-                <p className="card-text mb-2">
+              <div className="card-body p-4">
+                <h4 className="card-title mb-4">Fresh Super Mall</h4>
+                <p className="card-text mb-4">
                   Fresh Super Mall struggled with franchise lead generation. We implemented targeted ads, SEO, CRM integration, and influencer marketing. Results: 300% increase in inquiries, 50% better conversion rate, and enhanced brand visibility. Our strategy fueled their expansion.
                 </p>
                 <a
@@ -58,9 +58,9 @@ const OurJourney = () => {
           {/* Card 3 */}
           <div className="col-md-4 mb-4">
             <div className="card bg-black text-white h-100 border-0">
-              <div className="card-body p-3">
-                <h4 className="card-title mb-3">Paidavaar</h4>
-                <p className="card-text mb-2">
+              <div className="card-body p-4">
+                <h4 className="card-title mb-4">Paidavaar</h4>
+                <p className="card-text mb-4">
                   Paidavaar partnered with us a year ago to build its digital presence. We designed the brand logo, developed content, and introduced ‘Gayani Thai’ for farming insights, which became a major hit. Our efforts increased engagement, strengthened brand recognition, and established Paidavaar as a trusted name in agriculture.
                 </p>
                 <a
@@ -83,21 +83,18 @@ const OurJourney = () => {
           font-weight: bold;
         }
 
-        .card-body {
-          padding: 1rem;
-        }
-
         .card-title {
-          font-size: 42px;
+          font-size: 36px;
           font-weight: 700;
         }
 
         .card-text {
-          font-size: 21px;
-          line-height: 1.8;
+          font-size: 24px;
+          line-height: 2.2;
         }
 
         .learn-more-link {
+          font-size: 18px;
           color: #eeb200;
           text-decoration: underline;
           transition: color 0.3s ease;
@@ -117,7 +114,11 @@ const OurJourney = () => {
           }
 
           .card-text {
-            font-size: 18px;
+            font-size: 20px;
+          }
+
+          .learn-more-link {
+            font-size: 16px;
           }
         }
       `}</style>
