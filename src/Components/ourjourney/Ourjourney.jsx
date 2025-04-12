@@ -22,9 +22,9 @@ const OurJourney = () => {
           {/* Card 1 */}
           <div className="col-md-4 mb-4">
             <div className="card bg-black text-white h-100 border-0">
-              <div className="card-body">
+              <div className="card-body p-3">
                 <h4 className="card-title mb-3">Fresh O Need</h4>
-                <p className="card-text text-white mb-2">
+                <p className="card-text mb-2">
                   Fresh O Need struggled with ineffective marketing, unoptimized website, and marketplace issues. We resolved all challenges, improved engagement, optimized ads, and expanded their presence to global markets in just six months.
                 </p>
                 <a
@@ -40,9 +40,9 @@ const OurJourney = () => {
           {/* Card 2 */}
           <div className="col-md-4 mb-4">
             <div className="card bg-black text-white h-100 border-0">
-              <div className="card-body">
+              <div className="card-body p-3">
                 <h4 className="card-title mb-3">Fresh Super Mall</h4>
-                <p className="card-text text-white mb-2">
+                <p className="card-text mb-2">
                   Fresh Super Mall struggled with franchise lead generation. We implemented targeted ads, SEO, CRM integration, and influencer marketing. Results: 300% increase in inquiries, 50% better conversion rate, and enhanced brand visibility. Our strategy fueled their expansion.
                 </p>
                 <a
@@ -58,9 +58,9 @@ const OurJourney = () => {
           {/* Card 3 */}
           <div className="col-md-4 mb-4">
             <div className="card bg-black text-white h-100 border-0">
-              <div className="card-body">
+              <div className="card-body p-3">
                 <h4 className="card-title mb-3">Paidavaar</h4>
-                <p className="card-text text-white mb-2">
+                <p className="card-text mb-2">
                   Paidavaar partnered with us a year ago to build its digital presence. We designed the brand logo, developed content, and introduced ‘Gayani Thai’ for farming insights, which became a major hit. Our efforts increased engagement, strengthened brand recognition, and established Paidavaar as a trusted name in agriculture.
                 </p>
                 <a
@@ -75,7 +75,7 @@ const OurJourney = () => {
         </div>
       </div>
 
-      {/* Custom CSS with font size changes */}
+      {/* Custom CSS */}
       <style jsx="true">{`
         .stroke-text {
           -webkit-text-stroke: 2px black;
@@ -83,15 +83,18 @@ const OurJourney = () => {
           font-weight: bold;
         }
 
-        /* Custom Font Sizes */
+        .card-body {
+          padding: 1rem;
+        }
+
         .card-title {
-          font-size: 24px; /* Increased title font size */
-          font-weight: 600;
+          font-size: 42px;
+          font-weight: 700;
         }
 
         .card-text {
-          font-size: 17px; /* Increased content font size */
-          line-height: 1.7;
+          font-size: 21px;
+          line-height: 1.8;
         }
 
         .learn-more-link {
@@ -110,11 +113,11 @@ const OurJourney = () => {
           }
 
           .card-title {
-            font-size: 20px;
+            font-size: 28px;
           }
 
           .card-text {
-            font-size: 15px;
+            font-size: 18px;
           }
         }
       `}</style>
