@@ -24,6 +24,8 @@ const Servicesnew = () => {
             color: transparent;
             -webkit-text-stroke: 2px black;
             font-weight: bold;
+            font-size: 60px;
+            line-height: 1;
           }
 
           .btn:hover {
@@ -42,16 +44,18 @@ const Servicesnew = () => {
             position: sticky;
             top: 100px;
             z-index: 10;
+            text-align: start;
           }
 
           @media (max-width: 768px) {
             .stroke-text {
               font-size: 2.5rem !important;
+              text-align: center;
             }
-
             .sticky-title {
               position: static;
               top: auto;
+              text-align: center;
             }
           }
         `}
@@ -61,13 +65,11 @@ const Servicesnew = () => {
       <div className="row align-items-start mb-5">
         <div className="col-md-4 mb-4 mb-md-0 sticky-title">
           <h1
-            className="display-4 stroke-text text-center text-md-start"
+            className="stroke-text"
             style={{
               backgroundColor: "#ffffff",
               padding: "40px 20px",
               borderRadius: "8px",
-              fontSize: "60px",
-              minWidth: "200px",
             }}
           >
             Services
