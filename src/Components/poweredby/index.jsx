@@ -13,16 +13,16 @@ const Poweredby = () => {
     "9.png",
   ];
 
+  // Duplicate logos to create seamless loop
+  const loopedLogos = [...logos, ...logos];
+
   return (
     <div className="bg-black py-5 text-center">
       <h4 className="text-white mb-4">Partner with</h4>
-      <div className="container">
-        <div className="row justify-content-center">
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="col-6 col-md-4 col-lg-2 d-flex justify-content-center mb-3"
-            >
+      <div className="overflow-hidden">
+        <div className="marquee">
+          {loopedLogos.map((logo, index) => (
+            <div className="logo-item" key={index}>
               <img
                 src={`/assets/img/powered/${logo}`}
                 alt={`Logo ${index + 1}`}
@@ -32,6 +32,40 @@ const Poweredby = () => {
           ))}
         </div>
       </div>
+
+      <style>{`
+        .marquee {
+          display: flex;
+          animation: scroll 25s linear infinite;
+          width: max-content;
+        }
+
+        .logo-item {
+          flex: 0 0 auto;
+          padding: 0 25px;
+          display: flex;
+          align-items: center;
+        }
+
+        .marquee img {
+          max-height: 50px;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .marquee {
+            animation-duration: 40s;
+          }
+        }
+      `}</style>
     </div>
   );
 };
