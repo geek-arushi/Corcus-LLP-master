@@ -41,13 +41,16 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
     );
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzeazp1goY7kBwdg06keJkhaRnBTn19V0rW8unprFBTzqXxRR7LQuI4u82WKFKQJLVtQA/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formBody.toString(),
-      });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycby3F3QHRbptPVMRogJxokydQiRbh-RqZ5eejvvXG6QKY3LkBM4vPmEX-XLld3f00ZVcSg/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formBody.toString(),
+        }
+      );
 
       const resultText = await response.text();
       console.log("Response from script:", resultText);
