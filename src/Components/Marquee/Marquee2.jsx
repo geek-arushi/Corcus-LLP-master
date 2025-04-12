@@ -1,58 +1,15 @@
 const Marquee2 = () => {
+  const marqueeText = Array(50).fill("Reach Us");
+
   return (
     <div style={{ width: "100%", position: "relative", height: "100px" }}>
-      {/* First Marquee (Now Second) */}
+      {/* Top Rotated Marquee (black) */}
       <div
         style={{
           height: "50px",
           display: "flex",
           alignItems: "center",
-          background: "#DEDEDEFF",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          position: "absolute",
-          top: "25px",
-          left: 0,
-          right: 0,
-          transform: "rotate(-3deg)",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            animation: "marquee-right 20s linear infinite",
-            minWidth: "200%",
-          }}
-        >
-          {[...Array(20)].map((_, index) => (
-            <div
-              key={index}
-              style={{ display: "flex", gap: "40px", marginRight: "0px" }}
-            >
-              {[...Array(20)].map((_, i) => (
-                <span
-                  key={i}
-                  style={{
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    color: "black",
-                  }}
-                >
-                  Reach Us
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Second Marquee (Now First) */}
-      <div
-        style={{
-          height: "50px",
-          display: "flex",
-          alignItems: "center",
-          background: "#000000FF",
+          background: "#000",
           whiteSpace: "nowrap",
           overflow: "hidden",
           position: "absolute",
@@ -66,27 +23,60 @@ const Marquee2 = () => {
           style={{
             display: "flex",
             animation: "marquee-left 20s linear infinite",
-            minWidth: "200%",
+            minWidth: "100%",
+            gap: "40px",
           }}
         >
-          {[...Array(20)].map((_, index) => (
-            <div
-              key={index}
-              style={{ display: "flex", gap: "40px", marginRight: "0px" }}
+          {marqueeText.map((text, i) => (
+            <span
+              key={`left-${i}`}
+              style={{
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "white",
+              }}
             >
-              {[...Array(5)].map((_, i) => (
-                <span
-                  key={i}
-                  style={{
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    color: "white",
-                  }}
-                >
-                  Reach Us
-                </span>
-              ))}
-            </div>
+              {text}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Rotated Marquee (grey) */}
+      <div
+        style={{
+          height: "50px",
+          display: "flex",
+          alignItems: "center",
+          background: "#DEDEDE",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          position: "absolute",
+          top: "25px",
+          left: 0,
+          right: 0,
+          transform: "rotate(-3deg)",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            animation: "marquee-right 20s linear infinite",
+            minWidth: "100%",
+            gap: "40px",
+          }}
+        >
+          {marqueeText.map((text, i) => (
+            <span
+              key={`right-${i}`}
+              style={{
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: "black",
+              }}
+            >
+              {text}
+            </span>
           ))}
         </div>
       </div>
