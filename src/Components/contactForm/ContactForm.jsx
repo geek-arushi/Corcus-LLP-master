@@ -6,7 +6,7 @@ const ContactForm = () => {
     Phone: "",
     Email: "",
     Business: "",
-    Service: "",
+    Services: "",
     CustomService: "",
   });
 
@@ -22,11 +22,11 @@ const ContactForm = () => {
     e.preventDefault();
 
     const finalService =
-      formData.Service === "Other" ? formData.CustomService : formData.Service;
+      formData.Services === "Other" ? formData.CustomService : formData.Services;
 
     const submissionData = {
       ...formData,
-      Service: finalService,
+      Services: finalService,
     };
 
     const formBody = new URLSearchParams();
@@ -36,7 +36,7 @@ const ContactForm = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwe4RjJp4iIKdG92bm-R7QZ-clddBU1X6Z8fWVvRtwTmeUl10N8nYisNuJw8_LUhaWI/exec",
+        "https://script.google.com/macros/s/AKfycbyUmsV5wT-pZzi1oCjecaLH6szviR8cZgk6bxvf1hxX0IoAqBCTYn7cLoeozqf8DcCD/exec",
         {
           method: "POST",
           headers: {
@@ -55,7 +55,7 @@ const ContactForm = () => {
         Phone: "",
         Email: "",
         Business: "",
-        Service: "",
+        Services: "",
         CustomService: "",
       });
     } catch (error) {
@@ -200,8 +200,8 @@ const ContactForm = () => {
 
         <div className="form-group">
           <select
-            name="Service"
-            value={formData.Service}
+            name="Services"
+            value={formData.Services}
             onChange={handleChange}
             required
           >
@@ -215,7 +215,7 @@ const ContactForm = () => {
           </select>
         </div>
 
-        {formData.Service === "Other" && (
+        {formData.Services === "Other" && (
           <div className="form-group">
             <input
               type="text"
