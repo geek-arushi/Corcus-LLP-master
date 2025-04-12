@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -35,7 +34,7 @@ const ContactForm = () => {
         }
       );
 
-      const result = await response.text();
+      await response.text();
       alert("Form submitted successfully!");
       setFormData({ Name: "", Email: "", Contact: "", Message: "" });
     } catch (error) {
@@ -45,21 +44,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container-fluid p-0 d-flex justify-content-center align-items-center min-vh-100 contact-container">
+    <div className="container-fluid p-0 d-flex justify-content-center align-items-center min-vh-100">
       <div className="shadow-lg p-5 rounded contact-card w-100">
-        {/* Social Icons */}
-        <div className="social-icons position-absolute top-0 end-0 p-3">
-          <a href="#" className="text-dark me-3">
-            <FaLinkedin />
-          </a>
-          <a href="#" className="text-dark me-3">
-            <FaInstagram />
-          </a>
-          <a href="#" className="text-dark">
-            <FaFacebook />
-          </a>
-        </div>
-
         <div className="row">
           {/* Left Content */}
           <div className="col-md-6 p-4">
@@ -68,10 +54,8 @@ const ContactForm = () => {
             <p className="mt-3 text-muted">
               <strong>Ready to turn your vision into reality?</strong> Whether
               you need branding, web design, packaging, or digital marketing,
-              we’re here to help. Let’s brainstorm, create, and bring your ideas
-              to life. At Corcus, we are a performance-driven digital marketing
-              company dedicated to delivering measurable results and real
-              business growth.
+              we’re here to help. At Corcus, we are a performance-driven digital
+              marketing company delivering real business growth.
             </p>
             <button
               className="btn btn-dark mt-3 custom-btn"
@@ -155,41 +139,37 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Styles */}
-      <style jsx="true">{`
-        .custom-btn:hover {
-          background-color: #eeb200 !important;
-          border-color: #eeb200 !important;
-          color: #000 !important;
-        }
-
-        .marquee-wrapper {
-          height: 40px;
-        }
-
-        .marquee-text {
-          font-size: 18px;
-          font-weight: 600;
-          color: #000;
-          white-space: nowrap;
-        }
-
-        .contact-heading {
-          font-size: 36px;
-        }
-
-        @media (max-width: 768px) {
-          .contact-heading {
-            font-size: 28px;
+        {/* Custom Styles */}
+        <style jsx="true">{`
+          .custom-btn:hover {
+            background-color: #eeb200 !important;
+            border-color: #eeb200 !important;
+            color: #000 !important;
           }
 
           .marquee-text {
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            white-space: nowrap;
           }
-        }
-      `}</style>
+
+          .contact-heading {
+            font-size: 36px;
+          }
+
+          @media (max-width: 768px) {
+            .contact-heading {
+              font-size: 28px;
+            }
+
+            .marquee-text {
+              font-size: 16px;
+            }
+          }
+        `}</style>
+      </div>
     </div>
   );
 };
