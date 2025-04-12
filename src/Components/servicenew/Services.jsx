@@ -8,7 +8,6 @@ const Servicesnew = () => {
 
   return (
     <div className="container my-5">
-      {/* Custom CSS for styling */}
       <style>
         {`
           .service-card {
@@ -39,9 +38,20 @@ const Servicesnew = () => {
             border-color: #eeb200 !important;
           }
 
+          .sticky-title {
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+          }
+
           @media (max-width: 768px) {
             .stroke-text {
               font-size: 2.5rem !important;
+            }
+
+            .sticky-title {
+              position: static;
+              top: auto;
             }
           }
         `}
@@ -49,7 +59,7 @@ const Servicesnew = () => {
 
       {/* Title Section */}
       <div className="row align-items-start mb-5">
-        <div className="col-md-4 mb-4 mb-md-0">
+        <div className="col-md-4 mb-4 mb-md-0 sticky-title">
           <h1
             className="display-4 stroke-text text-center text-md-start"
             style={{
@@ -65,10 +75,11 @@ const Servicesnew = () => {
         </div>
         <div className="col-md-8">
           <p className="lead text-black ps-md-3">
-            At our digital marketing agency, we offer a wide range of services to help
-            businesses grow and achieve their goals. These services include performance
-            marketing, social media management, SEO, content creation, and more — all
-            tailored to boost your brand’s online presence and drive real results.
+            At our digital marketing agency, we offer a wide range of services
+            to help businesses grow and achieve their goals. These services
+            include performance marketing, social media management, SEO, content
+            creation, and more — all tailored to boost your brand’s online
+            presence and drive real results.
           </p>
         </div>
       </div>
@@ -166,7 +177,7 @@ const Servicesnew = () => {
         ))}
       </div>
 
-      {/* Popup Form */}
+      {/* Popup */}
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
         <ContactForm />
       </Popup>
@@ -175,5 +186,3 @@ const Servicesnew = () => {
 };
 
 export default Servicesnew;
-
-
