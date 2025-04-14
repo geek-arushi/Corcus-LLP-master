@@ -76,11 +76,19 @@ const Servicesnew = () => {
           </h1>
         </div>
         <div className="col-md-8">
-          <p className="lead text-black ps-md-3">
+          <p
+            className="lead text-grey ps-md-3"
+            style={{
+              fontSize: "1rem",
+              fontWeight: "bold",
+              lineHeight: "1.6",
+              marginBottom: "1.5rem",
+            }}
+          >
             At our digital marketing agency, we offer a wide range of services
             to help businesses grow and achieve their goals. These services
             include performance marketing, social media management, SEO, content
-            creation, and more — all tailored to boost your brand’s online
+            creation, and more — all tailored to boost your brand's online
             presence and drive real results.
           </p>
         </div>

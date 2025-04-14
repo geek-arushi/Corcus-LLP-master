@@ -89,7 +89,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.6;
   color: var(--text);
   background: #ffffff;
   padding: 0;
@@ -133,9 +133,9 @@ h6 {
 }
 
 h1 {
-  font-size: 90px;
-  font-weight: 800;
-  line-height: 125%;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 @media (max-width: 991px) {
@@ -157,8 +157,8 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 @media (max-width: 1199px) {
@@ -180,9 +180,9 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 133%;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 @media (max-width: 575px) {
@@ -192,19 +192,19 @@ h3 {
 }
 
 h4 {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 h5 {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 145%;
+  line-height: 1.4;
 }
 
 a {
@@ -9866,6 +9866,9 @@ body {
 .mt-4 {
   margin-top: 40px;
 }
+
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* servive new */
 .container {
