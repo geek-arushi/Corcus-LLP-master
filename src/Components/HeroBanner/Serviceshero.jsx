@@ -36,64 +36,69 @@ const Serviceshero = () => {
   return (
     <section className="hero-section hero-3 services-hero">
       <div className="container">
-        <div className="row flex-lg-row flex-column-reverse align-items-center px-4">
+        <div className="row align-items-center flex-column-reverse flex-lg-row">
           {/* Text Content */}
-          <div className="col-lg-6 hero-content text-lg-start text-center mt-4 mt-lg-0">
-            <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-            <h1
-              className="wow fadeInUp"
-              data-wow-delay=".3s"
-              style={{ marginBottom: "15px" }}
-            >
-              {parse(heroContent.title)}
-            </h1>
-            <p className="wow fadeInUp" data-wow-delay=".5s">
-              {heroContent.content}
-            </p>
+          <div className="col-lg-6 px-4 mt-4 mt-lg-0">
+            <div className="hero-content text-lg-start text-center">
+              <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
+              <h1
+                className="wow fadeInUp"
+                data-wow-delay=".3s"
+                style={{ marginBottom: "15px" }}
+              >
+                {parse(heroContent.title)}
+              </h1>
+              <p
+                className="wow fadeInUp"
+                data-wow-delay=".5s"
+                style={{ marginTop: "0" }}
+              >
+                {heroContent.content}
+              </p>
+            </div>
           </div>
 
           {/* Image */}
-          <div className="col-lg-6 text-center">
-            <img
-              src={heroImages[currentImageIndex]}
-              alt="Hero"
-              className="img-fluid w-100 h-auto"
-            />
+          <div className="col-lg-6 px-4 mb-4 mb-lg-0 text-center">
+            <div
+              className="hero-image wow img-custom-anim-left"
+              data-wow-duration="1.5s"
+              data-wow-delay="0.3s"
+            >
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="Service Hero"
+                className="img-fluid w-100 h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Styling Inside JSX */}
+      {/* Styling */}
       <style jsx="true">{`
         .services-hero {
           padding: 100px 0 20px 0;
         }
 
+        .hero-content h6 {
+          font-size: 1rem;
+          font-weight: 500;
+          color: #eeb200;
+          margin-bottom: 10px;
+        }
+
         .hero-content h1 {
           font-size: 2.5rem;
           font-weight: 700;
+          line-height: 1.2;
+          color: #000;
         }
 
         .hero-content p {
           font-size: 1.1rem;
           color: #444;
-        }
-
-        .contact-btn {
-          background: transparent;
-          border: 2px solid black;
-          color: black;
-          padding: 10px 20px;
-          display: flex;
-          align-items: center;
-          border-radius: 25px;
-          gap: 8px;
-          transition: all 0.3s ease-in-out;
-        }
-
-        .contact-btn:hover {
-          background: black;
-          color: white;
+          margin-top: 15px;
         }
 
         @media (max-width: 768px) {
@@ -110,13 +115,12 @@ const Serviceshero = () => {
             font-size: 1rem;
           }
 
-          .contact-btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
+          .hero-image {
+            margin-bottom: 30px;
           }
 
           .services-hero {
-            padding: 60px 0 20px;
+            padding: 60px 0 30px;
           }
         }
       `}</style>

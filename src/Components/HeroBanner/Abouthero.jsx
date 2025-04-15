@@ -34,30 +34,42 @@ const Abouthero = () => {
   return (
     <section className="hero-section hero-3 about-hero">
       <div className="container">
-        <div className="row flex-lg-row flex-column-reverse align-items-center px-4">
+        <div className="row align-items-center flex-column-reverse flex-lg-row">
           {/* Content */}
-          <div className="col-lg-6 hero-content text-lg-start text-center mt-4 mt-lg-0">
-            <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-            <h1
-              className="wow fadeInUp"
-              data-wow-delay=".3s"
-              style={{ marginBottom: "15px" }}
-            >
-              {parse(heroContent.title)}
-            </h1>
-            <p className="wow fadeInUp" data-wow-delay=".5s">
-              {heroContent.content}
-            </p>
+          <div className="col-lg-6 px-4">
+            <div className="hero-content">
+              <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
+              <h1
+                className="wow fadeInUp"
+                data-wow-delay=".3s"
+                style={{ marginBottom: "15px" }}
+              >
+                {parse(heroContent.title)}
+              </h1>
+              <p
+                className="wow fadeInUp"
+                data-wow-delay=".5s"
+                style={{ marginTop: "0" }}
+              >
+                {heroContent.content}
+              </p>
+            </div>
           </div>
 
           {/* Image */}
-          <div className="col-lg-6 text-center">
-            <img
-              src={heroImages[currentImageIndex]}
-              alt="About Hero"
-              className="img-fluid"
-              style={{ width: "100%", height: "auto" }}
-            />
+          <div className="col-lg-6 px-4 mb-4 mb-lg-0">
+            <div
+              className="hero-image wow img-custom-anim-left"
+              data-wow-duration="1.5s"
+              data-wow-delay="0.3s"
+              style={{ textAlign: "center" }}
+            >
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="About Hero"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -65,7 +77,7 @@ const Abouthero = () => {
       {/* Styles */}
       <style jsx="true">{`
         .about-hero {
-          padding: 80px 0 40px 0;
+          padding: 100px 0 20px 0;
         }
 
         .hero-content h1 {
@@ -79,13 +91,21 @@ const Abouthero = () => {
         }
 
         @media (max-width: 768px) {
+          .hero-content {
+            padding: 30px 15px 0 15px;
+            text-align: center;
+          }
+
           .hero-content h1 {
             font-size: 2rem;
           }
 
           .hero-content p {
             font-size: 1rem;
-            padding: 0 10px;
+          }
+
+          .hero-image {
+            margin-bottom: 30px;
           }
 
           .about-hero {

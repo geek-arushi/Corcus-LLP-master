@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
 import parse from "html-react-parser";
 
-const Contacthero = () => {
+const Serviceshero = () => {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
@@ -10,10 +10,11 @@ const Contacthero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
-    "/assets/img/Contactus/01.png",
-    "/assets/img/Contactus/02.png",
-    "/assets/img/Contactus/03.png",
-    "/assets/img/Contactus/04.png",
+    "assets/img/Servicedetail/1.png",
+    "assets/img/Servicedetail/2.png",
+    "assets/img/Servicedetail/3.png",
+    "assets/img/Servicedetail/4.png",
+    "assets/img/Servicedetail/5.png",
   ];
 
   useEffect(() => {
@@ -26,45 +27,51 @@ const Contacthero = () => {
   }, []);
 
   const heroContent = {
-    subtitle: "Let’s Connect",
-    title: " We’re Here to Help You Grow",
+    subtitle: "What We Offer",
+    title: "Strategic Digital Marketing Services That Deliver Results",
     content:
-      "Have a project in mind? Need a marketing partner who understands your goals? We’re just a message away! Whether you have a question, need a custom quote, or want to explore how we can take your brand to the next level — we’d love to hear from you.",
+      "We offer a full suite of performance-driven digital marketing services designed to elevate your brand and drive real business growth. Whether you're looking to build brand awareness, generate quality leads, or boost your online sales — we've got you covered.",
   };
 
   return (
-    <section className="hero-section hero-3 contact-hero">
+    <section className="hero-section hero-3 services-hero">
       <div className="container">
-        <div className="row flex-lg-row flex-column-reverse align-items-center px-4">
-          {/* Content First (on Desktop, bottom on Mobile) */}
-          <div className="col-lg-6 hero-content text-lg-start text-center mt-4 mt-lg-0">
-            <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-            <h1
-              className="wow fadeInUp"
-              data-wow-delay=".3s"
-              style={{ marginBottom: "15px" }}
-            >
-              {parse(heroContent.title)}
-            </h1>
-            <p className="wow fadeInUp" data-wow-delay=".5s">
-              {heroContent.content}
-            </p>
+        <div className="row align-items-center flex-column-reverse flex-lg-row">
+          {/* Text Content */}
+          <div className="col-lg-6 px-4">
+            <div className="hero-content">
+              <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
+              <h1 className="wow fadeInUp" data-wow-delay=".3s">
+                {parse(heroContent.title)}
+              </h1>
+              <p className="wow fadeInUp" data-wow-delay=".5s">
+                {heroContent.content}
+              </p>
+            </div>
           </div>
 
-          {/* Image */}
-          <div className="col-lg-6 text-center">
-            <img
-              src={heroImages[currentImageIndex]}
-              alt="Hero"
-              className="img-fluid w-100 h-auto"
-            />
+          {/* Image Content */}
+          <div className="col-lg-6 px-4 mb-4 mb-lg-0">
+            <div
+              className="hero-image wow img-custom-anim-left"
+              data-wow-duration="1.5s"
+              data-wow-delay="0.3s"
+              style={{ textAlign: "center" }}
+            >
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="Service Hero"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
           </div>
         </div>
       </div>
 
+      {/* Styles */}
       <style jsx="true">{`
-        .contact-hero {
-          padding: 80px 0 20px 0;
+        .services-hero {
+          padding: 100px 0 20px 0;
         }
 
         .hero-content h1 {
@@ -75,25 +82,6 @@ const Contacthero = () => {
         .hero-content p {
           font-size: 1.1rem;
           color: #444;
-        }
-
-        .contact-btn {
-          background: transparent;
-          border: 2px solid #000;
-          color: #000;
-          padding: 10px 22px;
-          display: flex;
-          align-items: center;
-          border-radius: 30px;
-          gap: 8px;
-          font-weight: 500;
-          text-decoration: none;
-          transition: all 0.3s ease-in-out;
-        }
-
-        .contact-btn:hover {
-          background: #000;
-          color: #fff;
         }
 
         @media (max-width: 768px) {
@@ -110,9 +98,12 @@ const Contacthero = () => {
             font-size: 1rem;
           }
 
-          .contact-btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
+          .hero-image {
+            margin-bottom: 30px;
+          }
+
+          .services-hero {
+            padding: 60px 0 30px;
           }
         }
       `}</style>
@@ -120,4 +111,4 @@ const Contacthero = () => {
   );
 };
 
-export default Contacthero;
+export default Serviceshero;
