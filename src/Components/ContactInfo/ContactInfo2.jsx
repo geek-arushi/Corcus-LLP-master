@@ -120,7 +120,7 @@ const ContactInfo2 = () => {
                 </div>
                 <div className="content">
                   <h3>
-                    Hot: <a href="tel:+2086660112">+08789677330</a>
+                    Phone: <a href="tel:+2086660112">+08789677330</a>
                   </h3>
                   <p>
                     Call us for any kind of support, we <br />
