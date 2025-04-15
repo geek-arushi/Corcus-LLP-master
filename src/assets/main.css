@@ -9820,9 +9820,9 @@ body {
 .scroll-container {
   white-space: nowrap;
   position: relative;
-  margin-top: 120px;
+  margin-top: 90px;
   overflow: hidden;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   width: 100%;
 }
 
@@ -9838,8 +9838,8 @@ body {
 }
 
 .client-logo {
-  width: 120px;
-  height: 60px;
+  width: 200px;
+  height: 90px;
 }
 
 @keyframes scroll-left {
@@ -9864,7 +9864,7 @@ body {
 
 /* Space between the two lines */
 .mt-4 {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 /* servive new */
