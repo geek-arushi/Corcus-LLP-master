@@ -9,13 +9,13 @@ const ClientFeedback = () => {
       name: "Anamika Anand",
       title: "Paidavaar (CEO & Founder)",
       review:
-        "Corcus completely reimagined our brand with a fresh and strong identity that truly connects with our audience. The creative touch they brought, especially with the 'Gayani Thai' character, helped us build a deeper bond with the farming community. The results speak for themselves - we've seen a huge boost in engagement, reach, and trust. It's been a transformative experience!",
+        "Corcus completely reimagined our brand with a fresh and strong identity that truly connects with our audience. The creative touch they brought, especially with the 'Gayani Thai' character, helped us build a deeper bond with the farming community. The results speak for themselves - we've seen a huge boost in engagement, reach.",
     },
     {
       name: "Nand Kumar Patil",
       title: "Fresh O Need (CEO)",
       review:
-        "Corcus took our digital presence to new heights with their seamless marketing strategies. They optimized our website, created amazing content, and ran ads that really resonated with our audience. Sales and engagement skyrocketed, and thanks to their expertise, we've been able to expand globally. They've truly been an essential part of our journey.",
+        "Corcus took our digital presence to new heights with their seamless marketing strategies. They optimized our website, created amazing content, and ran ads that really resonated with our audience. Sales and engagement skyrocketed, and thanks to their expertise, we've been able to expand globally.",
     },
     {
       name: "Abinash",
@@ -24,16 +24,29 @@ const ClientFeedback = () => {
         "Working with Corcus was a game changer for our franchise lead generation. Their targeted ads, SEO, and automation strategies took things to the next level. We saw a 300% increase in leads, and our brand visibility grew massively. Their creative content and smart approach really made a difference. Couldn't recommend them more!",
     },
     {
-      name: "Abinash",
-      title: "Fresh Super Mall",
+      name: "Ankit Kumar",
+      title: "Cosmosentials",
       review:
-        "Working with Corcus was a game changer for our franchise lead generation. Their targeted ads, SEO, and automation strategies took things to the next level. We saw a 300% increase in leads, and our brand visibility grew massively. Their creative content and smart approach really made a difference. Couldn't recommend them more!",
+        "Working with Corucu Studio LLP has been a game-changer for Cosmosentials. They built our Shopify website and consistently deliver 5–7 ROAS every month. Their team is proactive, creative, and result-oriented. We’ve seen significant growth in our online sales thanks to their smart digital marketing strategies.",
     },
     {
-      name: "Abinash",
-      title: "Fresh Super Mall",
+      name: "Ashish",
+      title: " Marshal Technologyl",
       review:
-        "Working with Corcus was a game changer for our franchise lead generation. Their targeted ads, SEO, and automation strategies took things to the next level. We saw a 300% increase in leads, and our brand visibility grew massively. Their creative content and smart approach really made a difference. Couldn't recommend them more!",
+        "Corucu Studio LLP delivered exactly what we needed—an effective website, high-converting landing page, and targeted ad management. Their work has helped us generate quality leads specifically for our Salesforce courses. Their expertise and attention to detail have truly boosted our business.",
+    },
+    {
+      name: " Dr. Punkesh",
+      title: "Advance Skin Hair and Laser Clinic",
+      review:
+        "Corucu Studio LLP has done an excellent job with our social media management, content creation, and lead generation. Their creative approach and consistent efforts have significantly increased our online visibility and brought in quality leads. We’re extremely happy with the results and their professional service.",
+    },
+    {
+      name: " — Mantu Mayank",
+      title: "Haridwar Farms",
+      review:
+        "Corucu Studio LLP has been a valuable partner for Haridwar Farms. Their content creation and strategic marketing efforts have greatly boosted the sales of our organic fertilizers. Their team understands our vision and delivers results with creativity and consistency. Highly recommended!"
+,
     },
   ];
 
