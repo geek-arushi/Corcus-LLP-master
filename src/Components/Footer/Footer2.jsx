@@ -46,6 +46,9 @@ const Footer2 = () => {
                       <a href="https://www.linkedin.com/company/corcus-studio-llp/">
                         <i className="bi bi-linkedin"></i>
                       </a>
+                      <a href="https://x.com/Corcus_studio">
+                        <i className="bi bi-twitter-x"></i>
+                      </a>
                     </div>
                   </div>
                 </div>

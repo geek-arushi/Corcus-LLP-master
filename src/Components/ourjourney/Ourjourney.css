@@ -1,9 +1,9 @@
 .learn-more-link {
-    color: #ffea00;
+    color: #eeb200;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .learn-more-link:hover {
-    color: #f4b400;
+    color: #ffffff;
 }

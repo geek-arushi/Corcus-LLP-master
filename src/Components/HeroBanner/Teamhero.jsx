@@ -34,11 +34,11 @@ const Teamhero = () => {
   };
 
   return (
-    <section className="hero-section hero-3 py-60">
+    <section className="hero-section hero-3">
       <div className="container">
         <div className="row flex-lg-row flex-column-reverse align-items-center g-4 px-3">
           {/* Content */}
-          <div className="col-lg-6 hero-content text-lg-start text-center mt-4 mt-lg-0">
+          <div className="col-lg-6 hero-content text-lg-start text-center content-block">
             <h6 className="text-uppercase mb-3">{heroContent.subtitle}</h6>
             <h1 className="fw-bold mb-3">{parse(heroContent.title)}</h1>
             <p className="lead mb-0">{heroContent.content}</p>
@@ -62,10 +62,14 @@ const Teamhero = () => {
         </div>
       </div>
 
-      {/* Responsive Styles */}
+      {/* Inline CSS Styles */}
       <style jsx="true">{`
         .hero-section.hero-3 {
-          padding: 100px 0 20px 0;
+          padding: 160px 0 40px 0; /* Section spacing */
+        }
+
+        .content-block {
+          margin-top: 40px;
         }
 
         .hero-content h1 {
@@ -76,6 +80,12 @@ const Teamhero = () => {
         .hero-content p {
           font-size: 1.05rem;
           color: #444;
+        }
+
+        @media (min-width: 992px) {
+          .content-block {
+            margin-top: 0; /* Remove top margin on larger screens */
+          }
         }
 
         @media (max-width: 768px) {
@@ -93,7 +103,7 @@ const Teamhero = () => {
           }
 
           .hero-section.hero-3 {
-            padding: 60px 0 20px;
+            padding: 100px 0 30px;
           }
         }
       `}</style>

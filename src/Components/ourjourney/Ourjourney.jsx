@@ -50,8 +50,7 @@ const OurJourney = () => {
                   Fresh Super Mall struggled with franchise lead generation. We
                   implemented targeted ads, SEO, CRM integration, and influencer
                   marketing. Results: 300% increase in inquiries, 50% better
-                  conversion rate, and enhanced brand visibility. Our strategy
-                  fueled their expansion.
+                  conversion rate, and enhanced brand visibility.
                 </p>
                 <a
                   href="https://corcusstudio.in/fresh-super-mall-boosting-franchise-leads-through-digital-marketing/"
@@ -72,9 +71,7 @@ const OurJourney = () => {
                   Paidavaar partnered with us a year ago to build its digital
                   presence. We designed the brand logo, developed content, and
                   introduced ‘Gayani Thai’ for farming insights, which became a
-                  major hit. Our efforts increased engagement, strengthened
-                  brand recognition, and established Paidavaar as a trusted name
-                  in agriculture.
+                  major hit.
                 </p>
                 <a
                   href="https://corcusstudio.in/paidavaar-a-year-of-transformative-digital-marketing/"
