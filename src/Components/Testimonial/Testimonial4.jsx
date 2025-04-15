@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
 
 const ClientFeedback = () => {
   const feedbacks = [
@@ -62,8 +61,8 @@ const ClientFeedback = () => {
             display: flex;
             flex-direction: column;
             width: 100%;
-            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-              rgba(17, 17, 26, 0.05) 0px 8px 32px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+                      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
           }
 
           .card-body {
@@ -106,9 +105,72 @@ const ClientFeedback = () => {
           }
 
           .card-text {
-            font-size: 0.6rem;
+            font-size: 1rem;
             line-height: 1.6;
             flex-grow: 1;
+          }
+          .testimonial-card {
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease,
+              background-color 0.3s ease, color 0.3s ease;
+            aspect-ratio: 1/1.2;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+              rgba(17, 17, 26, 0.05) 0px 8px 32px;
+            padding: 1.5rem;
+          }
+          .card-body {
+            padding: 1rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          .card-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: black;
+          }
+          .card-subtitle {
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            color: #666;
+          }
+          .card-text {
+            font-size: 0.7rem;
+            line-height: 1.4;
+            flex-grow: 1;
+            color: black;
+          }
+          .testimonial-card:hover .card-title,
+          .testimonial-card:hover .card-text {
+            color: white;
+          }
+          .card-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            flex-grow: 1;
+            margin-top: 1rem;
+          }
+          padding: 1.5rem;
+          }
+          @media (max-width: 768px) {
+            .card-text {
+              font-size: 0.95rem;
+              line-height: 1.5;
+            }
+            .card-title {
+              font-size: 1.2rem;
+            }
+            .card-subtitle {
+              font-size: 0.9rem;
+            }
+            .testimonial-card {
+              padding: 1.5rem;
+              aspect-ratio: 1/1.4;
+            }
           }
           .animate-up {
             opacity: 0;
@@ -149,6 +211,10 @@ const ClientFeedback = () => {
               opacity: 0.5;
             }
           }
+
+          .bg-white {
+            background-color: white !important;
+          }
         `}</style>
         <div className="reveal-text">
           <h1
@@ -159,7 +225,7 @@ const ClientFeedback = () => {
               fontWeight: 900,
             }}
           >
-            CLIENT 
+            CLIENT
           </h1>
           <h2
             className="display-3 font-weight-bold"
@@ -173,15 +239,14 @@ const ClientFeedback = () => {
       <div className="container">
         <Swiper
           modules={[Navigation, Autoplay]}
-          spaceBetween={50}
+          spaceBetween={30}
           slidesPerView={1}
           navigation
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
-            640: { slidesPerView: 1, spaceBetween: 30 },
-            768: { slidesPerView: 2, spaceBetween: 40 },
-            1024: { slidesPerView: 3, spaceBetween: 60 },
-            1200: { slidesPerView: 4, spaceBetween: 30 },
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 25 },
+            1024: { slidesPerView: 3, spaceBetween: 25 },
           }}
         >
           {feedbacks.map((feedback, index) => (
