@@ -117,7 +117,7 @@ const Footer2 = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/">
+                      <Link to="/contact">
                         <i className="bi bi-arrow-right"></i>
                         Join Us
                       </Link>
