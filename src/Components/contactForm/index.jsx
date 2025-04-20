@@ -111,31 +111,69 @@ const ContactForm = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-dark w-100 custom-btn">
-                Submit
-              </button>
+              <div className="mb-5">
+                <button type="submit" className="btn btn-dark w-100 custom-btn">
+                  Submit
+                </button>
+              </div>
             </form>
 
-            {/* Marquee */}
+            {/* Marquees */}
             <div
-              className="marquee-wrapper mt-4 position-relative"
-              style={{ height: "40px", overflow: "hidden" }}
+              className="marquees-container"
+              style={{ width: "100%", margin: "0", padding: "0" }}
             >
-              <Marquee
-                gradient={false}
-                speed={60}
-                className="marquee-text position-absolute top-0 start-0 w-100"
+              <div
+                className="marquee-wrapper mt-4 position-relative"
+                style={{
+                  height: "35px",
+                  overflow: "hidden",
+                  background: "#000000",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                  marginBottom: "15px",
+                  transform: "rotate(-4deg)",
+                  marginLeft: "-3%",
+                  width: "106%",
+                }}
               >
-                BOOK NOW &nbsp; BOOK NOW &nbsp; BOOK NOW &nbsp; BOOK NOW
-              </Marquee>
-              <Marquee
-                gradient={false}
-                speed={60}
-                direction="right"
-                className="marquee-text position-absolute top-0 start-0 w-100"
+                <Marquee
+                  gradient={true}
+                  gradientColor={[0, 0, 0]}
+                  gradientWidth={50}
+                  speed={40}
+                  direction="left"
+                  pauseOnHover={true}
+                  className="marquee-text-white"
+                >
+                  BOOK NOW • BOOK NOW • BOOK NOW • BOOK NOW • BOOK NOW
+                </Marquee>
+              </div>
+              <div
+                className="marquee-wrapper position-relative"
+                style={{
+                  height: "35px",
+                  overflow: "hidden",
+                  background: "#f8f9fa",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                  transform: "rotate(-2deg)",
+                  width: "106%",
+                  marginLeft: "-3%",
+                }}
               >
-                BOOK NOW &nbsp; BOOK NOW &nbsp; BOOK NOW &nbsp; BOOK NOW
-              </Marquee>
+                <Marquee
+                  gradient={true}
+                  gradientColor={[248, 249, 250]}
+                  gradientWidth={50}
+                  speed={40}
+                  direction="right"
+                  pauseOnHover={true}
+                  className="marquee-text-black"
+                >
+                  BOOK NOW • BOOK NOW • BOOK NOW • BOOK NOW • BOOK NOW
+                </Marquee>
+              </div>
             </div>
           </div>
         </div>
@@ -148,15 +186,26 @@ const ContactForm = () => {
             color: #000 !important;
           }
 
-          .marquee-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: #000;
+          .marquee-text-white {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
             white-space: nowrap;
+            padding: 8px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
           }
 
-          .contact-heading {
-            font-size: 36px;
+          .marquee-text-black {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            white-space: nowrap;
+            padding: 8px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
           }
 
           @media (max-width: 768px) {
@@ -166,6 +215,7 @@ const ContactForm = () => {
 
             .marquee-text {
               font-size: 16px;
+              padding: 12px 0;
             }
           }
         `}</style>
