@@ -50,8 +50,14 @@ const ContactInfo2 = () => {
         }
       );
 
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
       const resultText = await response.text();
-      if (resultText.includes("success")) {
+      console.log("Response:", resultText);
+
+      if (resultText.toLowerCase().includes("success")) {
         setSubmitStatus("success");
         setFormData({
           Name: "",
@@ -61,10 +67,11 @@ const ContactInfo2 = () => {
           Message: "",
         });
       } else {
+        console.error("Unexpected response:", resultText);
         setSubmitStatus("error");
       }
     } catch (error) {
-      console.error("Form submission failed", error);
+      console.error("Submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -73,70 +80,19 @@ const ContactInfo2 = () => {
 
   return (
     <div>
-      {/* Contact Info Section */}
-      <section className="contact-info-section fix section-padding">
-        <div className="container">
-          <div className="row g-4">
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-items text-center active">
-                <div className="icon">
-                  <i className="bi bi-geo-alt-fill"></i>
-                </div>
-                <div className="content">
-                  <h3>Our Address</h3>
-                  <p>
-                    Basmati Bhawan, Gola Rd, near Issyoga, Ramjaipal Nagar, Patna
-                    <br /> Bihar, 801503.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-items text-center">
-                <div className="icon">
-                  <i className="bi bi-envelope-fill"></i>
-                </div>
-                <div className="content">
-                  <h3>
-                    <a href="mailto:info@corcus.in">info@corcus.in</a>
-                  </h3>
-                  <p>Email us anytime for any kind <br /> of query.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-items text-center">
-                <div className="icon">
-                  <i className="bi bi-telephone-fill"></i>
-                </div>
-                <div className="content">
-                  <h3>
-                    Phone: <a href="tel:+08789677330">+08789677330</a>
-                  </h3>
-                  <p>Call us for any kind of support, we <br /> will be happy to help.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
       <section className="contact-section-33 fix section-padding pt-0">
         <div className="container">
           <div className="contact-wrapper-2">
             <div className="row g-4 align-items-center">
               <div className="col-lg-6">
                 <div className="map-items">
-                  <div className="googpemap">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.702167670409!2d85.05559967521958!3d25.618237114518706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed572a39ec32d7%3A0x5f24450d80959e86!2sCorcus%20Studio%20LLP!5e1!3m2!1sen!2sin!4v1743748006759!5m2!1sen!2sin"
-                      loading="lazy"
-                      style={{ border: 0, width: "100%", height: "400px" }}
-                      allowFullScreen=""
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.702167670409!2d85.05559967521958!3d25.618237114518706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed572a39ec32d7%3A0x5f24450d80959e86!2sCorcus%20Studio%20LLP!5e1!3m2!1sen!2sin!4v1743748006759!5m2!1sen!2sin"
+                    loading="lazy"
+                    style={{ width: "100%", height: "400px", border: "0" }}
+                    allowFullScreen
+                    title="Google Map"
+                  ></iframe>
                 </div>
               </div>
 
@@ -204,12 +160,13 @@ const ContactInfo2 = () => {
                           ></textarea>
                         </div>
                       </div>
-                      <div className="col-lg-7">
+
+                      <div className="col-lg-12">
                         <button type="submit" className="theme-btn" disabled={isSubmitting}>
-                          {isSubmitting ? "Sending..." : "Send Message"} <i className="bi bi-arrow-right"></i>
+                          {isSubmitting ? "Sending..." : "Send Message"}{" "}
+                          <i className="bi bi-arrow-right"></i>
                         </button>
-                      </div>
-                      <div className="col-12">
+
                         {isSubmitting && (
                           <p className="text-info mt-2">Sending your message...</p>
                         )}
@@ -217,7 +174,9 @@ const ContactInfo2 = () => {
                           <p className="text-success mt-2">Your message has been successfully sent!</p>
                         )}
                         {submitStatus === "error" && (
-                          <p className="text-danger mt-2">Please fill all fields correctly or try again later.</p>
+                          <p className="text-danger mt-2">
+                            Something went wrong. Please check all fields and try again.
+                          </p>
                         )}
                       </div>
                     </div>

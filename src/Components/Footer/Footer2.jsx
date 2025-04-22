@@ -158,7 +158,7 @@ const Footer2 = () => {
               </p>
               <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
                 <li>
-                  <a href="#">Terms & Condition</a>
+                  <Link to="/terms-and-conditions">Terms & Condition</Link>
                 </li>
                 <li>
                   <a href="">Privacy Policy</a>

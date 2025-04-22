@@ -14,6 +14,7 @@ import CaseStudyDetailsPage from "../Pages/CaseStudyDetailsPage";
 import BlogRightSidebar from "../Pages/BlogRightSidebar";
 import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
+import TermsAndConditions from "../Components/Terms&Conditions";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,14 @@ export const router = createBrowserRouter([
       {
         path: "/service",
         element: <ServicesPage></ServicesPage>,
+      },
+      {
+        path: "/terms-and-conditions",
+        element: <TermsAndConditions></TermsAndConditions>,
+      },
+      {
+        path: "/terms-and-conditions",
+        element: <TermsAndConditions></TermsAndConditions>,
       },
       // {
       //   path: "/service/service-details",

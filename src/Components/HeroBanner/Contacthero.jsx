@@ -1,109 +1,158 @@
-import { useEffect, useState } from "react";
-import loadBackgroudImages from "../Common/loadBackgroudImages";
-import parse from "html-react-parser";
+import { useState } from "react";
 
-const Serviceshero = () => {
-  useEffect(() => {
-    loadBackgroudImages();
-  }, []);
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [status, setStatus] = useState("");
 
-  const heroImages = [
-    "assets/img/Servicedetail/1.png",
-    "assets/img/Servicedetail/2.png",
-    "assets/img/Servicedetail/3.png",
-    "assets/img/Servicedetail/4.png",
-    "assets/img/Servicedetail/5.png",
-  ];
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-    return () => clearInterval(intervalId);
-  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
 
-  const heroContent = {
-    subtitle: "What We Offer",
-    title: "Strategic Digital Marketing Services That Deliver Results",
-    content:
-      "We offer a full suite of performance-driven digital marketing services designed to elevate your brand and drive real business growth. Whether you're looking to build brand awareness, generate quality leads, or boost your online sales — we've got you covered.",
+    // Simulate API call
+    setTimeout(() => {
+      setStatus("Thank you! We’ll be in touch shortly.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    }, 1500);
   };
 
   return (
-    <section className="hero-section hero-3 services-hero">
+    <section className="contact-section services-hero">
       <div className="container">
-        <div className="row align-items-center flex-column-reverse flex-lg-row">
-          {/* Text Content */}
-          <div className="col-lg-6 px-4">
-            <div className="hero-content">
-              <h6 className="wow fadeInUp">{heroContent.subtitle}</h6>
-              <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                {parse(heroContent.title)}
-              </h1>
-              <p className="wow fadeInUp" data-wow-delay=".5s">
-                {heroContent.content}
-              </p>
-            </div>
+        <div className="row justify-content-center text-center mb-5">
+          <div className="col-lg-8">
+            <h6 className="subtitle">Contact Us</h6>
+            <h1 style={{ marginBottom: "30px" }}>
+              Let’s Bring Your Vision to Life
+            </h1>
+            <p style={{ marginTop: "0", marginBottom: "0", color: "#444" }}>
+              Whether you have a question, want to start a project, or just say
+              hello — we’d love to hear from you. Drop us a message and our
+              team will get back to you as soon as possible.
+            </p>
           </div>
+        </div>
 
-          {/* Image Content */}
-          <div className="col-lg-6 px-4 mb-4 mb-lg-0">
-            <div
-              className="hero-image wow img-custom-anim-left"
-              data-wow-duration="1.5s"
-              data-wow-delay="0.3s"
-              style={{ textAlign: "center" }}
-            >
-              <img
-                src={heroImages[currentImageIndex]}
-                alt="Service Hero"
-                style={{ width: "100%", height: "auto" }}
+        <div className="row justify-content-center">
+          <div className="col-lg-6">
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name*"
+                required
               />
-            </div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email*"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number*"
+                required
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message*"
+                rows={4}
+                required
+              />
+              <button type="submit" className="theme-btn">
+                Send Message
+              </button>
+              {status && <p className="mt-3 text-info">{status}</p>}
+            </form>
           </div>
         </div>
       </div>
 
-      {/* Styles */}
       <style jsx="true">{`
         .services-hero {
-          padding: 100px 0 20px 0;
+          padding: 80px 0;
         }
 
-        .hero-content h1 {
+        .subtitle {
+          font-size: 1rem;
+          font-weight: 500;
+          color: #eeb200;
+          margin-bottom: 10px;
+        }
+
+        h1 {
           font-size: 2.5rem;
           font-weight: 700;
+          color: #000;
         }
 
-        .hero-content p {
-          font-size: 1.1rem;
-          color: #444;
+        input,
+        textarea {
+          width: 100%;
+          padding: 12px 15px;
+          margin-bottom: 15px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          font-size: 1rem;
+          outline: none;
+        }
+
+        .theme-btn {
+          background: #eeb200;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 25px;
+          color: #000;
+          font-weight: 500;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+
+        .theme-btn:hover {
+          background: #000;
+          color: #fff;
         }
 
         @media (max-width: 768px) {
-          .hero-content {
-            padding: 30px 15px 0 15px;
-            text-align: center;
-          }
-
-          .hero-content h1 {
+          h1 {
             font-size: 2rem;
           }
 
-          .hero-content p {
-            font-size: 1rem;
+          input,
+          textarea {
+            font-size: 0.95rem;
           }
 
-          .hero-image {
-            margin-bottom: 30px;
-          }
-
-          .services-hero {
-            padding: 60px 0 30px;
+          .theme-btn {
+            width: 100%;
+            font-size: 0.95rem;
           }
         }
       `}</style>
@@ -111,4 +160,4 @@ const Serviceshero = () => {
   );
 };
 
-export default Serviceshero;
+export default ContactUs;

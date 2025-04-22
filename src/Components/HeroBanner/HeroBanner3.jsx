@@ -14,11 +14,11 @@ const HeroBanner3 = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const heroImages = [
-    "/assets/img/hero/hero-image-1.png",
-    "/assets/img/hero/hero-image-2.png",
-    "/assets/img/hero/hero-image-3.png",
-    "/assets/img/hero/hero-image-4.png",
-    "/assets/img/hero/hero-image-5.png",
+    "/assets/img/hero/hero-image-1.jpg",
+    "/assets/img/hero/hero-image-2.jpg",
+    "/assets/img/hero/hero-image-3.jpg",
+    // "/assets/img/hero/hero-image-4.png",
+    // "/assets/img/hero/hero-image-5.png",
   ];
 
   useEffect(() => {

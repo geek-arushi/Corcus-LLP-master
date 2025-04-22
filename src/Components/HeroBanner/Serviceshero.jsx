@@ -11,10 +11,8 @@ const Serviceshero = () => {
 
   const heroImages = [
     "assets/img/Servicedetail/1.png",
-    "assets/img/Servicedetail/2.png",
-    "assets/img/Servicedetail/3.png",
-    "assets/img/Servicedetail/4.png",
-    "assets/img/Servicedetail/5.png",
+    "assets/img/Servicedetail/2.jpg",
+    "assets/img/Servicedetail/3.jpg",
   ];
 
   useEffect(() => {
@@ -44,14 +42,14 @@ const Serviceshero = () => {
               <h1
                 className="wow fadeInUp"
                 data-wow-delay=".3s"
-                style={{ marginBottom: "15px" }}
+                style={{ marginBottom: "30px" }} // 👈 Increased space between title and paragraph
               >
                 {parse(heroContent.title)}
               </h1>
               <p
                 className="wow fadeInUp"
                 data-wow-delay=".5s"
-                style={{ marginTop: "0" }}
+                style={{ marginTop: "0", marginBottom: "0" }}
               >
                 {heroContent.content}
               </p>
@@ -75,7 +73,7 @@ const Serviceshero = () => {
         </div>
       </div>
 
-      {/* Styling */}
+      {/* Optional Scoped Styles */}
       <style jsx="true">{`
         .services-hero {
           padding: 100px 0 20px 0;
@@ -98,7 +96,6 @@ const Serviceshero = () => {
         .hero-content p {
           font-size: 1.1rem;
           color: #444;
-          margin-top: 15px;
         }
 
         @media (max-width: 768px) {
