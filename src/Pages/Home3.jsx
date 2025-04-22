@@ -2,7 +2,7 @@ import Blog2 from "../Components/Blog/Blog2";
 import CaseStudy3 from "../Components/CaseStudy/CaseStudy3";
 import Counter2 from "../Components/Counter/Counter2";
 import HeroBanner3 from "../Components/HeroBanner/HeroBanner3";
-import Marquee2 from "../Components/Marquee/Marquee2";
+import Marquee2 from "../Components/Marquee/Marquee2";``
 import Marquee3 from "../Components/Marquee/Marquee3";
 import Services2 from "../Components/Services/Services2";
 import Team1 from "../Components/Team/Team1";
@@ -17,6 +17,7 @@ import Why from "../Components/Why/why";
 import Testimonial4 from "../Components/Testimonial/Testimonial4";
 import Letmake from "../Components/Let's make";
 import Servicesnew from "../Components/servicenew/Services";
+
 const Home3 = () => {
   return (
     <div>
