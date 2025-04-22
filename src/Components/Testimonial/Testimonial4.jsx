@@ -118,7 +118,7 @@ const ClientFeedback = () => {
           }
 
           .card-text {
-            font-size: 1rem;
+            font-size: 0.6rem;
             line-height: 1.6;
             flex-grow: 1;
           }
