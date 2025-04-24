@@ -14,7 +14,7 @@ import CaseStudyDetailsPage from "../Pages/CaseStudyDetailsPage";
 import BlogRightSidebar from "../Pages/BlogRightSidebar";
 import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
-import TermsAndConditions from "../Components/Terms and Condition";
+import TermsAndConditions from "../Pages/terms&conditions";
 
 
 export const router = createBrowserRouter([
