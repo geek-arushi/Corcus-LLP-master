@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ContactInfo2 = () => {
@@ -24,8 +24,14 @@ const ContactInfo2 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { Name, Email, Project, Phone, Message } = formData;
-    if (!Name || !Email || !Project || !Phone || !Message) {
+    // Validation
+    if (
+      !formData.Name ||
+      !formData.Email ||
+      !formData.Project ||
+      !formData.Phone ||
+      !formData.Message
+    ) {
       setSubmitStatus("error");
       return;
     }
@@ -40,7 +46,7 @@ const ContactInfo2 = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzIfJquR5PsjFKlMOX6oMK0EzpR3Gyv3CZxz_fP8TAD-BVxsMayxGZBh5HmCkuSicNP/exec",
+        "https://script.google.com/macros/s/AKfycby-qHRAwUw7ZyGNhgYf-I04eksNoULwqrIpGPeuIQUYQ2bYrxsYKaifMVornbZtfULo/exec",
         {
           method: "POST",
           headers: {
@@ -50,12 +56,8 @@ const ContactInfo2 = () => {
         }
       );
 
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
-      }
-
       const resultText = await response.text();
-      console.log("Response:", resultText);
+      console.log(resultText);
 
       if (resultText.toLowerCase().includes("success")) {
         setSubmitStatus("success");
@@ -66,12 +68,16 @@ const ContactInfo2 = () => {
           Phone: "",
           Message: "",
         });
+
+        // Optional: Facebook Pixel Event
+        if (typeof fbq !== "undefined") {
+          fbq("track", "Lead");
+        }
       } else {
-        console.error("Unexpected response:", resultText);
         setSubmitStatus("error");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Form submission failed:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -80,6 +86,53 @@ const ContactInfo2 = () => {
 
   return (
     <div>
+      <section className="contact-info-section fix section-padding">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-lg-4 col-md-6">
+              <div className="contact-info-items text-center active">
+                <div className="icon">
+                  <i className="bi bi-geo-alt-fill"></i>
+                </div>
+                <div className="content">
+                  <h3>Our Address</h3>
+                  <p>
+                    Basmati Bhawan, Gola Rd, near Issyoga, Ramjaipal Nagar, Patna
+                    <br /> Bihar, 801503
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="contact-info-items text-center">
+                <div className="icon">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="content">
+                  <h3>
+                    <a href="mailto:info@corcus.in">info@corcus.in</a>
+                  </h3>
+                  <p>Email us anytime for any kind of query.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="contact-info-items text-center">
+                <div className="icon">
+                  <i className="bi bi-telephone-fill"></i>
+                </div>
+                <div className="content">
+                  <h3>
+                    Phone: <a href="tel:+08789677330">+08789677330</a>
+                  </h3>
+                  <p>Call us for any kind of support, we will be happy to help.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="contact-section-33 fix section-padding pt-0">
         <div className="container">
           <div className="contact-wrapper-2">
@@ -88,9 +141,12 @@ const ContactInfo2 = () => {
                 <div className="map-items">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.702167670409!2d85.05559967521958!3d25.618237114518706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed572a39ec32d7%3A0x5f24450d80959e86!2sCorcus%20Studio%20LLP!5e1!3m2!1sen!2sin!4v1743748006759!5m2!1sen!2sin"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
                     loading="lazy"
-                    style={{ width: "100%", height: "400px", border: "0" }}
-                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
                     title="Google Map"
                   ></iframe>
                 </div>
@@ -99,7 +155,7 @@ const ContactInfo2 = () => {
               <div className="col-lg-6">
                 <div className="contact-content">
                   <h2>Ready to Get Started?</h2>
-                  <form id="contact-form" className="contact-form-items" onSubmit={handleSubmit}>
+                  <form className="contact-form-items" onSubmit={handleSubmit}>
                     <div className="row g-4">
                       <div className="col-lg-6">
                         <div className="form-clt">
@@ -160,30 +216,22 @@ const ContactInfo2 = () => {
                           ></textarea>
                         </div>
                       </div>
-
-                      <div className="col-lg-12">
+                      <div className="col-lg-7">
                         <button type="submit" className="theme-btn" disabled={isSubmitting}>
-                          {isSubmitting ? "Sending..." : "Send Message"}{" "}
-                          <i className="bi bi-arrow-right"></i>
+                          {isSubmitting ? "Sending..." : "Send Message"} <i className="bi bi-arrow-right"></i>
                         </button>
-
-                        {isSubmitting && (
-                          <p className="text-info mt-2">Sending your message...</p>
-                        )}
-                        {submitStatus === "success" && (
-                          <p className="text-success mt-2">Your message has been successfully sent!</p>
-                        )}
-                        {submitStatus === "error" && (
-                          <p className="text-danger mt-2">
-                            Something went wrong. Please check all fields and try again.
-                          </p>
-                        )}
                       </div>
                     </div>
                   </form>
+
+                  {submitStatus === "error" && (
+                    <p className="text-danger mt-3">Form submission failed. Please fill all fields.</p>
+                  )}
+                  {submitStatus === "success" && (
+                    <p className="text-success mt-3">Your message has been successfully sent!</p>
+                  )}
                 </div>
               </div>
-
             </div>
           </div>
         </div>

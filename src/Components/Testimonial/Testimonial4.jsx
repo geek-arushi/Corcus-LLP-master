@@ -118,8 +118,8 @@ const ClientFeedback = () => {
           }
 
           .card-text {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.6rem;
+            line-height: 1.4;
             flex-grow: 1;
           }
           .testimonial-card {
@@ -152,7 +152,7 @@ const ClientFeedback = () => {
             color: #666;
           }
           .card-text {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             line-height: 1.4;
             flex-grow: 1;
             color: black;
@@ -162,7 +162,7 @@ const ClientFeedback = () => {
             color: white;
           }
           .card-text {
-            font-size: 1rem;
+            font-size: 0.8rem;
             line-height: 1.8;
             flex-grow: 1;
             margin-top: 1rem;
@@ -171,8 +171,8 @@ const ClientFeedback = () => {
           }
           @media (max-width: 768px) {
             .card-text {
-              font-size: 0.95rem;
-              line-height: 1.5;
+              font-size: 0.85rem;
+              line-height: 1.7;
             }
             .card-title {
               font-size: 1.2rem;
