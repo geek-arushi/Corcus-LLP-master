@@ -3,9 +3,9 @@ import React from "react";
 const TermsAndCondition = () => {
   return (
     <div className="container mx-auto px-4 mt-20 pb-10">
-      <p className="text-sm text-gray-500 mb-8 text-center">
+      <h3 className="text-sm text-gray-500 mb-8 text-center">
         Last updated on Apr 22 2025
-      </p>
+      </h3>
 
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-2">Introduction</h2>
