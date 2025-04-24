@@ -15,6 +15,8 @@ import BlogRightSidebar from "../Pages/BlogRightSidebar";
 import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import TermsAndConditions from "../Pages/terms&conditions";
+import Privacypolicy from "../Pages/privacypolicy";
+
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: "/TermsAndConditions",
         element: <TermsAndConditions></TermsAndConditions>,
+      },
+      {
+        path: "/PrivacyPolicy",
+        element: <Privacypolicy></Privacypolicy>,
       },
       // {
       //   path: "/",

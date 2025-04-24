@@ -161,7 +161,7 @@ const Footer2 = () => {
                   <Link to="/TermsAndConditions">Terms & Condition</Link>
                 </li>
                 <li>
-                  <Link to="/TermsAndConditions">Privacy Policy</Link>
+                  <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 </li>
               </ul>
             </div>
