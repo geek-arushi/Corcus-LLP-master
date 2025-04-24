@@ -16,7 +16,6 @@ import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import TermsAndConditions from "../Pages/terms&conditions";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
