@@ -111,12 +111,6 @@ const Footer2 = () => {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="/blog">
-                        <i className="bi bi-arrow-right"></i>
-                        Our Blogs
-                      </Link>
-                    </li>
-                    <li>
                       <Link to="/contact">
                         <i className="bi bi-arrow-right"></i>
                         Join Us
