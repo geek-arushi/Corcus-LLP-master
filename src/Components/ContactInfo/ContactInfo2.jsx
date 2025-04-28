@@ -23,14 +23,20 @@ const ContactInfo2 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Simple validation: Check if all fields are filled
-    if (
-      !formData.Name ||
-      !formData.Email ||
-      !formData.Project ||
-      !formData.Phone ||
-      !formData.Message
-    ) {
+    // Enhanced validation
+    const requiredFields = ['Name', 'Email', 'Project', 'Phone', 'Message'];
+    const emptyFields = requiredFields.filter(field => !formData[field].trim());
+    
+    if (emptyFields.length > 0) {
+      alert('Please fill in all required fields');
+      setSubmitStatus("error");
+      return;
+    }
+
+    // Phone number validation
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(formData.Phone)) {
+      alert('Please enter a valid 10-digit phone number');
       setSubmitStatus("error");
       return;
     }
@@ -56,10 +62,10 @@ const ContactInfo2 = () => {
       );
 
       const resultText = await response.text();
-      console.log(resultText);
-
-      if (resultText.includes("success")) {
+      
+      if (response.ok) {
         setSubmitStatus("success");
+        alert('Form submitted successfully!');
         setFormData({
           Name: "",
           Email: "",
@@ -68,23 +74,37 @@ const ContactInfo2 = () => {
           Message: "",
         });
       } else {
-        setSubmitStatus("error");
+        throw new Error('Submission failed');
       }
     } catch (error) {
       console.error("Form submission failed", error);
+      alert('Form submission failed. Please try again.');
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
-  };
+};
 
   return (
     <div>
-      <section className="contact-info-section fix section-padding">
-        <div className="container">
+      <section className="contact-info-section fix section-padding" style={{
+        padding: '80px 0',
+        backgroundColor: '#f8f9fa'
+      }}>
+        <div className="container" style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 15px'
+        }}>
           <div className="row g-4">
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-              <div className="contact-info-items text-center active">
+              <div className="contact-info-items text-center active" style={{
+                padding: '40px 30px',
+                backgroundColor: '#fff',
+                borderRadius: '10px',
+                boxShadow: '0 0 20px rgba(0,0,0,0.1)',
+                height: '100%'
+              }}>
                 <div className="icon">
                   <i className="bi bi-geo-alt-fill"></i>
                 </div>
@@ -135,36 +155,70 @@ const ContactInfo2 = () => {
 
       <section className="contact-section-33 fix section-padding pt-0">
         <div className="container">
-          <div className="contact-wrapper-2">
+          <div className="contact-wrapper-2" style={{
+            backgroundColor: '#fff',
+            borderRadius: '15px',
+            padding: '40px',
+            boxShadow: '0 0 30px rgba(0,0,0,0.1)'
+          }}>
             <div className="row g-4 align-items-center">
               <div className="col-lg-6">
-                <div className="map-items">
-                  <div className="googpemap">
+                // In the map section, update the iframe styles:
+                <div className="map-items" style={{ height: '100%', minHeight: '500px' }}>
+                  <div className="googpemap" style={{ height: '100%' }}>
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.702167670409!2d85.05559967521958!3d25.618237114518706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed572a39ec32d7%3A0x5f24450d80959e86!2sCorcus%20Studio%20LLP!5e1!3m2!1sen!2sin!4v1743748006759!5m2!1sen!2sin"
                       loading="lazy"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        minHeight: '500px',
+                        border: 'none',
+                        borderRadius: '8px',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                      }}
                     ></iframe>
                   </div>
                 </div>
               </div>
               <div className="col-lg-6">
-                <div className="contact-content">
+                <div className="contact-content" style={{
+                  padding: '20px'
+                }}>
                   <h2>Ready to Get Started?</h2>
                   <form
                     id="contact-form"
                     className="contact-form-items"
                     onSubmit={handleSubmit}
+                    style={{
+                      width: '100%'
+                    }}
                   >
                     <div className="row g-4">
                       <div className="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div className="form-clt">
-                          <span>Your Name*</span>
+                        <div className="form-clt" style={{
+                          marginBottom: '20px'
+                        }}>
+                          <span style={{
+                            display: 'block',
+                            marginBottom: '8px',
+                            color: '#666',
+                            fontSize: '14px'
+                          }}>Your Name*</span>
                           <input
                             type="text"
                             name="Name"
                             value={formData.Name}
                             onChange={handleChange}
                             placeholder="Your Name"
+                            style={{
+                              width: '100%',
+                              padding: '12px 15px',
+                              border: '1px solid #ddd',
+                              borderRadius: '5px',
+                              fontSize: '16px',
+                              transition: 'border-color 0.3s ease'
+                            }}
                           />
                         </div>
                       </div>
@@ -216,17 +270,49 @@ const ContactInfo2 = () => {
                         </div>
                       </div>
                       <div className="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
-                        <button type="submit" className="theme-btn">
-                          Send Message <i className="bi bi-arrow-right"></i>
+                        <button 
+                          type="submit" 
+                          className="theme-btn"
+                          style={{
+                            backgroundColor: '#000000',
+                            color: '#fff',
+                            padding: '15px 30px',
+                            border: 'none',
+                            borderRadius: '5px',
+                            fontSize: '16px',
+                            cursor: 'pointer',
+                            transition: 'background-color 0.3s ease',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px'
+                          }}
+                          onMouseOver={(e) => {
+                            e.target.style.backgroundColor = '#fea000';
+                            e.target.querySelector('i').style.color = '#000000';
+                          }}
+                          onMouseOut={(e) => {
+                            e.target.style.backgroundColor = '#000000';
+                            e.target.querySelector('i').style.color = '#ffffff';
+                          }}
+                        >
+                          Send Message <i className="bi bi-arrow-right" style={{ color: '#000000' }}></i>
                         </button>
                       </div>
                     </div>
                   </form>
                   {submitStatus === "error" && (
-                    <p className="text-danger">Form submission failed. Please try again.</p>
+                    <p style={{
+                      color: '#dc3545',
+                      marginTop: '15px',
+                      fontSize: '14px'
+                    }}>Form submission failed. Please try again.</p>
                   )}
                   {submitStatus === "success" && (
-                    <p className="text-success">Your message has been successfully sent!</p>
+                    <p style={{
+                      color: '#28a745',
+                      marginTop: '15px',
+                      fontSize: '14px'
+                    }}>Your message has been successfully sent!</p>
                   )}
                 </div>
               </div>
