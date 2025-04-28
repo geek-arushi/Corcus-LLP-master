@@ -5,7 +5,7 @@ const ContactInfo2 = () => {
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
-    Project: "",
+    Projectname: "",
     Phone: "",
     Message: "",
   });
@@ -24,11 +24,11 @@ const ContactInfo2 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation
+    // Basic validation
     if (
       !formData.Name ||
       !formData.Email ||
-      !formData.Project ||
+      !formData.Projectname ||
       !formData.Phone ||
       !formData.Message
     ) {
@@ -46,7 +46,7 @@ const ContactInfo2 = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycby-qHRAwUw7ZyGNhgYf-I04eksNoULwqrIpGPeuIQUYQ2bYrxsYKaifMVornbZtfULo/exec",
+        "https://script.google.com/macros/s/AKfycbzTquOK4AbTudTkMTpCXpiRsv0ITbRkVQPSJXWXdmRDnALf4eredYt2fJp2nBYTPsinEw/exec", // 👈 Replace this with your deployed Web App URL
         {
           method: "POST",
           headers: {
@@ -59,17 +59,16 @@ const ContactInfo2 = () => {
       const resultText = await response.text();
       console.log(resultText);
 
-      if (resultText.toLowerCase().includes("success")) {
+      if (resultText.toLowerCase().includes("successfully sent")) {
         setSubmitStatus("success");
         setFormData({
           Name: "",
           Email: "",
-          Project: "",
+          Projectname: "",
           Phone: "",
           Message: "",
         });
 
-        // Optional: Facebook Pixel Event
         if (typeof fbq !== "undefined") {
           fbq("track", "Lead");
         }
@@ -86,9 +85,11 @@ const ContactInfo2 = () => {
 
   return (
     <div>
+      {/* Contact Info Section */}
       <section className="contact-info-section fix section-padding">
         <div className="container">
           <div className="row g-4">
+            {/* Address */}
             <div className="col-lg-4 col-md-6">
               <div className="contact-info-items text-center active">
                 <div className="icon">
@@ -96,35 +97,30 @@ const ContactInfo2 = () => {
                 </div>
                 <div className="content">
                   <h3>Our Address</h3>
-                  <p>
-                    Basmati Bhawan, Gola Rd, near Issyoga, Ramjaipal Nagar, Patna
-                    <br /> Bihar, 801503
-                  </p>
+                  <p>Basmati Bhawan, Gola Rd, near Issyoga, Ramjaipal Nagar, Patna<br />Bihar, 801503</p>
                 </div>
               </div>
             </div>
+            {/* Email */}
             <div className="col-lg-4 col-md-6">
               <div className="contact-info-items text-center">
                 <div className="icon">
                   <i className="bi bi-envelope-fill"></i>
                 </div>
                 <div className="content">
-                  <h3>
-                    <a href="mailto:info@corcus.in">info@corcus.in</a>
-                  </h3>
+                  <h3><a href="mailto:info@corcus.in">info@corcus.in</a></h3>
                   <p>Email us anytime for any kind of query.</p>
                 </div>
               </div>
             </div>
+            {/* Phone */}
             <div className="col-lg-4 col-md-6">
               <div className="contact-info-items text-center">
                 <div className="icon">
                   <i className="bi bi-telephone-fill"></i>
                 </div>
                 <div className="content">
-                  <h3>
-                    Phone: <a href="tel:+08789677330">+08789677330</a>
-                  </h3>
+                  <h3>Phone: <a href="tel:+08789677330">+08789677330</a></h3>
                   <p>Call us for any kind of support, we will be happy to help.</p>
                 </div>
               </div>
@@ -133,6 +129,7 @@ const ContactInfo2 = () => {
         </div>
       </section>
 
+      {/* Contact Form Section */}
       <section className="contact-section-33 fix section-padding pt-0">
         <div className="container">
           <div className="contact-wrapper-2">
@@ -157,6 +154,7 @@ const ContactInfo2 = () => {
                   <h2>Ready to Get Started?</h2>
                   <form className="contact-form-items" onSubmit={handleSubmit}>
                     <div className="row g-4">
+                      {/* Name */}
                       <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Your Name*</span>
@@ -169,6 +167,7 @@ const ContactInfo2 = () => {
                           />
                         </div>
                       </div>
+                      {/* Email */}
                       <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Your Email*</span>
@@ -181,18 +180,20 @@ const ContactInfo2 = () => {
                           />
                         </div>
                       </div>
+                      {/* Project Name */}
                       <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Project Name*</span>
                           <input
                             type="text"
-                            name="Project"
-                            value={formData.Project}
+                            name="Projectname"
+                            value={formData.Projectname}
                             onChange={handleChange}
                             placeholder="Project Name"
                           />
                         </div>
                       </div>
+                      {/* Phone */}
                       <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Mobile Number*</span>
@@ -205,6 +206,7 @@ const ContactInfo2 = () => {
                           />
                         </div>
                       </div>
+                      {/* Message */}
                       <div className="col-lg-12">
                         <div className="form-clt">
                           <span>Write Message*</span>
@@ -216,6 +218,7 @@ const ContactInfo2 = () => {
                           ></textarea>
                         </div>
                       </div>
+                      {/* Submit */}
                       <div className="col-lg-7">
                         <button type="submit" className="theme-btn" disabled={isSubmitting}>
                           {isSubmitting ? "Sending..." : "Send Message"} <i className="bi bi-arrow-right"></i>
@@ -224,14 +227,16 @@ const ContactInfo2 = () => {
                     </div>
                   </form>
 
+                  {/* Success/Error Message */}
                   {submitStatus === "error" && (
-                    <p className="text-danger mt-3">Form submission failed. Please fill all fields.</p>
+                    <p className="text-danger mt-3">Form submission failed. Please fill all fields or try again!</p>
                   )}
                   {submitStatus === "success" && (
                     <p className="text-success mt-3">Your message has been successfully sent!</p>
                   )}
                 </div>
               </div>
+
             </div>
           </div>
         </div>

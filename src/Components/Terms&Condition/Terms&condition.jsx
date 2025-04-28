@@ -22,7 +22,7 @@ const TermsAndCondition = () => {
 
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-2">Acceptance of Terms</h2>
-        <p>
+        <p> 
           Your use of the website and/or purchases from us are governed by the
           following Terms and Conditions:
         </p>
