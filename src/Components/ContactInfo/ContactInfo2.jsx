@@ -23,7 +23,6 @@ const ContactInfo2 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation
     if (
       !formData.Name ||
       !formData.Email ||
@@ -58,7 +57,6 @@ const ContactInfo2 = () => {
       const resultText = await response.text();
       console.log(resultText);
 
-      if (resultText.toLowerCase().includes("success")) {
         setSubmitStatus("success");
         alert('Form submitted successfully!');
         setFormData({
@@ -69,7 +67,6 @@ const ContactInfo2 = () => {
           Message: "",
         });
 
-        // Optional: Facebook Pixel Event
         if (typeof fbq !== "undefined") {
           fbq("track", "Lead");
         }
@@ -248,9 +245,6 @@ const ContactInfo2 = () => {
                         <button type="submit" className="theme-btn" disabled={isSubmitting}>
                           {isSubmitting ? "Sending..." : "Send Message"} <i className="bi bi-arrow-right"></i>
                         </button>
-                      </div>
-                    </div>
-                  </form>
 
                   {submitStatus === "error" && (
                     <p className="text-danger mt-3">Form submission failed. Please fill all fields.</p>
