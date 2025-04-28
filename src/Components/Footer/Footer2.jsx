@@ -111,12 +111,6 @@ const Footer2 = () => {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="/blog">
-                        <i className="bi bi-arrow-right"></i>
-                        Our Blogs
-                      </Link>
-                    </li>
-                    <li>
                       <Link to="/contact">
                         <i className="bi bi-arrow-right"></i>
                         Join Us
@@ -158,10 +152,10 @@ const Footer2 = () => {
               </p>
               <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
                 <li>
-                  <Link to="/terms-and-conditions">Terms & Condition</Link>
+                  <Link to="/TermsAndConditions">Terms & Condition</Link>
                 </li>
                 <li>
-                  <a href="">Privacy Policy</a>
+                  <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 </li>
               </ul>
             </div>

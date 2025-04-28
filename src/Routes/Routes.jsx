@@ -14,7 +14,9 @@ import CaseStudyDetailsPage from "../Pages/CaseStudyDetailsPage";
 import BlogRightSidebar from "../Pages/BlogRightSidebar";
 import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
-import TermsAndConditions from "../Components/Terms&Conditions";
+import TermsAndConditions from "../Pages/terms&conditions";
+import Privacypolicy from "../Pages/privacypolicy";
+
 
 export const router = createBrowserRouter([
   {
@@ -55,13 +57,17 @@ export const router = createBrowserRouter([
         element: <ServicesPage></ServicesPage>,
       },
       {
-        path: "/terms-and-conditions",
+        path: "/TermsAndConditions",
         element: <TermsAndConditions></TermsAndConditions>,
       },
       {
-        path: "/terms-and-conditions",
-        element: <TermsAndConditions></TermsAndConditions>,
+        path: "/PrivacyPolicy",
+        element: <Privacypolicy></Privacypolicy>,
       },
+      // {
+      //   path: "/",
+      //   element: <TermsConditions></TermsConditions>,
+      // },
       // {
       //   path: "/service/service-details",
       //   element: <ServiceDetailsPage></ServiceDetailsPage>,

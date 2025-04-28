@@ -5,7 +5,7 @@ const ContactInfo2 = () => {
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
-    Project: "",
+    Projectname: "",
     Phone: "",
     Message: "",
   });
@@ -22,21 +22,15 @@ const ContactInfo2 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Enhanced validation
-    const requiredFields = ['Name', 'Email', 'Project', 'Phone', 'Message'];
-    const emptyFields = requiredFields.filter(field => !formData[field].trim());
-    
-    if (emptyFields.length > 0) {
-      alert('Please fill in all required fields');
-      setSubmitStatus("error");
-      return;
-    }
 
-    // Phone number validation
-    const phoneRegex = /^\d{10}$/;
-    if (!phoneRegex.test(formData.Phone)) {
-      alert('Please enter a valid 10-digit phone number');
+    // Validation
+    if (
+      !formData.Name ||
+      !formData.Email ||
+      !formData.Project ||
+      !formData.Phone ||
+      !formData.Message
+    ) {
       setSubmitStatus("error");
       return;
     }
@@ -51,7 +45,7 @@ const ContactInfo2 = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycby-qHRAwUw7ZyGNhgYf-I04eksNoULwqrIpGPeuIQUYQ2bYrxsYKaifMVornbZtfULo/exec",
+        "https://script.google.com/macros/s/AKfycbzTquOK4AbTudTkMTpCXpiRsv0ITbRkVQPSJXWXdmRDnALf4eredYt2fJp2nBYTPsinEw/exec", // 👈 Replace this with your deployed Web App URL
         {
           method: "POST",
           headers: {
@@ -62,17 +56,23 @@ const ContactInfo2 = () => {
       );
 
       const resultText = await response.text();
-      
-      if (response.ok) {
+      console.log(resultText);
+
+      if (resultText.toLowerCase().includes("success")) {
         setSubmitStatus("success");
         alert('Form submitted successfully!');
         setFormData({
           Name: "",
           Email: "",
-          Project: "",
+          Projectname: "",
           Phone: "",
           Message: "",
         });
+
+        // Optional: Facebook Pixel Event
+        if (typeof fbq !== "undefined") {
+          fbq("track", "Lead");
+        }
       } else {
         throw new Error('Submission failed');
       }
@@ -87,24 +87,11 @@ const ContactInfo2 = () => {
 
   return (
     <div>
-      <section className="contact-info-section fix section-padding" style={{
-        padding: '80px 0',
-        backgroundColor: '#f8f9fa'
-      }}>
-        <div className="container" style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 15px'
-        }}>
+      <section className="contact-info-section fix section-padding">
+        <div className="container">
           <div className="row g-4">
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-              <div className="contact-info-items text-center active" style={{
-                padding: '40px 30px',
-                backgroundColor: '#fff',
-                borderRadius: '10px',
-                boxShadow: '0 0 20px rgba(0,0,0,0.1)',
-                height: '100%'
-              }}>
+            <div className="col-lg-4 col-md-6">
+              <div className="contact-info-items text-center active">
                 <div className="icon">
                   <i className="bi bi-geo-alt-fill"></i>
                 </div>
@@ -112,40 +99,34 @@ const ContactInfo2 = () => {
                   <h3>Our Address</h3>
                   <p>
                     Basmati Bhawan, Gola Rd, near Issyoga, Ramjaipal Nagar, Patna
-                    <br /> Bihar,801503.
+                    <br /> Bihar, 801503
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+            <div className="col-lg-4 col-md-6">
               <div className="contact-info-items text-center">
                 <div className="icon">
                   <i className="bi bi-envelope-fill"></i>
                 </div>
                 <div className="content">
                   <h3>
-                    <a href="mailto:info@example.com">info@corcus.in</a>
+                    <a href="mailto:info@corcus.in">info@corcus.in</a>
                   </h3>
-                  <p>
-                    Email us anytime for any kind <br />
-                    of query.
-                  </p>
+                  <p>Email us anytime for any kind of query.</p>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+            <div className="col-lg-4 col-md-6">
               <div className="contact-info-items text-center">
                 <div className="icon">
                   <i className="bi bi-telephone-fill"></i>
                 </div>
                 <div className="content">
                   <h3>
-                    Phone: <a href="tel:+2086660112">+08789677330</a>
+                    Phone: <a href="tel:+08789677330">+08789677330</a>
                   </h3>
-                  <p>
-                    Call us for any kind of support, we <br />
-                    will be happy to help.
-                  </p>
+                  <p>Call us for any kind of support, we will be happy to help.</p>
                 </div>
               </div>
             </div>
@@ -153,6 +134,7 @@ const ContactInfo2 = () => {
         </div>
       </section>
 
+      {/* Contact Form Section */}
       <section className="contact-section-33 fix section-padding pt-0">
         <div className="container">
           <div className="contact-wrapper-2" style={{
@@ -195,16 +177,9 @@ const ContactInfo2 = () => {
                     }}
                   >
                     <div className="row g-4">
-                      <div className="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div className="form-clt" style={{
-                          marginBottom: '20px'
-                        }}>
-                          <span style={{
-                            display: 'block',
-                            marginBottom: '8px',
-                            color: '#666',
-                            fontSize: '14px'
-                          }}>Your Name*</span>
+                      <div className="col-lg-6">
+                        <div className="form-clt">
+                          <span>Your Name*</span>
                           <input
                             type="text"
                             name="Name"
@@ -222,7 +197,7 @@ const ContactInfo2 = () => {
                           />
                         </div>
                       </div>
-                      <div className="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                      <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Your Email*</span>
                           <input
@@ -234,19 +209,19 @@ const ContactInfo2 = () => {
                           />
                         </div>
                       </div>
-                      <div className="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                      <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Project Name*</span>
                           <input
                             type="text"
-                            name="Project"
-                            value={formData.Project}
+                            name="Projectname"
+                            value={formData.Projectname}
                             onChange={handleChange}
                             placeholder="Project Name"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-6 wow fadeInUp" data-wow-delay=".6s">
+                      <div className="col-lg-6">
                         <div className="form-clt">
                           <span>Mobile Number*</span>
                           <input
@@ -258,7 +233,7 @@ const ContactInfo2 = () => {
                           />
                         </div>
                       </div>
-                      <div className="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
+                      <div className="col-lg-12">
                         <div className="form-clt">
                           <span>Write Message*</span>
                           <textarea
@@ -269,43 +244,16 @@ const ContactInfo2 = () => {
                           ></textarea>
                         </div>
                       </div>
-                      <div className="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
-                        <button 
-                          type="submit" 
-                          className="theme-btn"
-                          style={{
-                            backgroundColor: '#000000',
-                            color: '#fff',
-                            padding: '15px 30px',
-                            border: 'none',
-                            borderRadius: '5px',
-                            fontSize: '16px',
-                            cursor: 'pointer',
-                            transition: 'background-color 0.3s ease',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px'
-                          }}
-                          onMouseOver={(e) => {
-                            e.target.style.backgroundColor = '#fea000';
-                            e.target.querySelector('i').style.color = '#000000';
-                          }}
-                          onMouseOut={(e) => {
-                            e.target.style.backgroundColor = '#000000';
-                            e.target.querySelector('i').style.color = '#ffffff';
-                          }}
-                        >
-                          Send Message <i className="bi bi-arrow-right" style={{ color: '#000000' }}></i>
+                      <div className="col-lg-7">
+                        <button type="submit" className="theme-btn" disabled={isSubmitting}>
+                          {isSubmitting ? "Sending..." : "Send Message"} <i className="bi bi-arrow-right"></i>
                         </button>
                       </div>
                     </div>
                   </form>
+
                   {submitStatus === "error" && (
-                    <p style={{
-                      color: '#dc3545',
-                      marginTop: '15px',
-                      fontSize: '14px'
-                    }}>Form submission failed. Please try again.</p>
+                    <p className="text-danger mt-3">Form submission failed. Please fill all fields.</p>
                   )}
                   {submitStatus === "success" && (
                     <p style={{
@@ -316,6 +264,7 @@ const ContactInfo2 = () => {
                   )}
                 </div>
               </div>
+
             </div>
           </div>
         </div>
