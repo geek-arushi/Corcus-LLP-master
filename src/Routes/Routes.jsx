@@ -16,7 +16,7 @@ import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import TermsAndConditions from "../Pages/terms&conditions";
 import Privacypolicy from "../Pages/privacypolicy";
-import Refund from "../Pages/refund";
+import Refund from "../Pages/Refund";
 
 
 export const router = createBrowserRouter([
