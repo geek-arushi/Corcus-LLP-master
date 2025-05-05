@@ -16,7 +16,7 @@ import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import TermsAndConditions from "../Pages/terms&conditions";
 import Privacypolicy from "../Pages/privacypolicy";
-import RefundPolicy from "../Components/Refund";
+import Refund from "../Pages/refund";
 
 
 export const router = createBrowserRouter([
@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/RefundPolicy",
-        element: <RefundPolicy></RefundPolicy>,
+        element: <Refund></Refund>,
       },
       // {
       //   path: "/",
