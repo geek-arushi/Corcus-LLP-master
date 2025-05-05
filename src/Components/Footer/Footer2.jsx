@@ -117,6 +117,14 @@ const Footer2 = () => {
                       </Link>
                     </li>
                   </ul>
+                  <ul className="list-area">
+                    <li>
+                      <Link to="/InternPage">
+                        <i className="bi bi-arrow-right"></i>
+                        Internshiip
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div
