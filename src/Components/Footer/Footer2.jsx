@@ -116,12 +116,6 @@ const Footer2 = () => {
                         Join Us
                       </Link>
                     </li>
-                    <li>
-                      <Link to="/RefundPolicy">
-                        <i className="bi bi-arrow-right"></i>
-                        RefundPolicy
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -157,6 +151,9 @@ const Footer2 = () => {
                 © All Copyright 2025 by Corcus
               </p>
               <ul className="footer-menu wow fadeInRight" data-wow-delay=".5s">
+                <li>
+                  <Link to="/RefundPolicy">Refund Policy</Link>
+                </li>
                 <li>
                   <Link to="/TermsAndConditions">Terms & Condition</Link>
                 </li>
