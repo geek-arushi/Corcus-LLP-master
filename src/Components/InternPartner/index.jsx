@@ -2,32 +2,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const InternP = () => {
   const logos = [
-    "01.png",
-    "02.png",
-    "03.png",
-    "04.png",
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png",
+    "6.png",
+    "7.png",
+    "8.png",
+    "9.png",
   ];
 
   // Duplicate logos to create seamless loop
   const loopedLogos = [...logos, ...logos];
 
   return (
-    <div className="bg-white py-5 text-center">
-      <h4 className="text-dark mb-4">Our Internship Partners</h4>
-      <div className="logo-container overflow-hidden">
+    <div className="bg-black py-5 text-center">
+      <h4 className="text-white mb-4"></h4>
+      <div className="overflow-hidden">
         <div className="marquee">
           {loopedLogos.map((logo, index) => (
             <div className="logo-item" key={index}>
               <img
-                src={`/assets/img/Intern/${logo}`}
+                src={`/assets/img/powered/${logo}`}
                 alt={`Logo ${index + 1}`}
                 className="img-fluid"
-                loading="lazy"
-                style={{ height: "50px" }}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "/assets/img/Intern/placeholder.png"; // fallback image if needed
-                }}
               />
             </div>
           ))}
@@ -46,7 +45,10 @@ const InternP = () => {
           padding: 0 25px;
           display: flex;
           align-items: center;
-          justify-content: center;
+        }
+
+        .marquee img {
+          max-height: 50px;
         }
 
         @keyframes scroll {
