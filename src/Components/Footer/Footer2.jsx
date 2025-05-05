@@ -116,6 +116,12 @@ const Footer2 = () => {
                         Join Us
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/RefundPolicy">
+                        <i className="bi bi-arrow-right"></i>
+                        RefundPolicy
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
