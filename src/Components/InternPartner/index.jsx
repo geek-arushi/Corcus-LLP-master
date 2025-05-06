@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const InternPartner = () => {
   // Partner logos array
   const partnerLogos = [
-    "/assets/img/partners/shopify.png",
-    "/assets/img/partners/nodejs.png",
-    "/assets/img/partners/react.png",
-    "/assets/img/partners/wordpress.png",
+    "/public/assets/img/Inetrn/1.png",
+    "/public/assets/img/Inetrn/2.png",
+    "/public/assets/img/Inetrn/3.png",
+    "/public/assets/img/Inetrn/4.png",
     // Add more logos as needed
   ];
 
