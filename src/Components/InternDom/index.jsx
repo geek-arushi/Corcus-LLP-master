@@ -141,13 +141,31 @@ const InternshipDomains = () => {
   };
 
   return (
-    <div className="container my-5">
-      <h2 style={sectionTitleStyle}>
-        <span style={highlightStyle}>Internship Domains</span>
-      </h2>
-      <p className="text-muted mb-4">
-        At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:
-      </p>
+    <div className="container py-5">
+      {/* Title Section */}
+      <div
+      className="container py-4"
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+    >
+      <div className="d-flex flex-column flex-sm-row align-items-center mb-4 gap-3">
+        <h1
+          className="highlight-bg mb-0"
+          style={{
+            fontSize: "1.125rem",
+            fontWeight: "400",
+            backgroundColor: "#FFB800",
+            borderRadius: "0.25rem",
+            padding: "0.15rem 0.5rem",
+            display: "inline-block",
+          }}
+        >
+          Internship Domains
+        </h1>
+        <p className="mb-0" style={{ fontSize: "0.75rem", maxWidth: "600px" }}>
+          At our digital marketing agency, we offer a range of services to help
+          businesses grow and succeed online. These services include:
+        </p>
+      </div>
 
       <div className="row g-4">
         {domains.map((item, index) => (
@@ -175,6 +193,7 @@ const InternshipDomains = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
