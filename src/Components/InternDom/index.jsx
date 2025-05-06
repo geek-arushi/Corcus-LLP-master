@@ -43,6 +43,26 @@ const InternshipDomains = () => {
       textColor: '#000',
       link: '/internships/shopify-ecommerce', // Add your link here
     },
+    {
+      title: 'INTERMEDIATE',
+      subtitle: 'WEB DEVELOPER',
+      image: '/Inetrn/01.png', // Add your image path here
+      bgColor: '#ffc107',
+      tagBg: '#000',
+      textColor: '#000',
+      tagTextColor: '#fff',
+      link: '/internships/intermediate-web-developer', // Add your link here
+    },
+    {
+      title: 'WORDPRESS',
+      subtitle: 'DEVELOPER',
+      image: '/images/wordpress-dev.jpg', // Add your image path here
+      bgColor: '#000',
+      tagBg: '#fff',
+      textColor: '#fff',
+      tagTextColor: '#000',
+      link: '/internships/wordpress-developer', // Add your link here
+    },
   ];
 
   const sectionTitleStyle = {
