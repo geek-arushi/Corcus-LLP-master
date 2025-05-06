@@ -1,56 +1,76 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const InternP = () => {
-  const logos = [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png",
-    "6.png",
-    "7.png",
-    "8.png",
-    "9.png",
+const InternPartner = () => {
+  // Partner logos array
+  const partnerLogos = [
+    "/assets/img/partners/shopify.png",
+    "/assets/img/partners/nodejs.png",
+    "/assets/img/partners/react.png",
+    "/assets/img/partners/wordpress.png",
+    // Add more logos as needed
   ];
 
   // Duplicate logos to create seamless loop
-  const loopedLogos = [...logos, ...logos];
+  const loopedLogos = [...partnerLogos, ...partnerLogos];
 
   return (
-    <div className="bg-black py-5 text-center">
-      <h4 className="text-white mb-4"></h4>
-      <div className="overflow-hidden">
-        <div className="marquee">
-          {loopedLogos.map((logo, index) => (
-            <div className="logo-item" key={index}>
-              <img
-                src={`/assets/img/powered/${logo}`}
-                alt={`Logo ${index + 1}`}
-                className="img-fluid"
-              />
+    <section className="partner-section py-5">
+      <div className="container">
+        <div className="row mb-4">
+          <div className="col-12 text-center">
+            <div className="partner-header">
+              <h2 className="section-title fw-bold mb-1"></h2>
+              <p className="text-secondary">
+               
+              </p>
             </div>
-          ))}
+          </div>
+        </div>
+
+        <div className="overflow-hidden">
+          <div className="marquee">
+            {loopedLogos.map((logo, index) => (
+              <div className="logo-item" key={index}>
+                <img
+                  src={logo}
+                  alt={`Partner logo ${index + 1}`}
+                  className="img-fluid"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <style>{`
+      <style jsx="true">{`
+        .partner-section {
+          background-color: #ffffff;
+          padding: 3rem 0;
+        }
+        .partner-header {
+          margin-bottom: 2rem;
+        }
         .marquee {
           display: flex;
           animation: scroll 25s linear infinite;
           width: max-content;
         }
-
         .logo-item {
           flex: 0 0 auto;
           padding: 0 25px;
           display: flex;
           align-items: center;
         }
-
         .marquee img {
-          max-height: 50px;
+          max-height: 60px;
+          filter: grayscale(0.5);
+          transition: filter 0.3s ease, transform 0.3s ease;
         }
-
+        .marquee img:hover {
+          filter: grayscale(0);
+          transform: scale(1.1);
+        }
         @keyframes scroll {
           0% {
             transform: translateX(0%);
@@ -59,15 +79,14 @@ const InternP = () => {
             transform: translateX(-50%);
           }
         }
-
         @media (max-width: 768px) {
           .marquee {
             animation-duration: 40s;
           }
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 
-export default InternP;
+export default InternPartner;
