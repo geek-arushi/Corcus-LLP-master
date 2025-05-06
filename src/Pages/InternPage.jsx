@@ -6,6 +6,7 @@ import InternWhy from "../Components/InternWhy";
 import WorkingProcess from "../Components/Internworking";
 import MentorTeamBootstrap from "../Components/Internmentors";
 import BenefitsSection from "../Components/Benifits";
+import MakeThings from "../Components/Make things";
 
 
 const Intern = () => {
@@ -14,6 +15,7 @@ const Intern = () => {
         <Internhero></Internhero>
         <InternP></InternP>
         <InternshipDomains></InternshipDomains>
+        < MakeThings></MakeThings>
         {/* <CallToAction></CallToAction> */}
         <InternWhy></InternWhy>
         {/* <WorkingProcess></WorkingProcess> */}
