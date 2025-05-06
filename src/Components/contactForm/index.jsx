@@ -119,7 +119,7 @@ const ContactForm = () => {
             </form>
 
             {/* Marquees */}
-            <div
+            {/* <div
               className="marquees-container"
               style={{ width: "100%", margin: "0", padding: "0" }}
             >
@@ -176,7 +176,7 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Custom Styles */}
         <style jsx="true">{`
@@ -220,6 +220,8 @@ const ContactForm = () => {
           }
         `}</style>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

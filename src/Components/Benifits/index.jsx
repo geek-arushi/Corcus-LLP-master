@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const BenefitsSection = () => {
+const BenefitsSectionStyled = () => {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    document.body.style.fontFamily = "'Poppins', sans-serif";
+    return () => {
+      document.body.style.fontFamily = "";
+    };
+  }, []);
+
   const benefitsData = [
     {
       icon: "bi bi-person-gear",
@@ -32,7 +44,7 @@ const BenefitsSection = () => {
       icon: "bi bi-briefcase",
       bgColor: "#FFF0EB",
       borderColor: "#FF5733",
-      title: "Tailored Learning Experience",
+      title: "Practical Industry Training",
       description:
         "Invest in your future with practical skills that enhance your career prospects, making you competitive and opening doors to new opportunities.",
     },
@@ -60,19 +72,43 @@ const BenefitsSection = () => {
     .benefit-card:hover {
       transform: translateY(-5px);
     }
+    .stroke-heading {
+      font-size: 4rem;
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 2px #000;
+      display: inline-block;
+      line-height: 1;
+    }
+    .benefit-description {
+      font-size: 0.875rem;
+      color: #6c757d;
+      line-height: 1.6;
+    }
+    .poppins-font {
+      font-family: 'Poppins', sans-serif;
+    }
+    @media (max-width: 768px) {
+      .heading-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+    }
   `;
 
   return (
-    <section className="benefits-section py-5">
+    <section className="benefits-section py-5 poppins-font">
       <style jsx="true">{styles}</style>
       <div className="container">
-        <div className="mb-5">
-          <h2 className="fw-bold mb-2">Benefits</h2>
-          <p className="text-secondary">
+        {/* Stroke Heading & Paragraph Row */}
+        <div className="d-flex justify-content-between align-items-center mb-5 heading-row flex-md-row flex-column gap-3">
+          <h2 className="stroke-heading m-0">Benefits & Working Process</h2>
+          <p className="benefit-description m-0" style={{ maxWidth: "700px" }}>
             Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services
           </p>
         </div>
 
+        {/* Benefit Cards */}
         <div className="d-flex flex-column gap-4">
           {benefitsData.map((benefit, index) => (
             <div
@@ -100,4 +136,4 @@ const BenefitsSection = () => {
   );
 };
 
-export default BenefitsSection;
+export default BenefitsSectionStyled;

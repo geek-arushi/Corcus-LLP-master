@@ -1,6 +1,5 @@
 import Internhero from "../Components/HeroBanner/Internhero";
 import InternP from "../Components/InternPartner";
-import InternshipDomains from "../Components/InternDom";
 import CallToAction from "../Components/Internform";
 import InternWhy from "../Components/InternWhy";
 import WorkingProcess from "../Components/Internworking";
@@ -8,6 +7,7 @@ import MentorTeamBootstrap from "../Components/Internmentors";
 import BenefitsSection from "../Components/Benifits";
 import MakeThings from "../Components/Make things";
 import ContactForm from "../Components/contactForm";
+import Servicesnew from "../Components/servicenew/Services";
 
 
 const Intern = () => {
@@ -15,7 +15,7 @@ const Intern = () => {
       <div>
         <Internhero></Internhero>
         <InternP></InternP>
-        <InternshipDomains></InternshipDomains>
+        <Servicesnew></Servicesnew>
         < MakeThings></MakeThings>
         {/* <CallToAction></CallToAction> */}
         <InternWhy></InternWhy>

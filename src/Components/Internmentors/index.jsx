@@ -2,17 +2,14 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const MentorTeamBootstrap = () => {
+const MentorTeamStroke4rem = () => {
   useEffect(() => {
-    // Load Inter font
     const link = document.createElement("link");
     link.href = "https://fonts.googleapis.com/css2?family=Inter&display=swap";
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    // Apply Inter font
     document.body.style.fontFamily = "'Inter', sans-serif";
-
     return () => {
       document.body.style.fontFamily = "";
     };
@@ -49,48 +46,17 @@ const MentorTeamBootstrap = () => {
       linkedin: "#",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
-    {
-        name: "John Smith",
-        title: "CEO and Founder",
-        description:
-          "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
-        imgSrc:
-          "https://storage.googleapis.com/a1aa/image/e74b7ff4-ff69-460f-8cc8-658663cba7e3.jpg",
-        linkedin: "#",
-        alt: "Headshot of John Smith with yellow abstract shape behind",
-      },
-      {
-        name: "Jane Doe",
-        title: "Director of Operations",
-        description:
-          "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
-        imgSrc:
-          "https://storage.googleapis.com/a1aa/image/1bf5636a-a8d4-49d4-f0ec-5a67e178799b.jpg",
-        linkedin: "#",
-        alt: "Headshot of Jane Doe with yellow abstract shape behind",
-      },
-      {
-        name: "Michael Brown",
-        title: "Senior SEO Specialist",
-        description:
-          "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
-        imgSrc:
-          "https://storage.googleapis.com/a1aa/image/a1489e73-78f9-4aef-5d8e-5f98ba59f54a.jpg",
-        linkedin: "#",
-        alt: "Headshot of Michael Brown with yellow abstract shape behind",
-      },
   ];
 
   const styles = `
     .mentor-label {
-      background-color: #f5b800;
-      color: black;
-      font-weight: 800;
-      font-size: 1.125rem;
+      font-weight: 900;
+      font-size: 4rem; /* Updated size */
       border-radius: 0.375rem;
-      padding: 0.5rem 1rem;
       display: inline-block;
       user-select: none;
+      color: transparent;
+      -webkit-text-stroke: 2px #000;
     }
     .card-custom {
       border: 1px solid black;
@@ -184,11 +150,8 @@ const MentorTeamBootstrap = () => {
       <style>{styles}</style>
       <div className="container py-4">
         <div className="d-flex flex-column flex-sm-row align-items-center gap-3 mb-5">
-          <span className="mentor-label">Mentor</span>
-          <p
-            className="mb-0"
-            style={{ maxWidth: "36rem", fontSize: "0.875rem" }}
-          >
+          <span className="mentor-label">Mentors</span>
+          <p className="mb-0" style={{ maxWidth: "36rem", fontSize: "0.875rem" }}>
             Meet the skilled and experienced team behind our successful digital
             marketing strategies
           </p>
@@ -228,4 +191,4 @@ const MentorTeamBootstrap = () => {
   );
 };
 
-export default MentorTeamBootstrap;
+export default MentorTeamStroke4rem;
