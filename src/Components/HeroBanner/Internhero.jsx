@@ -26,9 +26,9 @@ const Internhero = () => {
 
   const heroContent = {
     subtitle: "What We Offer",
-    title: "Strategic Digital Marketing Services That Deliver Results",
+    title: "Launch Your Career with Real Industry Skills!",
     content:
-      "We offer a full suite of performance-driven digital marketing services designed to elevate your brand and drive real business growth. Whether you're looking to build brand awareness, generate quality leads, or boost your online sales — we've got you covered.",
+      "Internship Program in Digital Marketing, Web Development, AI & SMM. Kickstart your professional journey with hands-on training, live projects, and expert mentorship",
   };
 
   return (
