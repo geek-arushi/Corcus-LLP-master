@@ -8,7 +8,7 @@ const InternshipDomains = () => {
     {
       title: 'BEGINER',
       subtitle: 'WEB DEVELOPER',
-      image: '/public/assets/img/Inetrn/01.png', // Add your image path here
+      image: '/assets/img/Inetrn/01.png', // Add your image path here
       bgColor: '#f5f5f5',
       tagBg: '#FFBF00',
       textColor: '#000',
@@ -17,7 +17,7 @@ const InternshipDomains = () => {
     {
       title: 'INTERMEDIATE',
       subtitle: 'WEB DEVELOPER',
-      image: '/public/assets/img/Inetrn/02.png', // Add your image path here
+      image: '/assets/img/Inetrn/02.png', // Add your image path here
       bgColor: '#ffc107',
       tagBg: '#000',
       textColor: '#000',
@@ -27,7 +27,7 @@ const InternshipDomains = () => {
     {
       title: 'WORDPRESS',
       subtitle: 'DEVELOPER',
-      image: '/public/assets/img/Inetrn/03.png', // Add your image path here
+      image: '/assets/img/Inetrn/03.png', // Add your image path here
       bgColor: '#000',
       tagBg: '#fff',
       textColor: '#fff',
@@ -37,7 +37,7 @@ const InternshipDomains = () => {
     {
       title: 'SHOPIFY',
       subtitle: 'ECOMERCE',
-      image: '/public/assets/img/Inetrn/04.png', // Add your image path here
+      image: '/assets/img/Inetrn/04.png', // Add your image path here
       bgColor: '#f5f5f5',
       tagBg: '#FFBF00',
       textColor: '#000',
@@ -46,7 +46,7 @@ const InternshipDomains = () => {
     {
       title: 'INTERMEDIATE',
       subtitle: 'WEB DEVELOPER',
-      image: '/public/assets/img/Inetrn/05.png', // Add your image path here
+      image: '/assets/img/Inetrn/05.png', // Add your image path here
       bgColor: '#ffc107',
       tagBg: '#000',
       textColor: '#000',
@@ -56,7 +56,7 @@ const InternshipDomains = () => {
     {
       title: 'WORDPRESS',
       subtitle: 'DEVELOPER',
-      image: '/public/assets/img/Inetrn/06.png', // Add your image path here
+      image: '/assets/img/Inetrn/06.png', // Add your image path here
       bgColor: '#000',
       tagBg: '#fff',
       textColor: '#fff',
