@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
-const Benefits = () => {
+const BenefitsSection = () => {
   const benefitsData = [
     {
       icon: "bi bi-person-gear",
@@ -37,85 +38,66 @@ const Benefits = () => {
     },
   ];
 
+  const styles = `
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .benefit-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+  `;
+
   return (
     <section className="benefits-section py-5">
+      <style jsx="true">{styles}</style>
       <div className="container">
-        <div className="row mb-4">
-          <div className="col-12">
-            <div className="benefits-header">
-              <h2 className="section-title fw-bold mb-1">Benefits</h2>
-              <p className="text-secondary">
-                Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services
-              </p>
-            </div>
-          </div>
+        <div className="mb-5">
+          <h2 className="fw-bold mb-2">Benefits</h2>
+          <p className="text-secondary">
+            Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services
+          </p>
         </div>
 
-        <div className="row g-4">
+        <div className="d-flex flex-column gap-4">
           {benefitsData.map((benefit, index) => (
-            <div key={index} className="col-md-6 col-lg-3">
-              <div 
-                className="benefit-card h-100" 
-                style={{ 
-                  backgroundColor: benefit.bgColor,
-                  borderRadius: "12px",
-                  border: `1px solid ${benefit.borderColor}`,
-                  borderLeft: `6px solid ${benefit.borderColor}`,
-                  overflow: "hidden",
-                  padding: "1.5rem",
-                  position: "relative",
-                }}
+            <div
+              key={index}
+              className="benefit-card d-flex flex-column flex-sm-row align-items-start gap-3"
+              style={{ backgroundColor: benefit.bgColor, borderLeft: `6px solid ${benefit.borderColor}` }}
+            >
+              <div
+                className="benefit-icon"
+                style={{ backgroundColor: benefit.borderColor }}
               >
-                <div className="d-flex flex-column">
-                  <div className="d-flex align-items-start mb-3">
-                    <div 
-                      className="icon-container me-3" 
-                      style={{ 
-                        width: "48px", 
-                        height: "48px",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        backgroundColor: benefit.borderColor,
-                        color: "#fff",
-                        flexShrink: 0
-                      }}
-                    >
-                      <i className={`${benefit.icon} fs-5`}></i>
-                    </div>
-                    <h5 className="card-title fw-bold mb-0">{benefit.title}</h5>
-                  </div>
-                  <div className="ps-5">
-                    <p className="card-text text-muted mb-0" style={{ fontSize: "0.9rem", lineHeight: "1.5" }}>
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
+                <i className={`${benefit.icon} fs-5`}></i>
+              </div>
+              <div>
+                <h5 className="fw-bold mb-1">{benefit.title}</h5>
+                <p className="text-muted mb-0" style={{ fontSize: "0.875rem", lineHeight: "1.6" }}>
+                  {benefit.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <style jsx="true">{`
-        .benefits-section {
-          background-color: #ffffff;
-          padding: 3rem 0;
-        }
-        .benefits-header {
-          margin-bottom: 2rem;
-        }
-        .benefit-card {
-          transition: transform 0.3s ease;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .benefit-card:hover {
-          transform: translateY(-5px);
-        }
-      `}</style>
     </section>
   );
 };
 
-export default Benefits;
+export default BenefitsSection;
