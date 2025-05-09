@@ -98,28 +98,28 @@ const InternS = () => {
       <div className="row">
         {[
           {
-            title: "Performance Marketing",
+            title: "BEGINER WEB DEVELOPER",
             desc: "Contact us today to learn how our digital marketing services can help your business grow.",
             img: "assets/img/service/01.gif",
             btnStyle: "dark",
             darkStyle: false,
           },
           {
-            title: "Social Media Marketing",
+            title: "INTERMEDIATE WEB DEVELOPER",
             desc: "Strategic content creation and management across platforms to engage your audience.",
             img: "assets/img/service/02.gif",
             btnStyle: "light",
             darkStyle: true,
           },
           {
-            title: "Search Engine Optimization",
+            title: "WORDPRESS DEVELOPER",
             desc: "Improve your website's visibility and ranking on search engines.",
             img: "assets/img/service/03.gif",
             btnStyle: "light",
             darkStyle: true,
           },
           {
-            title: "Content Marketing",
+            title: "SHOPIFY ECOMERCE ",
             desc: "Engaging content builds brand authority and attracts customers.",
             img: "assets/img/service/04.gif",
             btnStyle: "dark",
