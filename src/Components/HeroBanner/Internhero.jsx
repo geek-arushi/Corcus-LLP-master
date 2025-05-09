@@ -10,9 +10,9 @@ const Internhero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
-    "assets/img/Servicedetail/1.png",
-    "assets/img/Servicedetail/2.jpg",
-    "assets/img/Servicedetail/3.jpg",
+    "/assets/img/Inetrn/11.gif",
+    "/assets/img/Inetrn/12.gif",
+    "/assets/img/Inetrn/13.gif",
   ];
 
   useEffect(() => {

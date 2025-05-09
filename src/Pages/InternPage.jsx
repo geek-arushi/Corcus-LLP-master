@@ -7,7 +7,7 @@ import MentorTeamBootstrap from "../Components/Internmentors";
 import BenefitsSection from "../Components/Benifits";
 import MakeThings from "../Components/Make things";
 import ContactForm from "../Components/contactForm";
-import Servicesnew from "../Components/servicenew/Services";
+import InternS from "../Components/InternServices";
 
 
 const Intern = () => {
@@ -15,7 +15,7 @@ const Intern = () => {
       <div>
         <Internhero></Internhero>
         <InternP></InternP>
-        <Servicesnew></Servicesnew>
+        <InternS></InternS>
         < MakeThings></MakeThings>
         {/* <CallToAction></CallToAction> */}
         <InternWhy></InternWhy>
