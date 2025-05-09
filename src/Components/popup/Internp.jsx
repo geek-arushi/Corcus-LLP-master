@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./popup.scss"; // keep your styles
-import "./Popup.css";
 
 const PopupForm = ({ isOpen, setIsOpen }) => {
   const [formData, setFormData] = useState({
@@ -141,4 +140,4 @@ const PopupForm = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default PopupForm;
+export default IntPop;

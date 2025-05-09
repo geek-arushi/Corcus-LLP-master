@@ -17,28 +17,49 @@ const MentorTeamStroke4rem = () => {
 
   const profiles = [
     {
-      name: "John Smith",
-      title: "CEO and Founder",
+      name: "Ayush Anand",
+      title: "Wordpress,Shopify,Liquid Coading,Canva",
       description:
-        "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+        "5+ years of experience in digital marketing. Strong organizational and communication skills",
       imgSrc:
         "https://storage.googleapis.com/a1aa/image/e74b7ff4-ff69-460f-8cc8-658663cba7e3.jpg",
       linkedin: "#",
       alt: "Headshot of John Smith with yellow abstract shape behind",
     },
     {
-      name: "Jane Doe",
-      title: "Director of Operations",
+      name: "Tanisha",
+      title: "AI,SEO,Blog",
       description:
-        "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+        "3+ years of experience in project management and team leadership. Strong organizational and communication skills",
       imgSrc:
         "https://storage.googleapis.com/a1aa/image/1bf5636a-a8d4-49d4-f0ec-5a67e178799b.jpg",
       linkedin: "#",
       alt: "Headshot of Jane Doe with yellow abstract shape behind",
     },
     {
-      name: "Michael Brown",
-      title: "Senior SEO Specialist",
+      name: "Abhishek Raj",
+      title: "Coading",
+      description:
+        "2+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+      imgSrc:
+        "https://storage.googleapis.com/a1aa/image/a1489e73-78f9-4aef-5d8e-5f98ba59f54a.jpg",
+      linkedin: "#",
+      alt: "Headshot of Michael Brown with yellow abstract shape behind",
+    },
+    {
+      name: "Arushi Singh",
+      title: "Coading",
+      description:
+        "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+      imgSrc:
+        "https://storage.googleapis.com/a1aa/image/a1489e73-78f9-4aef-5d8e-5f98ba59f54a.jpg",
+      linkedin: "#",
+      alt: "Headshot of Michael Brown with yellow abstract shape behind",
+    },
+    
+    {
+      name: "Animesh Anand",
+      title: "Coading",
       description:
         "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
       imgSrc:
