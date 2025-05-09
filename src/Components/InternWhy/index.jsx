@@ -43,18 +43,16 @@ const InternWhyStrokeText = () => {
             <div className="col-md-4 mb-4">
               <div className="card bg-black text-white h-100 border-0">
                 <div className="card-body p-4">
-                  <h4 className="card-title mb-4 text-white">Fresh O Need</h4>
+                  <h4 className="card-title mb-4 text-white"></h4>
                   <p className="card-text mb-4 text-white">
-                    Fresh O Need struggled with ineffective marketing, unoptimized
-                    website, and marketplace issues. We resolved all challenges,
-                    improved engagement, optimized ads, and expanded their
-                    presence to global markets in just six months.
+                  At Corcus Studio, our internship program goes beyond basic training. You'll gain real-world experience by working on live projects, mastering in-demand skills like ReactJS, WordPress, Shopify, WooCommerce, and AI tools. This hands-on approach ensures you're ready to tackle real industry challenges.
+
                   </p>
                   <a
                     href="https://corcusstudio.in/case-study-fresh-o-need-a-digital-transformation-success-story/"
                     className="learn-more-link d-inline-block mt-2"
                   >
-                    Learn More →
+                    
                   </a>
                 </div>
               </div>
@@ -64,18 +62,16 @@ const InternWhyStrokeText = () => {
             <div className="col-md-4 mb-4">
               <div className="card bg-black text-white h-100 border-0">
                 <div className="card-body p-4">
-                  <h4 className="card-title mb-4 text-white">Fresh Super Mall</h4>
+                  <h4 className="card-title mb-4 text-white"></h4>
                   <p className="card-text mb-4 text-white">
-                    Fresh Super Mall struggled with franchise lead generation. We
-                    implemented targeted ads, SEO, CRM integration, and influencer
-                    marketing. Results: 300% increase in inquiries, 50% better
-                    conversion rate, and enhanced brand visibility.
+                  Our program also helps you build a strong professional portfolio, connect with industry experts, and expand your network. You'll gain practical insights, personalized mentorship, and the confidence to stand out in the competitive tech landscape.
+
                   </p>
                   <a
                     href="https://corcusstudio.in/fresh-super-mall-boosting-franchise-leads-through-digital-marketing/"
                     className="learn-more-link d-inline-block mt-2"
                   >
-                    Learn More →
+                 
                   </a>
                 </div>
               </div>
@@ -85,18 +81,15 @@ const InternWhyStrokeText = () => {
             <div className="col-md-4 mb-4">
               <div className="card bg-black text-white h-100 border-0">
                 <div className="card-body p-4">
-                  <h4 className="card-title mb-4 text-white">Paidavaar</h4>
+                  <h4 className="card-title mb-4 text-white"></h4>
                   <p className="card-text mb-4 text-white">
-                    Paidavaar partnered with us a year ago to build its digital
-                    presence. We designed the brand logo, developed content, and
-                    introduced ‘Gayani Thai’ for farming insights, which became a
-                    major hit.
+                  With flexible online and offline sessions, resume building, interview preparation, and career support, we provide all the tools you need for a successful tech career. Join Corcus Studio's Internship Program and take the first step towards becoming a tech leader.
                   </p>
                   <a
                     href="https://corcusstudio.in/paidavaar-a-year-of-transformative-digital-marketing/"
                     className="learn-more-link d-inline-block mt-2"
                   >
-                    Learn More →
+                    
                   </a>
                 </div>
               </div>
