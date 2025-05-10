@@ -17,7 +17,7 @@ const BenefitsSectionStyled = () => {
 
   const benefitsData = [
     {
-      icon: "bi bi-person-gear",
+      icon: "bi bi-person-ge",
       bgColor: "#FFF9E5",
       borderColor: "#F8D458",
       title: "Hands-On Project Experience",
@@ -25,7 +25,7 @@ const BenefitsSectionStyled = () => {
         "Work on real-world projects, gaining practical skills and industry insights that go beyond classroom learning.",
     },
     {
-      icon: "bi bi-collection-play",
+      icon: "bi bi-teach",
       bgColor: "#E8F1FF",
       borderColor: "#4285F4",
       title: "Personalized Mentorship and Career Guidance",
@@ -33,7 +33,7 @@ const BenefitsSectionStyled = () => {
         "Receive one-on-one mentorship from industry experts, tailored to your learning pace and career goals.",
     },
     {
-      icon: "bi bi-graph-up-arrow",
+      icon: "bi bi-employee",
       bgColor: "#F9EAFF",
       borderColor: "#D252E1",
       title: "Professional Networking and Growth",
@@ -41,12 +41,12 @@ const BenefitsSectionStyled = () => {
         "Connect with like-minded peers and industry professionals, expanding your network and career opportunities.",
     },
     {
-      icon: "bi bi-briefcase",
+      icon: "bi bi-certificate",
       bgColor: "#FFF0EB",
       borderColor: "#FF5733",
       title: "Certification and Exclusive Perks",
       description:
-        "Icareer prospects, making you competitive and opening doors to new opportunitie",
+        "Earn a recognized internship certificate and enjoy exclusive perks, including resume reviews, interview prep, and job placement support.",
     },
   ];
 
