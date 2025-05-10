@@ -25,7 +25,7 @@ const BenefitsSectionStyled = () => {
         "Work on real-world projects, gaining practical skills and industry insights that go beyond classroom learning.",
     },
     {
-      icon: "bi bi-teach",
+      icon: "bi bi-collection-play",
       bgColor: "#E8F1FF",
       borderColor: "#4285F4",
       title: "Personalized Mentorship and Career Guidance",
@@ -33,7 +33,7 @@ const BenefitsSectionStyled = () => {
         "Receive one-on-one mentorship from industry experts, tailored to your learning pace and career goals.",
     },
     {
-      icon: "bi bi-employee",
+      icon: "bi bi-graph-up-arrow",
       bgColor: "#F9EAFF",
       borderColor: "#D252E1",
       title: "Professional Networking and Growth",
@@ -41,12 +41,12 @@ const BenefitsSectionStyled = () => {
         "Connect with like-minded peers and industry professionals, expanding your network and career opportunities.",
     },
     {
-      icon: "bi bi-certificate",
+      icon: "bi bi-briefcase",
       bgColor: "#FFF0EB",
       borderColor: "#FF5733",
       title: "Certification and Exclusive Perks",
       description:
-        "Earn a recognized internship certificate and enjoy exclusive perks, including resume reviews, interview prep, and job placement support.",
+        "Icareer prospects, making you competitive and opening doors to new opportunitie",
     },
   ];
 

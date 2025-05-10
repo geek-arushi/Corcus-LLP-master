@@ -7,7 +7,6 @@ import MentorTeamBootstrap from "../Components/Internmentors";
 import BenefitsSection from "../Components/Benifits";
 import MakeThings from "../Components/Make things";
 import ContactForm from "../Components/contactForm";
-import InternS from "../Components/InternServices";
 
 
 const Intern = () => {
@@ -22,7 +21,7 @@ const Intern = () => {
         {/* <WorkingProcess></WorkingProcess> */}
         <MentorTeamBootstrap></MentorTeamBootstrap>
         <BenefitsSection></BenefitsSection>
-        <ContactForm></ContactForm>
+        
         
       </div>
     );
