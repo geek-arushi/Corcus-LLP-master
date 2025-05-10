@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Popup from "../popup/Popup";
-import ContactForm from "../contactForm/ContactForm";
+import Internform from "../contactForm/Intcontact";
 
 const InternS = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -189,7 +189,7 @@ const InternS = () => {
 
       {/* Popup */}
       <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
-        <ContactForm />
+        <Internform />
       </Popup>
     </div>
   );

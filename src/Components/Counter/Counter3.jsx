@@ -11,7 +11,7 @@ const Counter3 = () => {
   const [toggle, setToggle] = useState(false);
 
   const handelClick = () => {
-    setIframeSrc("http://www.youtube.com/embed/NSKCh9yhZxk?si=WvnWUEwS0SGhnzKg");
+    setIframeSrc("https://youtu.be/NSKCh9yhZxk?si=aBriTfUuBwCyJaVd");
     setToggle(true);
   };
 

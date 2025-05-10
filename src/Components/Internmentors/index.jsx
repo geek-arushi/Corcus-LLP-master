@@ -22,9 +22,9 @@ const MentorTeamStroke4rem = () => {
       description:
         "5+ years of experience in digital marketing. Strong organizational and communication skills",
       imgSrc:
-        "https://storage.googleapis.com/a1aa/image/e74b7ff4-ff69-460f-8cc8-658663cba7e3.jpg",
+        "assets/img/team/01.jpg",
       linkedin: "#",
-      alt: "Headshot of John Smith with yellow abstract shape behind",
+      alt: "Ayshi",
     },
     {
       name: "Tanisha",
@@ -32,7 +32,7 @@ const MentorTeamStroke4rem = () => {
       description:
         "3+ years of experience in project management and team leadership. Strong organizational and communication skills",
       imgSrc:
-        "https://storage.googleapis.com/a1aa/image/1bf5636a-a8d4-49d4-f0ec-5a67e178799b.jpg",
+        "assets/img/team/04.jpg",
       linkedin: "#",
       alt: "Headshot of Jane Doe with yellow abstract shape behind",
     },
@@ -42,7 +42,7 @@ const MentorTeamStroke4rem = () => {
       description:
         "2+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
       imgSrc:
-        "https://storage.googleapis.com/a1aa/image/a1489e73-78f9-4aef-5d8e-5f98ba59f54a.jpg",
+        "assets/img/team/06.jpg",
       linkedin: "#",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
@@ -52,7 +52,7 @@ const MentorTeamStroke4rem = () => {
       description:
         "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
       imgSrc:
-        "https://storage.googleapis.com/a1aa/image/a1489e73-78f9-4aef-5d8e-5f98ba59f54a.jpg",
+        "assets/img/team/07.jpg",
       linkedin: "#",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
@@ -63,7 +63,7 @@ const MentorTeamStroke4rem = () => {
       description:
         "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
       imgSrc:
-        "https://storage.googleapis.com/a1aa/image/a1489e73-78f9-4aef-5d8e-5f98ba59f54a.jpg",
+        "assets/img/team/03.jpg",
       linkedin: "#",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
@@ -102,9 +102,7 @@ const MentorTeamStroke4rem = () => {
         0% 50%,
         15% 15%
       );
-      filter: brightness(0) saturate(100%) invert(82%) sepia(100%) saturate(749%) hue-rotate(39deg) brightness(96%) contrast(101%);
-      position: relative;
-      z-index: 1;
+
     }
     .profile-wrapper {
       position: relative;
