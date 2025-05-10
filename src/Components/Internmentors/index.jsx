@@ -23,7 +23,7 @@ const MentorTeamStroke4rem = () => {
         "5+ years of experience in digital marketing. Strong organizational and communication skills",
       imgSrc:
         "assets/img/team/01.jpg",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/ayush-anand-81119368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       alt: "Ayshi",
     },
     {
@@ -33,7 +33,7 @@ const MentorTeamStroke4rem = () => {
         "3+ years of experience in project management and team leadership. Strong organizational and communication skills",
       imgSrc:
         "assets/img/team/04.jpg",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/tanishasingh2018?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       alt: "Headshot of Jane Doe with yellow abstract shape behind",
     },
     {
@@ -43,7 +43,7 @@ const MentorTeamStroke4rem = () => {
         "4+ Years of Full-Stack Development and DevOps Experience.Skilled in building and scaling web and mobile apps using React.js, Flutter, and DevOps. Proficient in front-end and back-end architecture, API integration, cloud deployment, and CI/CD pipelines.",
       imgSrc:
         "assets/img/team/06.jpg",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/abhishek-raj-490606177?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
     {
@@ -53,7 +53,7 @@ const MentorTeamStroke4rem = () => {
         "4+ Years of Full-Stack Development Experience.Skilled in building and scaling web and mobile apps using React.js and WordPress. Proficient in front-end and back-end architecture, API integration, cloud deployment, and CI/CD pipelines.",
       imgSrc:
         "assets/img/team/07.jpg",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/arushi-singh-805a59264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
     
@@ -64,7 +64,7 @@ const MentorTeamStroke4rem = () => {
         "Skilled in creating captivating animations, illustrations, and video edits for digital content. Experienced in bringing concepts to life with creative storytelling, motion design, and visual effects.",
       imgSrc:
         "assets/img/team/03.jpg",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/company/corcus-studio-llp/",
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
   ];
