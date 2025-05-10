@@ -6,6 +6,73 @@ import Internform from "../contactForm/Intcontact";
 const InternS = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const services = [
+    {
+      title: "BEGINER WEB DEVELOPER",
+      desc: "Contact us today to learn how our digital marketing services can help your business grow.",
+      price: "₹ 5999/-",
+      img: "assets/img/service/01.gif",
+      btnStyle: "dark",
+      darkStyle: false,
+    },
+    {
+      title: "INTERMEDIATE WEB DEVELOPER",
+      desc: "Strategic content creation and management across platforms to engage your audience.",
+      price: "₹ 7999/-",
+      img: "assets/img/service/02.gif",
+      btnStyle: "light",
+      darkStyle: true,
+    },
+    {
+      title: "WORDPRESS DEVELOPER",
+      desc: "Improve your website's visibility and ranking on search engines.",
+      price: "₹ 3999/-",
+      img: "assets/img/service/03.gif",
+      btnStyle: "light",
+      darkStyle: true,
+    },
+    {
+      title: "SHOPIFY ECOMMERCE",
+      desc: "Engaging content builds brand authority and attracts customers.",
+      price: "₹ 4999/-",
+      img: "assets/img/service/04.gif",
+      btnStyle: "dark",
+      darkStyle: false,
+    },
+     {
+      title: "SMM",
+      desc: "Engaging content builds brand authority and attracts customers.",
+      price: "₹ 4999/-",
+      img: "assets/img/service/04.gif",
+      btnStyle: "dark",
+      darkStyle: false,
+    },
+     {
+      title: "CANVA",
+      desc: "Improve your website's visibility and ranking on search engines.",
+      price: "₹ 1999/-",
+      img: "assets/img/service/03.gif",
+      btnStyle: "light",
+      darkStyle: true,
+    },
+     {
+      title: "AI",
+      desc: "Improve your website's visibility and ranking on search engines.",
+      price: "₹ 1999/-",
+      img: "assets/img/service/03.gif",
+      btnStyle: "light",
+      darkStyle: true,
+    },
+    {
+      title: "Motion Graphics",
+      desc: "Engaging content builds brand authority and attracts customers.",
+      price: "₹ 14999/-",
+      img: "assets/img/service/04.gif",
+      btnStyle: "dark",
+      darkStyle: false,
+    },
+  ];
+
   return (
     <div className="container my-5">
       <style>
@@ -14,6 +81,8 @@ const InternS = () => {
             border: 2px solid black !important;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
           }
           .service-card:hover {
             transform: translateY(-8px) scale(1.02);
@@ -47,6 +116,28 @@ const InternS = () => {
             text-align: start;
           }
 
+          .price-tag {
+            background-color: #eeb200;
+            color: black;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+          }
+
+          .paid-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #eeb200;
+            color: black;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 5;
+          }
+
           @media (max-width: 768px) {
             .stroke-text {
               font-size: 2.5rem !important;
@@ -76,108 +167,27 @@ const InternS = () => {
           </h1>
         </div>
         <div className="col-md-8">
-          <p
-            className="lead text-grey ps-md-3"
-            style={{
-              fontSize: "1rem",
-              fontWeight: "bold",
-              lineHeight: "1.6",
-              marginBottom: "1.5rem",
-            }}
-          >
-            {/* At our digital marketing agency, we offer a wide range of services
-            to help businesses grow and achieve their goals. These services
-            include performance marketing, social media management, SEO, content
-            creation, and more — all tailored to boost your brand's online
-            presence and drive real results. */}
-          </p>
+          <p className="lead text-grey ps-md-3" style={{ fontSize: "1rem", fontWeight: "bold", lineHeight: "1.6", marginBottom: "1.5rem" }}></p>
         </div>
       </div>
 
       {/* Service Cards */}
       <div className="row">
-        {[
-          {
-            title: "BEGINER WEB DEVELOPER",
-            desc: "Contact us today to learn how our digital marketing services can help your business grow.",
-            img: "assets/img/service/01.gif",
-            btnStyle: "dark",
-            darkStyle: false,
-          },
-          {
-            title: "INTERMEDIATE WEB DEVELOPER",
-            desc: "Strategic content creation and management across platforms to engage your audience.",
-            img: "assets/img/service/02.gif",
-            btnStyle: "light",
-            darkStyle: true,
-          },
-          {
-            title: "WORDPRESS DEVELOPER",
-            desc: "Improve your website's visibility and ranking on search engines.",
-            img: "assets/img/service/03.gif",
-            btnStyle: "light",
-            darkStyle: true,
-          },
-          {
-            title: "SHOPIFY ECOMERCE ",
-            desc: "Engaging content builds brand authority and attracts customers.",
-            img: "assets/img/service/04.gif",
-            btnStyle: "dark",
-            darkStyle: false,
-          },
-        //   {
-        //     title: "Brand Strategy & Consulting",
-        //     desc: "Customized marketing strategies that align with your business goals.",
-        //     img: "assets/img/service/05.gif",
-        //     btnStyle: "dark",
-        //     darkStyle: false,
-        //   },
-        //   {
-        //     title: "Creative Design",
-        //     desc: "Visually appealing creatives that resonate with your target audience.",
-        //     img: "assets/img/service/06.gif",
-        //     btnStyle: "light",
-        //     darkStyle: true,
-        //   },
-        //   {
-        //     title: "E-commerce Marketing",
-        //     desc: "Comprehensive solutions to boost your online store's sales and visibility.",
-        //     img: "assets/img/service/07.gif",
-        //     btnStyle: "light",
-        //     darkStyle: true,
-        //   },
-        //   {
-        //     title: "Analytics & Reporting",
-        //     desc: "In-depth performance analysis to refine and optimize your campaigns.",
-        //     img: "assets/img/service/08.gif",
-        //     btnStyle: "dark",
-        //     darkStyle: false,
-        //   },
-        ].map((service, index) => (
+        {services.map((service, index) => (
           <div className="col-md-6 mb-4" key={index}>
-            <div
-              className={`card service-card h-100 p-4 rounded d-flex flex-column flex-md-row align-items-center ${
-                service.darkStyle ? "bg-black text-white" : ""
-              }`}
-            >
+            <div className={`card service-card h-100 p-4 rounded d-flex flex-column flex-md-row align-items-center ${service.darkStyle ? "bg-black text-white" : ""}`}>
+              <div className="paid-tag">PAID</div>
               <div className="order-md-2 ms-md-4">
-                <img
-                  src={service.img}
-                  alt={service.title}
-                  height="150"
-                  width="150"
-                  className="mb-4 mb-md-0"
-                />
+                <img src={service.img} alt={service.title} height="150" width="150" className="mb-4 mb-md-0" />
               </div>
               <div>
                 <h2 className="h4 fw-bold mb-3">{service.title}</h2>
                 <p className="mb-3">
                   {service.desc}
                   <br />
-                  <button
-                    className={`btn btn-${service.btnStyle} custom-btn mt-3`}
-                    onClick={() => setIsPopupOpen(true)}
-                  >
+                  <span className="price-tag">Price: {service.price}</span>
+                  <br />
+                  <button className={`btn btn-${service.btnStyle} custom-btn mt-3`} onClick={() => setIsPopupOpen(true)}>
                     Get your free proposal
                   </button>
                 </p>

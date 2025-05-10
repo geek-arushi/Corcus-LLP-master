@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Internform = () => {
   const [formData, setFormData] = useState({
     Name: "",
     Phone: "",
     Email: "",
-    Business: "",
-    Services: "",
-    CustomService: "",
+    Qualification: "",
+    PassingYear: "",
+    Course: "",
   });
 
   const handleChange = (e) => {
@@ -18,18 +20,24 @@ const Internform = () => {
     }));
   };
 
+  const handleDateChange = (date) => {
+    const year = date.getFullYear();
+    setFormData((prev) => ({
+      ...prev,
+      PassingYear: year,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const finalService =
-      formData.Services === "Other" ? formData.CustomService : formData.Services;
 
     const submissionData = {
       Name: formData.Name,
       Phone: formData.Phone,
       Email: formData.Email,
-      Business: formData.Business,
-      Services: finalService,
+      Qualification: formData.Qualification,
+      PassingYear: formData.PassingYear,
+      Course: formData.Course,
     };
 
     const formBody = new URLSearchParams();
@@ -57,9 +65,9 @@ const Internform = () => {
         Name: "",
         Phone: "",
         Email: "",
-        Business: "",
-        Services: "",
-        CustomService: "",
+        Qualification: "",
+        PassingYear: "",
+        Course: "",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -70,7 +78,7 @@ const Internform = () => {
   return (
     <>
       <form className="contact-form" onSubmit={handleSubmit}>
-        <h2>Get Your Free Proposal</h2>
+        <h2>Internship Application Form</h2>
 
         <div className="form-group">
           <input
@@ -110,46 +118,47 @@ const Internform = () => {
         <div className="form-group">
           <input
             type="text"
-            name="Business"
-            value={formData.Business}
+            name="Qualification"
+            value={formData.Qualification}
             onChange={handleChange}
-            placeholder="Business Name / Website"
+            placeholder="Your Qualification"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <DatePicker
+            selected={formData.PassingYear ? new Date(formData.PassingYear, 0, 1) : null}
+            onChange={handleDateChange}
+            showYearPicker
+            dateFormat="yyyy"
+            placeholderText="Select Passing Year"
+            className="year-picker"
             required
           />
         </div>
 
         <div className="form-group">
           <select
-            name="Services"
-            value={formData.Services}
+            name="Course"
+            value={formData.Course}
             onChange={handleChange}
             required
           >
-            <option value="">Which services are you looking for?</option>
-            <option value="Website Design">Website Design</option>
-            <option value="Social Media Marketing">Social Media Marketing</option>
-            <option value="Branding">Branding</option>
-            <option value="Performance Marketing">Performance Marketing</option>
-            <option value="Video/Reel Production">Video/Reel Production</option>
-            <option value="Other">Other (Write Below)</option>
+            <option value="">Select Your Course</option>
+            <option value="Motion Graphics">Motion Graphics</option>
+            <option value="AI">AI</option>
+            <option value="CANVA">CANVA</option>
+            <option value="SMM">SMM</option>
+            <option value="SHOPIFY ECOMMERCE">SHOPIFY ECOMMERCE</option>
+            <option value="WORDPRESS DEVELOPER">WORDPRESS DEVELOPER</option>
+            <option value="INTERMEDIATE WEB DEVELOPER">INTERMEDIATE WEB DEVELOPER</option>
+            <option value="BEGINER WEB DEVELOPER">BEGINER WEB DEVELOPER</option>
           </select>
         </div>
 
-        {formData.Services === "Other" && (
-          <div className="form-group">
-            <input
-              type="text"
-              name="CustomService"
-              value={formData.CustomService}
-              onChange={handleChange}
-              placeholder="Please specify your service"
-              required
-            />
-          </div>
-        )}
-
         <button type="submit" className="submit-btn">
-          Send Proposal Request
+          Submit Application
         </button>
       </form>
 
@@ -159,75 +168,48 @@ const Internform = () => {
           margin: 40px auto;
           padding: 30px 25px;
           background-color: #ffffff;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-radius: 12px;
+          border-radius: 16px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
           font-family: 'Poppins', sans-serif;
         }
-
         .contact-form h2 {
           text-align: center;
-          margin-bottom: 25px;
-          font-size: 24px;
-          font-weight: 600;
           color: #333;
+          margin-bottom: 30px;
         }
-
         .form-group {
           margin-bottom: 20px;
         }
-
         .contact-form input,
-        .contact-form select {
+        .contact-form select,
+        .year-picker {
           width: 100%;
           padding: 12px 15px;
-          font-size: 15px;
-          font-family: 'Poppins', sans-serif;
-          border: 1px solid #ccc;
+          font-size: 14px;
           border-radius: 8px;
+          border: 1px solid #ddd;
+          transition: all 0.3s ease;
         }
-
         .contact-form input:focus,
-        .contact-form select:focus {
+        .contact-form select:focus,
+        .year-picker:focus {
           border-color: #007bff;
           outline: none;
-          box-shadow: 0 0 3px rgba(0, 123, 255, 0.2);
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
         }
-
-        .contact-form select {
-          appearance: none;
-          background-color: #fff;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon fill='%23999' points='70,105 105,35 35,35 '/%3E%3C/svg%3E");
-          background-repeat: no-repeat;
-          background-position: right 10px center;
-          background-size: 12px;
-        }
-
         .submit-btn {
           width: 100%;
           padding: 14px;
-          font-size: 16px;
-          font-family: 'Poppins', sans-serif;
-          background-color: rgb(2, 2, 2);
+          background-color:rgb(0, 0, 0);
           color: #fff;
-          font-weight: 500;
           border: none;
           border-radius: 8px;
           cursor: pointer;
+          font-weight: 500;
           transition: background-color 0.3s ease;
         }
-
         .submit-btn:hover {
           background-color: #eeb200;
-        }
-
-        @media (max-width: 600px) {
-          .contact-form {
-            padding: 20px 15px;
-          }
-
-          .contact-form h2 {
-            font-size: 20px;
-          }
         }
       `}</style>
     </>

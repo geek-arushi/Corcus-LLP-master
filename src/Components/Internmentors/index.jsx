@@ -38,9 +38,9 @@ const MentorTeamStroke4rem = () => {
     },
     {
       name: "Abhishek Raj",
-      title: "Coading",
+      title: "Software Developer",
       description:
-        "2+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+        "4+ Years of Full-Stack Development and DevOps Experience.Skilled in building and scaling web and mobile apps using React.js, Flutter, and DevOps. Proficient in front-end and back-end architecture, API integration, cloud deployment, and CI/CD pipelines.",
       imgSrc:
         "assets/img/team/06.jpg",
       linkedin: "#",
@@ -48,9 +48,9 @@ const MentorTeamStroke4rem = () => {
     },
     {
       name: "Arushi Singh",
-      title: "Coading",
+      title: "Software Developer",
       description:
-        "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+        "4+ Years of Full-Stack Development Experience.Skilled in building and scaling web and mobile apps using React.js and WordPress. Proficient in front-end and back-end architecture, API integration, cloud deployment, and CI/CD pipelines.",
       imgSrc:
         "assets/img/team/07.jpg",
       linkedin: "#",
@@ -59,9 +59,9 @@ const MentorTeamStroke4rem = () => {
     
     {
       name: "Animesh Anand",
-      title: "Coading",
+      title: "Animation and Motion Graphics Artist",
       description:
-        "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+        "Skilled in creating captivating animations, illustrations, and video edits for digital content. Experienced in bringing concepts to life with creative storytelling, motion design, and visual effects.",
       imgSrc:
         "assets/img/team/03.jpg",
       linkedin: "#",
