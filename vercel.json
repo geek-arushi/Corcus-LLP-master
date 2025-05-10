@@ -1,15 +1,17 @@
 {
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/about", "dest": "/" },
-    { "src": "/team", "dest": "/" },
-    { "src": "/team/team-details", "dest": "/" },
-    { "src": "/contact", "dest": "/" },
-    { "src": "/service", "dest": "/" },
-    { "src": "/TermsAndConditions", "dest": "/" },
-    { "src": "/PrivacyPolicy", "dest": "/" },
-    { "src": "/RefundPolicy", "dest": "/" },
-    { "src": "/InternPage", "dest": "/" },
-    { "src": "/.*", "dest": "/" }
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/team", "destination": "/index.html" },
+    { "source": "/team/team-details", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/service", "destination": "/index.html" },
+    { "source": "/TermsAndConditions", "destination": "/index.html" },
+    { "source": "/PrivacyPolicy", "destination": "/index.html" },
+    { "source": "/RefundPolicy", "destination": "/index.html" },
+    { "source": "/InternPage", "destination": "/index.html" },
+
+   
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
