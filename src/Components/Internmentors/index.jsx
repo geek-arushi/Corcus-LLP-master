@@ -18,9 +18,9 @@ const MentorTeamStroke4rem = () => {
   const profiles = [
     {
       name: "Ayush Anand",
-      title: "Wordpress,Shopify,Liquid Coading,Canva",
+      title: "CEO & Founder of Corcus,Digital Marketing and E-Commerce Expert",
       description:
-        "5+ years of experience in digital marketing. Strong organizational and communication skills",
+        "10+ years of experience in digital marketing. Strong organizational and communication skills.Expert in WordPress website management, digital advertising, and e-commerce growth. Skilled in SEO, social media marketing, paid ads, conversion optimization, and website analytics, with a strong focus on scaling online businesses and maximizing ROI.",
       imgSrc:
         "assets/img/team/01.jpg",
       linkedin: "https://www.linkedin.com/in/ayush-anand-81119368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -28,19 +28,29 @@ const MentorTeamStroke4rem = () => {
     },
     {
       name: "Tanisha",
-      title: "AI,SEO,Blog",
+      title: "AI Expert",
       description:
-        "3+ years of experience in project management and team leadership. Strong organizational and communication skills",
+        "5+ years of experience in project management and team leadership.Skilled in leveraging AI tools like ChatGPT, Midjourney, and Stable Diffusion to create automated workflows, conversational bots, and intelligent content solutions. Experienced in prompt engineering, data analysis, and integrating AI into business processes for enhanced efficiency and personalization.",
       imgSrc:
         "assets/img/team/04.jpg",
       linkedin: "https://www.linkedin.com/in/tanishasingh2018?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       alt: "Headshot of Jane Doe with yellow abstract shape behind",
     },
+     {
+      name: "Animesh Anand",
+      title: "Animation and Motion Graphics Artist",
+      description:
+        " 12+ Year of Experience in creating captivating animations, illustrations, and video edits for digital content. Experienced in bringing concepts to life with creative storytelling, motion design, and visual effects.",
+      imgSrc:
+        "assets/img/team/03.jpg",
+      linkedin: "https://www.linkedin.com/company/corcus-studio-llp/",
+      alt: "Headshot of Michael Brown with yellow abstract shape behind",
+    },
     {
       name: "Abhishek Raj",
       title: "Software Developer",
       description:
-        "4+ Years of Full-Stack Development and DevOps Experience.Skilled in building and scaling web and mobile apps using React.js, Flutter, and DevOps. Proficient in front-end and back-end architecture, API integration, cloud deployment, and CI/CD pipelines.",
+        "6+ Years of Full-Stack Development and DevOps Experience.Skilled in building and scaling web and mobile apps using React.js, Flutter, and DevOps. Proficient in front-end and back-end architecture, API integration, cloud deployment, and CI/CD pipelines.",
       imgSrc:
         "assets/img/team/06.jpg",
       linkedin: "https://www.linkedin.com/in/abhishek-raj-490606177?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -57,16 +67,7 @@ const MentorTeamStroke4rem = () => {
       alt: "Headshot of Michael Brown with yellow abstract shape behind",
     },
     
-    {
-      name: "Animesh Anand",
-      title: "Animation and Motion Graphics Artist",
-      description:
-        " 7+ Year of Experience in creating captivating animations, illustrations, and video edits for digital content. Experienced in bringing concepts to life with creative storytelling, motion design, and visual effects.",
-      imgSrc:
-        "assets/img/team/03.jpg",
-      linkedin: "https://www.linkedin.com/company/corcus-studio-llp/",
-      alt: "Headshot of Michael Brown with yellow abstract shape behind",
-    },
+   
   ];
 
   const styles = `
