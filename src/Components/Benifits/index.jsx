@@ -104,7 +104,7 @@ const BenefitsSectionStyled = () => {
         <div className="d-flex justify-content-between align-items-center mb-5 heading-row flex-md-row flex-column gap-3">
           <h2 className="stroke-heading m-0">Benefits & Working Process</h2>
           <p className="benefit-description m-0" style={{ maxWidth: "700px" }}>
-            Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services
+           
           </p>
         </div>
 

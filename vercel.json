@@ -1,0 +1,15 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/about", "dest": "/" },
+    { "src": "/team", "dest": "/" },
+    { "src": "/team/team-details", "dest": "/" },
+    { "src": "/contact", "dest": "/" },
+    { "src": "/service", "dest": "/" },
+    { "src": "/TermsAndConditions", "dest": "/" },
+    { "src": "/PrivacyPolicy", "dest": "/" },
+    { "src": "/RefundPolicy", "dest": "/" },
+    { "src": "/InternPage", "dest": "/" },
+    { "src": "/.*", "dest": "/" }
+  ]
+}

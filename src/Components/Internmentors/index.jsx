@@ -171,8 +171,7 @@ const MentorTeamStroke4rem = () => {
         <div className="d-flex flex-column flex-sm-row align-items-center gap-3 mb-5">
           <span className="mentor-label">Mentors</span>
           <p className="mb-0" style={{ maxWidth: "36rem", fontSize: "0.875rem" }}>
-            Meet the skilled and experienced team behind our successful digital
-            marketing strategies
+      
           </p>
         </div>
         <div className="row g-4">
