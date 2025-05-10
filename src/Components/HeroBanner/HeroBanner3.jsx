@@ -16,7 +16,7 @@ const HeroBanner3 = () => {
   const heroImages = [
     "/assets/img/hero/hero-image-1.jpg",
     "/assets/img/hero/hero-image-2.jpg",
-    "/assets/img/hero/hero-image-3.jpg",
+    "/assets/img/hero/hero-image-3.png",
     // "/assets/img/hero/hero-image-4.png",
     // "/assets/img/hero/hero-image-5.png",
   ];
