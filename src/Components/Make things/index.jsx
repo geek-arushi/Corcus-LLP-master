@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Popup from "../popup/Popup";
+import Internform from "../contactForm/Intcontact";
 
 const MakeThings = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
     <section className="section-padding pt-0">
       <div className="container">
@@ -16,10 +20,12 @@ const MakeThings = () => {
             <button
               className="theme-btn btn btn-dark rounded-2 px-4 py-2 career-btn"
               type="button"
+              onClick={() => setIsPopupOpen(true)}
             >
-              Get your profesnall career
+              Get your Professional Careers
             </button>
           </div>
+
           <div className="d-flex justify-content-center">
             <div className="position-relative">
               <div className="position-absolute" style={{ top: "-20px", right: "-20px" }}>
@@ -44,6 +50,13 @@ const MakeThings = () => {
           </div>
         </div>
       </div>
+
+      {/* Popup */}
+      {isPopupOpen && (
+        <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
+          <Internform />
+        </Popup>
+      )}
 
       {/* CSS for button hover effect */}
       <style jsx="true">{`

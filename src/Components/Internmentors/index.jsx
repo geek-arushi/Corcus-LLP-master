@@ -61,7 +61,7 @@ const MentorTeamStroke4rem = () => {
       name: "Animesh Anand",
       title: "Animation and Motion Graphics Artist",
       description:
-        "Skilled in creating captivating animations, illustrations, and video edits for digital content. Experienced in bringing concepts to life with creative storytelling, motion design, and visual effects.",
+        " 7+ Year of Experience in creating captivating animations, illustrations, and video edits for digital content. Experienced in bringing concepts to life with creative storytelling, motion design, and visual effects.",
       imgSrc:
         "assets/img/team/03.jpg",
       linkedin: "https://www.linkedin.com/company/corcus-studio-llp/",

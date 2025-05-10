@@ -20,33 +20,33 @@ const BenefitsSectionStyled = () => {
       icon: "bi bi-person-gear",
       bgColor: "#FFF9E5",
       borderColor: "#F8D458",
-      title: "Tailored Learning Experience",
+      title: "Hands-On Project Experience",
       description:
-        "Benefit from personalized courses that adapt to your learning style and preferences, ensuring a customized educational journey.",
+        "Work on real-world projects, gaining practical skills and industry insights that go beyond classroom learning.",
     },
     {
-      icon: "bi bi-collection-play",
+      icon: "bi bi-teach",
       bgColor: "#E8F1FF",
       borderColor: "#4285F4",
-      title: "Engaging Multimedia Content",
+      title: "Personalized Mentorship and Career Guidance",
       description:
-        "Enjoy the freedom to learn at your own pace, anytime, anywhere, allowing you to balance education with your busy schedule.",
+        "Receive one-on-one mentorship from industry experts, tailored to your learning pace and career goals.",
     },
     {
-      icon: "bi bi-graph-up-arrow",
+      icon: "bi bi-employee",
       bgColor: "#F9EAFF",
       borderColor: "#D252E1",
-      title: "Career-Boosting Skills",
+      title: "Professional Networking and Growth",
       description:
-        "Immerse yourself in interactive and enjoyable learning with multimedia content, quizzes, and hands-on exercises for a dynamic educational experience.",
+        "Connect with like-minded peers and industry professionals, expanding your network and career opportunities.",
     },
     {
-      icon: "bi bi-briefcase",
+      icon: "bi bi-certificate",
       bgColor: "#FFF0EB",
       borderColor: "#FF5733",
-      title: "Practical Industry Training",
+      title: "Certification and Exclusive Perks",
       description:
-        "Invest in your future with practical skills that enhance your career prospects, making you competitive and opening doors to new opportunities.",
+        "Earn a recognized internship certificate and enjoy exclusive perks, including resume reviews, interview prep, and job placement support.",
     },
   ];
 
@@ -102,7 +102,7 @@ const BenefitsSectionStyled = () => {
       <div className="container">
         {/* Stroke Heading & Paragraph Row */}
         <div className="d-flex justify-content-between align-items-center mb-5 heading-row flex-md-row flex-column gap-3">
-          <h2 className="stroke-heading m-0">Benefits & Working Process</h2>
+          <h2 className="stroke-heading m-0">Internship Benefits at Corcus Studio</h2>
           <p className="benefit-description m-0" style={{ maxWidth: "700px" }}>
            
           </p>
