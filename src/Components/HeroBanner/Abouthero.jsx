@@ -12,7 +12,8 @@ const Abouthero = () => {
   const heroImages = [
     "/assets/img/about/06.png",
     "/assets/img/about/07.png",
-    "/assets/img/about/08.png",
+    "/assets/img/about/09.png",
+    "/assets/img/about/10.png",
   ];
 
   useEffect(() => {

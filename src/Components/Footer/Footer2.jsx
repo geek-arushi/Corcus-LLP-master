@@ -121,7 +121,7 @@ const Footer2 = () => {
                     <li>
                       <Link to="/InternPage">
                         <i className="bi bi-arrow-right"></i>
-                        Internship Programe
+                       Internship Programs
                       </Link>
                     </li>
                   </ul>
