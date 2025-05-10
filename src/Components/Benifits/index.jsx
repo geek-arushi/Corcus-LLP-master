@@ -102,7 +102,7 @@ const BenefitsSectionStyled = () => {
       <div className="container">
         {/* Stroke Heading & Paragraph Row */}
         <div className="d-flex justify-content-between align-items-center mb-5 heading-row flex-md-row flex-column gap-3">
-          <h2 className="stroke-heading m-0">Internship Benefits at Corcus Studio</h2>
+          <h2 className="stroke-heading m-0">Internship Benefits at Corcus</h2>
           <p className="benefit-description m-0" style={{ maxWidth: "700px" }}>
            
           </p>
