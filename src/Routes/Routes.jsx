@@ -18,6 +18,9 @@ import TermsAndConditions from "../Pages/terms&conditions";
 import Privacypolicy from "../Pages/privacypolicy";
 import Refund from "../Pages/Refund";
 import Intern from "../Pages/InternPage";
+import Casestudy1 from "../Pages/CaseStusy1";
+import Casestudy2 from "../Pages/CaseStudy2";
+import Casestudy3 from "../Pages/CaseStudy3";
 
 
 export const router = createBrowserRouter([
@@ -69,9 +72,22 @@ export const router = createBrowserRouter([
       {
         path: "/RefundPolicy",
         element: <Refund></Refund>,
-      }, {
+      },
+      {
         path: "/InternPage",
         element: <Intern></Intern>,
+      },
+      {
+        path: "/Foncasestudy",
+        element: <Casestudy1></Casestudy1>,
+      },
+      {
+        path: "/Freshsupermall",
+        element: <Casestudy2></Casestudy2>,
+      },
+      {
+        path: "/PaidavaarCaseStudy",
+        element: <Casestudy3></Casestudy3>,
       },
       // {
       //   path: "/",

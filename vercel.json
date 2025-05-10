@@ -10,6 +10,10 @@
     { "source": "/PrivacyPolicy", "destination": "/index.html" },
     { "source": "/RefundPolicy", "destination": "/index.html" },
     { "source": "/InternPage", "destination": "/index.html" },
+    { "source": "/Foncasestudy", "destination": "/index.html" },
+    { "source": "/Freshsupermall", "destination": "/index.html" },
+    { "source": "/PaidavaarCaseStudy", "destination": "/index.html" },
+
 
    
     { "source": "/(.*)", "destination": "/index.html" }
